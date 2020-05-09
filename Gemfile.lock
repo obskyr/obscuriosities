@@ -242,7 +242,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  github-pages
+  github-pages (~> 204)
   jekyll-paginate
   jekyll-sitemap
   jemoji
