@@ -5,16 +5,16 @@ layout: default
 <aside class="sidebar">
   <header>
     <div class="about">
-      <div class="cover-author-image">
-        <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/images/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}"></a>
+      <div class="cover-image">
+        <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/images/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.title}}"></a>
       </div>
-      <div class="author-name">{{site.author}}</div>
+      <div class="site-title">{{site.title}}</div>
       <p>{{site.about-author}}</p>
     </div>
   </header> <!-- End Header -->
   <footer>
     <section class="contact">
-      <h3 class="contact-title">Contact me</h3>
+      <h3 class="contact-title">Contact</h3>
       <ul>
         {% if site.social-twitter %}
           <li><a href="https://twitter.com/{{ site.social-twitter }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

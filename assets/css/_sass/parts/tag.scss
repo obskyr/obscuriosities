@@ -6,10 +6,10 @@
     font-size: 30px;
     text-align: center;
     line-height: 1.3;
-    color: $dark-blue;
+    color: $lighter-color;
   }
   h2 {
-    color: $dark-blue;
+    color: $lighter-color;
     margin: 10px 0;
   }
 }
@@ -23,15 +23,17 @@
     list-style: none;
     a {
       text-decoration: none;
-      color: $dark-blue;
+      color: $lighter-color;
       display: inline-block;
       padding: 5px 10px;
-      border: 1px solid $gray;
-      background-color: $lightgray;
+      border: 1px solid $lighter-color;
+      // background-color: $darker-content-background;
       transition: all .3s;
-      &:hover {
-        background-color: $gray;
-      }
+      /*
+        &:hover {
+          background-color: $gray;
+        }
+      */
     }
   }
 }
@@ -40,7 +42,7 @@
   span {
     a {
       text-decoration: none;
-      color: $dark-blue;
+      color: $lighter-color;
       &:hover {
         text-decoration: underline;
         opacity: .8;

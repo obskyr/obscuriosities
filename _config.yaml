@@ -7,7 +7,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 site-twitter: map # if your site has a twitter account, enter it here
 
 # Author Settings
-author: Obscuriosities
+author: Obskyr
 author-img: logo.png
 about-author: >
   The podcast about obscure video games. Do you believe that there's value in the unknown?
@@ -18,7 +18,7 @@ social-linkedin:
 social-email: powpowd@gmail.com
 
 # To add comments, set a Disqus identifier.
-# disqus-identifier: 
+# disqus-identifier:
 
 # Google Analytics
 # analytics:
