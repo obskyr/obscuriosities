@@ -1,25 +1,27 @@
-title: 
+title: Obscuriosities
 description: > # this means to ignore newlines until the next property
+  The podcast about obscure video games. Do you believe that there's value in the unknown?
 permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-site-twitter: # if your site has a twitter account, enter it here
+site-twitter: map # if your site has a twitter account, enter it here
 
 # Author Settings
-author: # add your name
-author-img: # add your photo
-about-author: # add description
-social-twitter: # add your Twitter handle
-social-facebook: # add your Facebook handle
-social-github: # add your Github handle
-social-linkedin: # add your Linkedin handle
-social-email: # add your Email address
+author: Obscuriosities
+author-img: logo.png
+about-author: >
+  The podcast about obscure video games. Do you believe that there's value in the unknown?
+social-twitter: obskyr
+social-facebook:
+social-github: https://github.com/obskyr/obscuriosities
+social-linkedin:
+social-email: powpowd@gmail.com
 
-# Disqus
-# discus-identifier: mr-brown # add your discus identifier
+# To add comments, set a Disqus identifier.
+# disqus-identifier: 
 
-# Tracker
-analytics: # Google Analytics
+# Google Analytics
+# analytics:
 
 # Build Settings
 markdown: kramdown
@@ -32,3 +34,6 @@ paginate: 8
 paginate_path: "/page/:num"
 
 exclude: []
+
+sass:
+  sass_dir: assets/css/_sass
