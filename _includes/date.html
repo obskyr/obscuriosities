@@ -1,5 +1,5 @@
 {% assign format-string = "%B %-d" %}
-{% assign mod = include.date | date: "%-d" | to_integer | modulo: 10 %}
-{% capture ordinal %}{% case mod %}{% when 1 %}st{% when 2 %}nd{% when 3 %}rd{% else %}th{% endcase %}{% endcapture %}
+{% assign day = include.date | date: "%-d" | to_integer %}
+{% capture ordinal %}{% case day %}{% when 1 or 21 or 31 %}st{% when 2 or 22 %}nd{% when 3 or 23 %}rd{% else %}th{% endcase %}{% endcapture %}
 {% assign format-string = format-string | append: ordinal | append: ", %Y" %}
 {{ include.date | date: format-string }}
