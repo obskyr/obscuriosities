@@ -31,7 +31,7 @@ Basic Command Line Usage:
 
   See 'octopod <command> --help' for more information on a specific command.
 
-Configuration is read from '<source>/_config.yml' but can be overridden
+Configuration is read from '<source>/_config.yaml' but can be overridden
 using the following options:
 
 HELP
@@ -41,7 +41,7 @@ octopod episode - generates a template to post your next episode
 
 octopod episode [options] [audio file[, audio file]]
 
-Configuration is read from '<source>/_config.yml' but can be overridden
+Configuration is read from '<source>/_config.yaml' but can be overridden
 using the following options:
 
 EPISODE_HELP
@@ -51,7 +51,7 @@ octopod deploy - deploys website via rsync
 
 octopod deploy [path to write generated site] [options]
 
-Configuration is read from '<source>/_config.yml' but can be overridden
+Configuration is read from '<source>/_config.yaml' but can be overridden
 using the following options:
 
 DEPLOY_HELP
@@ -111,7 +111,7 @@ def get_stdin(message)
 end
 
 if ARGV.size > 0 && (ARGV[0] == 'episode' || ARGV[0] == 'deploy' || ARGV[0] == 'setup')
-  options = YAML.load_file(File.join(PWD, '_config.yml'))
+  options = YAML.load_file(File.join(PWD, '_config.yaml'))
   options['posts_dir'] = File.join(PWD, '_posts')
 
   case ARGV[0]
@@ -248,9 +248,9 @@ if ARGV.size > 0 && (ARGV[0] == 'episode' || ARGV[0] == 'deploy' || ARGV[0] == '
     ok_failed system(rsync_command)
 
   when 'setup'
-    unless File.exists?(PWD + '/_config.dist_backup.yml')
+    unless File.exists?(PWD + '/_config.dist_backup.yaml')
       puts "", "===== Creating a backup of the configuration file ... ====="
-      FileUtils.cp(PWD + '/_config.yml', PWD + '/_config.dist_backup.yml', {verbose: true})
+      FileUtils.cp(PWD + '/_config.yaml', PWD + '/_config.dist_backup.yaml', {verbose: true})
       puts "===== ... done ===== ", ""
     end
 
@@ -268,7 +268,7 @@ if ARGV.size > 0 && (ARGV[0] == 'episode' || ARGV[0] == 'deploy' || ARGV[0] == '
     end
 
     if write_file?(PWD + "/_config.yaml")
-      FileUtils.cp(GEM_DIR + "/assets/_config.yml.sample", PWD + "/_config.yml", {verbose: true})
+      FileUtils.cp(GEM_DIR + "/assets/_config.yaml.sample", PWD + "/_config.yaml", {verbose: true})
     end
     puts "===== ... done ===== ", ""
   end
