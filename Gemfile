@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-# gem 'jekyll'
-gem "github-pages", "~> 204", group: :jekyll_plugins
+gem 'jekyll'
+gem 'jekyll-octopod', path: 'jekyll-octopod'
 
 group :jekyll_plugins do
   gem "jekyll-sitemap"

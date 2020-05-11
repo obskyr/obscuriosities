@@ -1,0 +1,7 @@
+*~
+*.gem
+.bundle
+pkg
+rdoc
+.sass-cache/*
+Gemfile.lock
