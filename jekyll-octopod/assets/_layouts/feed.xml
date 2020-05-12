@@ -55,11 +55,11 @@ layout: null
         {%- assign check = forloop.index0 | divided_by:site.episodes_per_feed_page | plus: 1 -%}
         {%- if check == page.page_number -%}
           <item>
-            <title>{{ post.title }} - {{ post.subtitle }}</title>
+            <title>{{ post.title }}{% if post.subtitle %} - {{ post.subtitle }}{% endif %}</title>
             <link>{{ site.url }}{{ post.url }}</link>
             <atom:link rel="http://podlove.org/deep-link" href="{{ site.url }}/players/{{ post.slug }}"/>
             <comments>{{ site.url }}{{ post.url }}#disqus_thread</comments>
-            <pubDate>{{ post.date | time_to_rssschema }}</pubDate>
+            <pubDate>{{ post.real-date | time_to_rssschema }}</pubDate>
             {% for category in post.categories %}
             <category><![CDATA[{{ category }}]]></category>
             {% endfor %}

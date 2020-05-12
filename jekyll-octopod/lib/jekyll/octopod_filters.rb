@@ -3,6 +3,8 @@ require 'digest/sha1'
 
 module Jekyll
   module OctopodFilters
+    extend self
+
     JSON_ENTITIES = { '&' => '\u0026', '>' => '\u003E', '<' => '\u003C', "'" => '\u0027' }
 
     # Escapes  some text for CDATA
@@ -161,17 +163,33 @@ module Jekyll
     #
     #   {{ '00:00:00.000 Welcome to Octopod!' | split_chapter:'start' }}
     #     => '00:00:00.000'
+    #
+    # Oh, and specifically for Obscuriosities, splitting on more than one space
+    # is fixed, and it also supports timestamps without hours or minutes.
+    TIMESTAMP_RE = /^(?:(?<hours>[0-9]+):)??(?:(?<minutes>[0-9]+):)??(?<seconds>[0-9]+(?:\.[0-9]+)?)$/
     def split_chapter(chapter_str, attribute = nil)
-      attributes = chapter_str.split(/ /, 2)
-      return nil unless attributes.first.match(/\A(\d|:|\.)+\z/)
+      attributes = chapter_str.split(' ', 2)
+      m = attributes.first.match(TIMESTAMP_RE)
+      return nil unless m
+
+      seconds = (m['hours'] || '0').to_i * 3600 +
+                (m['minutes'] || '0').to_i * 60 +
+                (m['seconds'].to_f)
+
+      start = string_of_start(seconds)
 
       if attribute.nil?
-        { 'start' => attributes.first, 'title' => attributes.last }
+        { 'start' => start, 'title' => attributes.last }
       else
-        attribute == 'start' ? attributes.first : attributes.last
+        attribute == 'start' ? start : attributes.last
       end
     end
 
+    def string_of_start(seconds)
+      hours, seconds = seconds.divmod(3600)
+      minutes, seconds = seconds.divmod(60)
+      "%d:%02d:%06.3f" % [hours, minutes, seconds]
+    end
 
     # Gets a number of seconds and returns an human readable duration string of
     # it.

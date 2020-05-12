@@ -41,8 +41,8 @@ layout: null
        {%- endif -%}
       }
     ],{% endif %}
-    "date_published": "{{ post.date | date_to_xmlschema }}",
-    "date_modified": "{{ post.date | date_to_xmlschema }}",
+    "date_published": "{{ post.real-date | date_to_xmlschema }}",
+    "date_modified": "{{ post.real-date | date_to_xmlschema }}",
     "author": {
       "name": "{{ post.author }}"
     }

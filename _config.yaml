@@ -64,3 +64,6 @@ exclude: ['jekyll-octopod']
 
 sass:
   sass_dir: assets/css/_sass
+
+# Not actually, but to make per-post timezones actually somewhat work...
+timezone: UTC

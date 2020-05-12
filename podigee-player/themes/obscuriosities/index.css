@@ -163,7 +163,8 @@
     }
   .podcast-player .panels .chaptermarks,
   .podcast-player .panels .playlist {
-    max-height: 300px; }
+    max-height: 300px;
+    overflow-y: auto; }
     .podcast-player .panels .chaptermarks ul,
     .podcast-player .panels .playlist ul {
       display: block;
@@ -201,7 +202,9 @@
         .podcast-player .panels .chaptermarks ul li .chaptermark-start,
         .podcast-player .panels .playlist ul li .chaptermark-start {
           float: left;
-          margin-left: 0; }
+          margin-left: 0; 
+          width: 4em;
+          text-align: right; }
         .podcast-player .panels .chaptermarks ul li .chaptermark-image + .chaptermark-start,
         .podcast-player .panels .playlist ul li .chaptermark-image + .chaptermark-start {
           margin-left: 10px; }

@@ -18,7 +18,7 @@ layout: null
     <entry>
       <title>{{ post.title }}</title>
       <link href="{{ site.url }}{{ post.url }}"/>
-      <updated>{{ post.date | date_to_xmlschema }}</updated>
+      <updated>{{ post.real-date | date_to_xmlschema }}</updated>
       <id>{{ site.url }}{{ post.id }}</id>
       <content type="html">{{ post.content | xml_escape }}</content>
       {% for file in post.audio %}
