@@ -132,9 +132,9 @@ module Jekyll
     #   {{ page | image_with_fallback }} => '/path/to/image.png'
     def image_with_fallback(page)
       if page["image"]
-        "/img/" + page["image"]
+        "/assets/images/" + page["image"]
       else
-        "/img/logo-itunes.jpg"
+        "/assets/images/logo/logo-itunes.png"
       end
     end
 

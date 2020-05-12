@@ -11,6 +11,8 @@ require 'rubygems'
 require 'optparse'
 require 'yaml'
 require 'fileutils'
+require 'audioinfo'
+require 'jekyll'
 
 
 octopod_help = <<HELP
@@ -110,6 +112,12 @@ def get_stdin(message)
   STDIN.gets.chomp
 end
 
+def duration_to_string(seconds)
+  hours, seconds = seconds.divmod(3600)
+  minutes, seconds = seconds.divmod(60)
+  "%02d:%02d:%02d" % [hours, minutes, seconds]
+end
+
 if ARGV.size > 0 && (ARGV[0] == 'episode' || ARGV[0] == 'deploy' || ARGV[0] == 'setup')
   options = YAML.load_file(File.join(PWD, '_config.yaml'))
   options['posts_dir'] = File.join(PWD, '_posts')
@@ -117,23 +125,37 @@ if ARGV.size > 0 && (ARGV[0] == 'episode' || ARGV[0] == 'deploy' || ARGV[0] == '
   case ARGV[0]
 
   when 'episode'
+    title = "A Title"
+    seconds = 60
+    files = {'m4a' => 'name.m4a', 'mp3' => 'name.mp3','ogg' => 'name.ogg'}
+    sizes = {'m4a' => 1234567, 'mp3' => 2345678, 'ogg' => 3456789}
+    if ARGV[1]
+      files = ARGV[1..-1].map{ |fn| [(File.extname(fn)[1..-1] || "").downcase, File.basename(fn)] }.to_h
+      sizes = ARGV[1..-1].map{ |fn| [(File.extname(fn)[1..-1] || "").downcase, File.size(fn)] }.to_h
+      AudioInfo.open(ARGV[1]) do |info|
+        title = info.title
+        title = "Episode #{info.tracknum}: #{title}"
+        if ['.mp4', '.aac', '.m4a'].include? File.extname(ARGV[1]).downcase
+          # The mp4info library does... not support Unicode? The heck?
+          title = title.force_encoding("utf-8")
+        end
+        seconds = info.length
+      end
+    end
+    duration_string = duration_to_string(seconds)
     post_header = {
-      'title'         => 'A Title',
-      'subtitle'      => "A Subtle Subtitle",
-      'datum'         => 'May 22nd, 2016',
+      'title'         => title,
+      # 'subtitle'      => "A Subtle Subtitle",
+      # 'datum'         => 'May 22nd, 2016',
       'layout'        => 'post',
       'author'        => options['author'],
       'explicit'      => options['explicit'] || 'no',
-      'duration'      => "0:01:00",
-      'audio'         => {
-        'm4a'  => 'name.m4a',
-        'mp3'  => 'name.mp3',
-        'ogg'  => 'name.ogg'},
-      'filesize'         => {
-        'm4a'  => 1234567,
-        'mp3'  => 2345678,
-        'ogg'  => 3456789}, 
+      'duration'      => duration_string,
+      'audio'         => files,
+      'filesize'      => sizes,
       'chapters'      => [
+        # Perhaps getting embedded chapters from audio files could be a thing
+        # to implement sometime - if there's ever an easy way to make such files.
         '00:00:00.000 Intro.',
         '00:00:30.000 Outro.'
       ]
@@ -190,7 +212,7 @@ if ARGV.size > 0 && (ARGV[0] == 'episode' || ARGV[0] == 'deploy' || ARGV[0] == '
     end
 
     post_header['title'] = post_header['title'] || 'untitled'
-    slug = post_header['title'].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '_')
+    slug = Jekyll::Utils.slugify(post_header['title'], mode: 'pretty')
     date = Time.now.strftime('%Y-%m-%d')
 
     filename = File.join(options['posts_dir'], "#{date}-#{slug}#{DEFAULT_EXT}")

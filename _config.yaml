@@ -4,12 +4,12 @@ description: > # this means to ignore newlines until the next property
 theme-color: '#191F42'
 permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://podcast.obskyr.io" # the base hostname & protocol for your site, e.g. http://example.com
 site-twitter: # if your site has a twitter account, enter it here
 
-# Author Settings
+# Author settings
 author: Obskyr
-author-img: logo.png
+author-img: logo/logo.png
 about-author: >
   The podcast about obscure video games. Do you believe that there's value in the unknown?
 social-twitter: obskyr
@@ -18,15 +18,41 @@ social-github: obskyr/obscuriosities
 social-linkedin:
 social-email: powpowd@gmail.com
 
+# Octopod settings. Why couldn't they have placed this in an object...
+author_url: "https://obskyr.io/"
+email: powpowd@gmail.com
+keywords: ['video games', games, technology, obscure]
+itunes_categories: ['Video Games', Technology, Education]
+language: en
+explicit: 'no'
+episodes_per_feed_page: 100
+
+player_theme: obscuriosities
+date_format: ordinal
+
+## If rsync deployments via Octopod are ever to be done:
+# ssh_host: user@host.org
+# ssh_port: 22
+# document_root: /path/to/your/htdocs/
+# rsync_delete: true
+
+## Feed links; optional
+# itunes_url: https://itunes.apple.com/at/podcast/myname/id232323
+# google_play_url: https://playmusic.app.goo.gl/...
+# bitlove_url: https://bitlove.org/myaccount
+# fyyd_url: https://fyyd.de/podcast/myaccount/myid
+# gpodder_url: https://gpodder.net/podcast/mypodcast
+
 # To add comments, set a Disqus identifier.
 # disqus-identifier:
 
 # Google Analytics
 # analytics:
 
-# Build Settings
+# Build settings
 markdown: kramdown
 plugins:
+  - jekyll-octopod
   - jekyll-sitemap
   - jekyll-paginate
   - jemoji
@@ -34,7 +60,7 @@ plugins:
 paginate: 8
 paginate_path: "/page/:num"
 
-exclude: []
+exclude: ['jekyll-octopod']
 
 sass:
   sass_dir: assets/css/_sass

@@ -83,5 +83,25 @@
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="{{ "/assets/fonts/font-awesome/css/font-awesome.min.css" | prepend: site.baseurl }}">
 	<!-- Styles -->
-	<link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  
+  <script>
+    window.podcastData = {
+      "title": "{{ site['title']}}",
+      "subtitle": "{{ site['subtitle']}}",
+      "description": "{{ site['description']}}",
+      "cover": "{{ site.url }}/assets/images/logo/logo-360x360.png",
+      "feeds": [
+      {% for feed in site['episode_feed_formats'] %}
+        {
+          "type": "audio",
+          "format": "{{ feed }}",
+          "url": "{{ site['url']}}/episodes.{{ feed }}.rss",
+          "directory-url-itunes": "{{ site['itunes_url']}}",
+          "variant": "high"
+        },
+      {% endfor %}
+      ]
+    }
+  </script>
 </head>

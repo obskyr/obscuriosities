@@ -1,7 +1,6 @@
 module Jekyll
   class PodigeePlayerTag < Liquid::Tag
-    # From here: https://github.com/podigee/podigee-podcast-player/tree/master/src/themes
-    PLAYER_THEMES = ["default", "default-dark", "legacy", "minimal", "republica"]
+    PLAYER_THEMES = ["obscuriosities"]
 
     def playerconfig(context)
       config = context.registers[:site].config
@@ -18,7 +17,7 @@ module Jekyll
                       Playlist:     {} },
         title: options['title'],
         episode: { media: audio,
-                   coverUrl: config['url'] + "/img/" + (page["image"] || "logo-360x360.png"),
+                   coverUrl: config['url'] + "/assets/images/" + (page["image"] || "logo/logo-360x360.png"),
                    title: page["title"],
                    subtitle: page["subtitle"],
                    url: config['url'] + page["url"],

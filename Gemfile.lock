@@ -1,3 +1,21 @@
+GIT
+  remote: https://github.com/arbarlow/ruby-mp4info.git
+  revision: ba04292683188b5f1020aba164eb951e3a835044
+  specs:
+    mp4info (1.7.3)
+
+GIT
+  remote: https://github.com/obskyr/ruby-audioinfo.git
+  revision: 901c55e738a4ac17be5e3d7abcb15760297d85a8
+  specs:
+    ruby-audioinfo (0.5.3)
+      apetag (>= 1.1.4)
+      flacinfo-rb (>= 0.4)
+      moumar-wmainfo-rb (>= 0.7)
+      ruby-mp3info (>= 0.8)
+      ruby-ogginfo (>= 0.6.13)
+      wavefile (~> 0.6.0)
+
 PATH
   remote: jekyll-octopod
   specs:
@@ -19,7 +37,10 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    apetag (1.1.5)
+      cicphash (>= 1.0.0)
     backports (3.17.1)
+    cicphash (1.1.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.6)
     em-websocket (0.5.1)
@@ -28,6 +49,7 @@ GEM
     eventmachine (1.2.7)
     facets (3.1.0)
     ffi (1.12.2)
+    flacinfo-rb (1.0)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
     html-pipeline (2.12.3)
@@ -79,6 +101,7 @@ GEM
     mercenary (0.3.6)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
+    moumar-wmainfo-rb (0.8)
     multi_json (1.14.1)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
@@ -95,6 +118,8 @@ GEM
       ffi (~> 1.0)
     rexml (3.2.4)
     rouge (3.18.0)
+    ruby-mp3info (0.8.10)
+    ruby-ogginfo (0.7.2)
     safe_yaml (1.0.5)
     sassc (2.3.0)
       ffi (~> 1.9)
@@ -116,6 +141,7 @@ GEM
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     unicode-display_width (1.7.0)
+    wavefile (0.6.0)
     zeitwerk (2.3.0)
 
 PLATFORMS
@@ -127,6 +153,8 @@ DEPENDENCIES
   jekyll-paginate
   jekyll-sitemap
   jemoji
+  mp4info!
+  ruby-audioinfo!
 
 BUNDLED WITH
    2.1.4
