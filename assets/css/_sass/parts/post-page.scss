@@ -102,3 +102,48 @@
 .comment-area {
   margin-top: 30px;
 }
+
+.article-page p > img {
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+  max-height: 380px;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.images.captiony {
+  align-items: flex-start;
+}
+
+.images img {
+  max-height: 380px;
+}
+
+.images > img, .images > .image-container {
+  margin: 15px;
+  max-width: calc(50% - 30px);
+}
+
+.images.three-wide > img, .images.three-wide > .image-container {
+  max-width: calc(33% - 30px);
+}
+
+.images.four-wide > img, .images.four-wide > .image-container {
+  max-width: calc(25% - 30px);
+}
+
+.images .caption {
+  margin-top: 0.1em;
+  width: 0;
+  min-width: 100%;
+  font-size: 0.9em;
+}

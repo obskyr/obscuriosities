@@ -71,10 +71,16 @@
     align-items: stretch;
   }
 
-.contact-title, .copyright {
-  display: none;
-}
+  .contact-title, .copyright {
+    display: none;
+  }
 
+  .images.three-wide > img, .images.three-wide > .image-container {
+    max-width: calc(50% - 30px);
+  }
+  .images.four-wide > img, .images.four-wide > .image-container {
+    max-width: calc(33% - 30px);
+  }
 }
 
 /* Extra Small Devices, Phones */
@@ -101,5 +107,9 @@
         }
       }
     }
+  }
+
+  .images.four-wide > img, .images.four-wide > .image-container {
+    max-width: calc(50% - 30px);
   }
 }
