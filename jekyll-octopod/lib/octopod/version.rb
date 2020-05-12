@@ -4,8 +4,9 @@ module Jekyll
       MAJOR = 0
       MINOR = 9
       TINY  = 23
+      TAG   = "obskyr"
 
-      STRING = [MAJOR, MINOR, TINY].join('.')
+      STRING = [MAJOR, MINOR, TINY].join('.') + (TAG ? "-" + TAG : "")
     end
   end
 end

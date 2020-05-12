@@ -19,7 +19,7 @@ GIT
 PATH
   remote: jekyll-octopod
   specs:
-    jekyll-octopod (0.9.23)
+    jekyll-octopod (0.9.23.pre.obskyr)
       facets (~> 3.1)
       jekyll (~> 4.0)
       jekyll-admin (~> 0.10)
