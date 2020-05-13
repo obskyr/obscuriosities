@@ -127,10 +127,12 @@ table tfoot td {
 .wrapper {
   display: inline-block;
   position: relative;
-  max-width: 1250px;
+  width: 1250px;
+  max-width: 100%;
 }
 
 .post, .article-page {
+  width: 100%;
   background-color: $white;
 }
 
