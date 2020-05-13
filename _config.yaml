@@ -28,6 +28,8 @@ language: en
 explicit: 'no'
 episodes_per_feed_page: 100
 
+use_podtrac: yes
+
 player_theme: obscuriosities
 date_format: ordinal
 

@@ -26,12 +26,12 @@ layout: null
           <link rel="enclosure" 
                 type="{{ file.first | mime_type }}" 
                 length="{{ post.filesize[file.first] }}" 
-                href="{{ site.url }}{{ site.baseurl }}/episodes/{{ file.last }}"/> 
+                href="{{ file.last | prepend: '/episodes/' | absolute_url }}"/> 
         {% else %}
           <link rel="enclosure" 
                 type="{{ file.first | mime_type }}" 
                 length="{{ file.last | file_size }}" 
-                href="{{ site.url }}{{ site.baseurl }}/episodes/{{ file.last }}"/>    
+                href="{{ file.last | prepend: '/episodes/' | absolute_url }}"/>    
         {% endif %}
       {% endfor %}
       {{ site | flattr_atom:post }}

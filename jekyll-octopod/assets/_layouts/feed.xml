@@ -73,7 +73,7 @@ layout: null
             <description><![CDATA[{{ post.content | before_hr | expand_urls: site.url | cdata_escape | remove_script_and_audio }}]]></description>
             <content:encoded><![CDATA[{{ post.content | before_hr | expand_urls: site.url | cdata_escape | remove_script_and_audio }}]]></content:encoded>
             {% assign encoded_filename = post.audio[page.format] | uri_escape %}
-            {% assign url = download_url | append: '/' | append: encoded_filename %}
+            {% assign url = download_url | append: '/' | append: encoded_filename | possibly_with_podtrac %}
             {%- if post.filesize -%}
               <enclosure url="{{ url }}" 
                          length="{{ post | size_by_format: page.format }}" 
