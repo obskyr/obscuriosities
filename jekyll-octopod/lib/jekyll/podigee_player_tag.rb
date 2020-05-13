@@ -22,7 +22,13 @@ module Jekyll
                    subtitle: page["subtitle"],
                    url: config['url'] + config['baseurl'] + page["url"],
                    description: page["description"],
-                   chaptermarks: page["chapters"] ? page["chapters"].map { |chapter| OctopodFilters::split_chapter(chapter) } : nil
+                   chaptermarks: page["chapters"] ? page["chapters"].map do |chapter|
+                     parts = OctopodFilters::split_chapter(chapter)
+                     # For some reason, chapters placed at 0 seconds don't work
+                     # in the Podigee web player. Who knows?
+                     parts['start'] = "0:00:01.000" if parts['start'] === "0:00:00.000"
+                     parts
+                   end : nil
                  }
       }.to_json
     end
