@@ -224,14 +224,23 @@ if ARGV.size > 0 && (ARGV[0] == 'episode' || ARGV[0] == 'deploy' || ARGV[0] == '
     open(filename, 'w') do |post|
       post.puts post_header.to_yaml
       post.puts '---'
+      # post.puts 
+      # post.puts '<!---'
+      # post.puts 'The filesize block above can be deleted, if your audio files are hosted within the episodes directory.'
+      # post.puts 'It is only necessary for hosting remotely.'
+      # post.puts '-->'
       post.puts 
-      post.puts '<!---'
-      post.puts 'The filesize block above can be deleted, if your audio files are hosted within the episodes directory.'
-      post.puts 'It is only necessary for hosting remotely.'
-      post.puts '-->'
-      post.puts 
-      post.puts "{% podigee_player page %}\n\n"
-      post.puts "## Shownotes and Links\n\n* Note"
+      post.puts "Episode page: [{{ page.url | absolute_url }}]({{ page.url | absolute_url }})"
+      post.puts
+      post.puts "Write show notes here!"
+      post.puts
+      post.puts "-----"
+      post.puts
+      post.puts "Opening paragraph here!"
+      post.puts
+      post.puts "{% podigee_player page %}"
+      post.puts
+      post.puts "## Blog post starts here!"
     end
 
     puts "Created new episode: #{filename}" if File.exists?(filename)
