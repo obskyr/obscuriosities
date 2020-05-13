@@ -4,7 +4,7 @@
   <title>Obscuriosities</title>
   <link href="https://podcast.obskyr.io/general_feed.xml" rel="self"/>
   <link href="https://podcast.obskyr.io"/>
-  <updated>2020-05-13T08:45:39+0000</updated>
+  <updated>2020-05-13T11:02:16+0000</updated>
   <id>https://podcast.obskyr.io/</id>
   <author>
     <name>Obskyr</name>
@@ -20,7 +20,7 @@
       <content type="html">&lt;p&gt;On this inaugural episode of Obscuriosities, we talk about mon games – games inspired to ride the coattails of Pokémon’s creature-collecting craze. But of course, unlike a Digimon or a Monster Rancher… these games didn’t make it big.&lt;/p&gt;
 
 &lt;script&gt;
-  window.playerConfiguration = {&quot;options&quot;:{&quot;theme&quot;:&quot;obscuriosities&quot;,&quot;startPanel&quot;:&quot;ChapterMarks&quot;},&quot;extensions&quot;:{&quot;ChapterMarks&quot;:{},&quot;EpisodeInfo&quot;:{},&quot;Playlist&quot;:{}},&quot;title&quot;:null,&quot;episode&quot;:{&quot;media&quot;:{&quot;m4a&quot;:&quot;https://podcast.obskyr.io/episodes/Episode 1 - The Post-Pokémon Gold Rush.m4a&quot;,&quot;ogg&quot;:&quot;https://podcast.obskyr.io/episodes/Episode 1 - The Post-Pokémon Gold Rush.ogg&quot;},&quot;coverUrl&quot;:&quot;https://podcast.obskyr.io/assets/episodes/episode-1-the-post-pokémon-gold-rush/cover.jpg&quot;,&quot;title&quot;:&quot;Episode 1: The Post-Pokémon Gold Rush&quot;,&quot;subtitle&quot;:null,&quot;url&quot;:&quot;https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/&quot;,&quot;description&quot;:null,&quot;chaptermarks&quot;:[{&quot;start&quot;:&quot;0:00:01.000&quot;,&quot;title&quot;:&quot;Opening&quot;},{&quot;start&quot;:&quot;0:02:00.755&quot;,&quot;title&quot;:&quot;Kotobattle: Tengai no Moribito&quot;},{&quot;start&quot;:&quot;0:16:53.387&quot;,&quot;title&quot;:&quot;Kanzume Monsters&quot;},{&quot;start&quot;:&quot;0:30:43.098&quot;,&quot;title&quot;:&quot;Lil' Monster&quot;},{&quot;start&quot;:&quot;0:40:35.092&quot;,&quot;title&quot;:&quot;Kaseki Sōsei Reborn&quot;},{&quot;start&quot;:&quot;0:53:27.221&quot;,&quot;title&quot;:&quot;Kaseki Sōsei Reborn II: Monster Digger&quot;},{&quot;start&quot;:&quot;0:59:24.040&quot;,&quot;title&quot;:&quot;Ending&quot;}]}}
+  window.playerConfiguration = {&quot;options&quot;:{&quot;theme&quot;:&quot;obscuriosities&quot;,&quot;startPanel&quot;:&quot;ChapterMarks&quot;},&quot;extensions&quot;:{&quot;ChapterMarks&quot;:{},&quot;EpisodeInfo&quot;:{},&quot;Playlist&quot;:{}},&quot;title&quot;:null,&quot;episode&quot;:{&quot;media&quot;:{&quot;m4a&quot;:&quot;https://dts.podtrac.com/redirect.m4a/Episode 1 - The Post-Pokémon Gold Rush.m4a&quot;,&quot;ogg&quot;:&quot;https://dts.podtrac.com/redirect.ogg/Episode 1 - The Post-Pokémon Gold Rush.ogg&quot;},&quot;coverUrl&quot;:&quot;https://podcast.obskyr.io/assets/episodes/episode-1-the-post-pokémon-gold-rush/cover.jpg&quot;,&quot;title&quot;:&quot;Episode 1: The Post-Pokémon Gold Rush&quot;,&quot;subtitle&quot;:null,&quot;url&quot;:&quot;https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/&quot;,&quot;description&quot;:null,&quot;chaptermarks&quot;:[{&quot;start&quot;:&quot;0:00:01.000&quot;,&quot;title&quot;:&quot;Opening&quot;},{&quot;start&quot;:&quot;0:02:00.755&quot;,&quot;title&quot;:&quot;Kotobattle: Tengai no Moribito&quot;},{&quot;start&quot;:&quot;0:16:53.387&quot;,&quot;title&quot;:&quot;Kanzume Monsters&quot;},{&quot;start&quot;:&quot;0:30:43.098&quot;,&quot;title&quot;:&quot;Lil' Monster&quot;},{&quot;start&quot;:&quot;0:40:35.092&quot;,&quot;title&quot;:&quot;Kaseki Sōsei Reborn&quot;},{&quot;start&quot;:&quot;0:53:27.221&quot;,&quot;title&quot;:&quot;Kaseki Sōsei Reborn II: Monster Digger&quot;},{&quot;start&quot;:&quot;0:59:24.040&quot;,&quot;title&quot;:&quot;Ending&quot;}]}}
 &lt;/script&gt;
 
 &lt;script class=&quot;podigee-podcast-player&quot; data-configuration=&quot;playerConfiguration&quot; src=&quot;https://podcast.obskyr.io/podigee-player/javascripts/podigee-podcast-player.js&quot;&gt;
@@ -253,14 +253,14 @@
           <link rel="enclosure" 
                 type="audio/mp4a-latm" 
                 length="30370796" 
-                href="https://podcast.obskyr.io/episodes/Episode 1 - The Post-Pokémon Gold Rush.m4a"/> 
+                href="https://podcast.obskyr.io/episodes/Episode%201%20-%20The%20Post-Pok%C3%A9mon%20Gold%20Rush.m4a"/> 
         
       
         
           <link rel="enclosure" 
                 type="audio/ogg; codecs=vorbis" 
                 length="32449813" 
-                href="https://podcast.obskyr.io/episodes/Episode 1 - The Post-Pokémon Gold Rush.ogg"/> 
+                href="https://podcast.obskyr.io/episodes/Episode%201%20-%20The%20Post-Pok%C3%A9mon%20Gold%20Rush.ogg"/> 
         
       
       

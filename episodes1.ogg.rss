@@ -19,7 +19,7 @@
     <atom:link rel="alternate" href="https://podcast.obskyr.io/episodes.m4a.rss" type="application/rss+xml" title="m4a Episode RSS-Feed"/>
     <description>The podcast about obscure video games. Do you believe that there’s value in the unknown?
 </description>
-    <lastBuildDate>Wed, 13 May 2020 08:45:39 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2020 11:02:16 +0000</lastBuildDate>
     <language>en</language>
     <generator>Jekyll-Octopod 0.9.23-obskyr</generator>
 
@@ -76,7 +76,7 @@
 <p>Today, we explore <em>Kotobattle: Tengai no Moribito</em> (Game Boy Color), <em>Kanzume Monsters</em> (Game Boy), <em>Kanzume Monsters: Parfait</em> (Game Boy Color), <em>Kaseki Sōsei Reborn</em> (Game Boy), and <em>Kaseki Sōsei Reborn II: Monster Digger</em> (Game Boy Color).</p>
 ]]></content:encoded>
             
-            <enclosure url="https://podcast.obskyr.io/episodes/Episode%201%20-%20The%20Post-Pok%C3%A9mon%20Gold%20Rush.ogg" 
+            <enclosure url="https://dts.podtrac.com/redirect.ogg/podcast.obskyr.io/episodes/Episode%201%20-%20The%20Post-Pok%C3%A9mon%20Gold%20Rush.ogg" 
                          length="32449813" 
                          type="audio/ogg; codecs=vorbis" />
             <itunes:keywords></itunes:keywords>

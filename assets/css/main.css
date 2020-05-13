@@ -363,9 +363,9 @@ table tfoot { font-size: 14px; font-weight: bold; color: #FFF5CF; background: #d
 
 table tfoot td { font-size: 14px; }
 
-.wrapper { display: inline-block; position: relative; max-width: 1250px; }
+.wrapper { display: inline-block; position: relative; width: 1250px; max-width: 100%; }
 
-.post, .article-page { background-color: #FFF5CF; }
+.post, .article-page { width: 100%; background-color: #FFF5CF; }
 
 ::-moz-selection { background: #191F42; color: #FFF5CF; }
 
