@@ -44,7 +44,7 @@ module Jekyll
         <script>
           window.playerConfiguration = #{playerconfig(context)}
         </script>
-        <script class="podigee-podcast-player" data-configuration="playerConfiguration"
+        <script defer class="podigee-podcast-player" data-configuration="playerConfiguration"
                 src="#{config["url"]}#{config["baseurl"]}/podigee-player/javascripts/podigee-podcast-player.js">
         </script>
 HTML

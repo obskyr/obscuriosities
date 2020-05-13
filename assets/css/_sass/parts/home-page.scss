@@ -16,7 +16,8 @@
   .cover-image {
     position: relative;
     left: -10px;
-    width: calc(100% + 20px);
+    width: 240px;
+    height: 240px;
     margin: 0 auto 10px;
     overflow: hidden;
     background-color: $background-color;
