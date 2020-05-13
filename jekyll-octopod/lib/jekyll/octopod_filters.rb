@@ -140,10 +140,10 @@ module Jekyll
       end
     end
 
-    # Returns the dowrload url with fallback to the site's episode folder url
+    # Returns the download url with fallback to the site's episode folder url
     def download_url_with_fallback(site)
       if site["download_url"] == "" or site["download_url"] == nil
-        site["url"] + "/episodes"
+        site["url"] + site["baseurl"] + "/episodes"
       else
         site["download_url"]
       end
@@ -239,7 +239,7 @@ module Jekyll
       if page
         disqus_vars = {
           'disqus_identifier'  => page['url'],
-          'disqus_url'         => "#{site['url']}#{page['url']}",
+          'disqus_url'         => "#{site['url']}#{site['baseurl']}#{page['url']}",
           'disqus_category_id' => page['disqus_category_id'] || site['disqus_category_id'],
           'disqus_title'       => j(page['title'] || site['site'])
         }
@@ -277,7 +277,7 @@ module Jekyll
       list = []
       list << pages.map { |p|
         active = (p.url == page['url']) || (page.key?('next') && File.join(p.dir, p.basename) == '/index')
-        navigation_list_item(File.join(site['url'], p.url), p.data['title'], active)
+        navigation_list_item(File.join(site['url'], site['baseurl'], p.url), p.data['title'], active)
       }
       list.join("\n")
     end
@@ -291,7 +291,7 @@ module Jekyll
                 </a><ul class="dropdown-menu">']
       list << pages.map { |p|
         active = (p.url == page['url']) || (page.key?('next') && File.join(p.dir, p.basename) == '/index')
-        navigation_list_item(File.join(site['url'], p.url), p.data['title'], active)
+        navigation_list_item(File.join(site['url'], site['baseurl'], p.url), p.data['title'], active)
       }
       list << ['</ul></li>']
 
@@ -323,7 +323,7 @@ module Jekyll
 
       if site['episode_feed_formats']
         site['episode_feed_formats'].map { |f|
-         feeds << ["#{f} Episode RSS-Feed", "#{site['url']}/episodes.#{f}.rss"] unless f == except
+         feeds << ["#{f} Episode RSS-Feed", "#{site['url']}#{site['baseurl']}/episodes.#{f}.rss"] unless f == except
         }
       end
       if site['additional_feeds']

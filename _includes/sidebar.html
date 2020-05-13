@@ -6,7 +6,7 @@
 </div>
 
 <p class="text-center">
-  <img width="200px" src="{{ site.url }}/assets/images/logo/logo-360x360.png" alt="{{ site.title }} logo">
+  <img width="200px" src="{{ site.url }}{{ site.baseurl }}/assets/images/logo/logo-360x360.png" alt="{{ site.title }} logo">
 </p>
 
 {% if site.description %}<p>{{ site.description }}</p>{% endif %}
@@ -25,13 +25,13 @@
       "title": "{{ site['title']}}",
       "subtitle": "{{ site['subtitle']}}",
       "description": "{{ site['description']}}",
-      "cover": "{{ site.url }}/assets/images/logo/logo-360x360.png",
+      "cover": "{{ site.url }}{{ site.baseurl }}/assets/images/logo/logo-360x360.png",
       "feeds": [
       {% for feed in site['episode_feed_formats'] %}
         {
           "type": "audio",
           "format": "{{ feed }}",
-          "url": "{{ site['url']}}/episodes.{{ feed }}.rss",
+          "url": "{{ site['url']}}{{ site['baseurl'] }}/episodes.{{ feed }}.rss",
           "directory-url-itunes": "{{ site['itunes_url']}}",
           "variant": "high"
         },
@@ -47,7 +47,7 @@
 
 <ol type="i">
   {% for feed in site['episode_feed_formats'] %}
-    <li><a href="{{ site['url']}}/episodes.{{ feed }}.rss"><i class="fa fa-rss"></i> {{ feed }}-RSS-Feed</a></li>
+    <li><a href="{{ site['url'] }}{{ site['baseurl'] }}/episodes.{{ feed }}.rss"><i class="fa fa-rss"></i> {{ feed }}-RSS-Feed</a></li>
   {% endfor %}
 </ol>
 
@@ -55,7 +55,7 @@
 
 <ol type="i">
   {% for jsonfeed in site['json_feed_formats'] %}
-    <li><a href="{{ site['url']}}/feed.{{ jsonfeed }}.json"><i class="fa fa-rss-square"></i> {{ jsonfeed }}-JSON-Feed</a></li>
+    <li><a href="{{ site['url'] }}{{ site['baseurl'] }}/feed.{{ jsonfeed }}.json"><i class="fa fa-rss-square"></i> {{ jsonfeed }}-JSON-Feed</a></li>
   {% endfor %}
 </ol>
 

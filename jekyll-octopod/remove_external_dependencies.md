@@ -59,13 +59,13 @@ with
 
 * in _includes/post.html replace
 ```
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ site.url }}{{post.url }}" data-text="{{ post.title }}">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ site.url }}{{ site.baseurl }}{{post.url }}" data-text="{{ post.title }}">Tweet</a>
 ```
 with
 ```
 <a href="https://twitter.com/share"
    class="button btn-primary btn-sm"
-   data-url="{{ site.url }}{{post.url }}"
+   data-url="{{ site.url }}{{ site.baseurl }}{{post.url }}"
    data-text="{{ post.title }}">
   <i class="fa fa-twitter"></i> Tweet</a>
 ```

@@ -21,16 +21,16 @@
     <meta content="{{ site.description }}" property="og:description">
   {% endif %}
   {% if page.url %}
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    <meta content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" property="og:url">
   {% endif %}
   {% if page.real-date %}
     <meta content="{{ page.real-date | date_to_xmlschema }}" property="article:published_time">
-    <meta content="{{ site.url }}/about/" property="article:author">
+    <meta content="{{ site.url }}{{ site.baseurl }}/about/" property="article:author">
   {% endif %}
   {% if page.img %}
-    <meta content="{{ site.url }}/assets/images/{{ page.img }}" property="og:image">
+    <meta content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.img }}" property="og:image">
   {% else %}
-    <meta content="{{ site.url }}/assets/images/{{ site.author-img }}" property="og:image">
+    <meta content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.author-img }}" property="og:image">
   {% endif %}
   {% if page.categories %}
     {% for category in page.categories limit:1 %}
@@ -54,7 +54,7 @@
     <meta name="twitter:title" content="{{ site.title }}">
   {% endif %}
   {% if page.url %}
-    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+    <meta name="twitter:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
   {% endif %}
   {% if page.description %}
     <meta name="twitter:description" content="{{ page.description }}">
@@ -62,9 +62,9 @@
     <meta name="twitter:description" content="{{ site.description }}">
   {% endif %}
   {% if page.img %}
-    <meta name="twitter:image:src" content="{{ site.url }}/assets/images/{{ page.img }}">
+    <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.img }}">
   {% else %}
-    <meta name="twitter:image:src" content="{{ site.url }}/assets/images/{{ site.author-img }}">
+    <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.author-img }}">
   {% endif %}
 
 	<meta name="description" content="{{ page.description }}">
@@ -90,13 +90,13 @@
       "title": "{{ site['title']}}",
       "subtitle": "{{ site['subtitle']}}",
       "description": "{{ site['description']}}",
-      "cover": "{{ site.url }}/assets/images/logo/logo-360x360.png",
+      "cover": "{{ site.url }}{{ site.baseurl }}/assets/images/logo/logo-360x360.png",
       "feeds": [
       {% for feed in site['episode_feed_formats'] %}
         {
           "type": "audio",
           "format": "{{ feed }}",
-          "url": "{{ site['url']}}/episodes.{{ feed }}.rss",
+          "url": "{{ site['url'] }}{{ site['baseurl'] }}/episodes.{{ feed }}.rss",
           "directory-url-itunes": "{{ site['itunes_url']}}",
           "variant": "high"
         },

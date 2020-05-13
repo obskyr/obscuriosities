@@ -26,8 +26,8 @@ layout: null
    {"id": "{{ post.url | absolute_url | sha1 }}",
     "title": {{ post.title | jsonify }},
     "summary": "",
-    "content_text": {{ post.content | strip_html | strip_newlines | jsonify }},
-    "content_html": {{ post.content | strip_newlines | jsonify }},
+    "content_text": {{ post.content | before_hr | strip_html | strip_newlines | jsonify }},
+    "content_html": {{ post.content | before_hr | strip_newlines | jsonify }},
     "url": "{{ post.url | absolute_url }}",
     {%- if post.tags.size > 0 -%}"tags": {{ post.tags | jsonify }}, {%- endif -%}
     {% if post.audio.size > 1 %}

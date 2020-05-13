@@ -5,10 +5,10 @@ layout: null
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title>{{ site.title }}</title>
-  <link href="{{ site.url }}/general_feed.xml" rel="self"/>
-  <link href="{{ site.url }}"/>
+  <link href="{{ site.url }}{{ site.baseurl }}/general_feed.xml" rel="self"/>
+  <link href="{{ site.url }}{{ site.baseurl }}"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>{{ site.url }}/</id>
+  <id>{{ site.url }}{{ site.baseurl }}/</id>
   <author>
     <name>{{ site.author }}</name>
     <email>{{ site.email }}</email>
@@ -17,21 +17,21 @@ layout: null
   {% for post in site.posts %}
     <entry>
       <title>{{ post.title }}</title>
-      <link href="{{ site.url }}{{ post.url }}"/>
+      <link href="{{ site.url }}{{ site.baseurl }}{{ post.url }}"/>
       <updated>{{ post.real-date | date_to_xmlschema }}</updated>
-      <id>{{ site.url }}{{ post.id }}</id>
-      <content type="html">{{ post.content | xml_escape }}</content>
+      <id>{{ site.url }}{{ site.baseurl }}{{ post.id }}</id>
+      <content type="html">{{ post.content | after_hr | xml_escape }}</content>
       {% for file in post.audio %}
         {% if post.filesize %}
           <link rel="enclosure" 
                 type="{{ file.first | mime_type }}" 
                 length="{{ post.filesize[file.first] }}" 
-                href="{{ site.url }}/episodes/{{ file.last }}"/> 
+                href="{{ site.url }}{{ site.baseurl }}/episodes/{{ file.last }}"/> 
         {% else %}
           <link rel="enclosure" 
                 type="{{ file.first | mime_type }}" 
                 length="{{ file.last | file_size }}" 
-                href="{{ site.url }}/episodes/{{ file.last }}"/>    
+                href="{{ site.url }}{{ site.baseurl }}/episodes/{{ file.last }}"/>    
         {% endif %}
       {% endfor %}
       {{ site | flattr_atom:post }}

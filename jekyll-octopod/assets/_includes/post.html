@@ -5,7 +5,7 @@
 <section id="{{ post.id | sha1:8 }}" class="active">
   {% include post_header.html %}
 
-  {{ post.content }}
+  {{ post.content | after_hr }}
     {% if post.audio %}
       {% for file in post.audio %}
         {% if post.filesize %}
@@ -21,7 +21,7 @@
   {{ site | flattr_button:post }}
   <a href="https://twitter.com/share"
      class="button btn-primary btn-sm"
-     data-url="{{ site.url }}{{post.url }}"
+     data-url="{{ site.url }}{{ site.baseurl }}{{ post.url }}"
      data-text="{{ post.title }}">
     <i class="fab fa-twitter"></i> Tweet</a>
   {% unless page.url == '/index.html' %}{% include disqus_thread.html %}{% endunless %}

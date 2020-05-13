@@ -14,9 +14,9 @@ layout: null
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="{{ site.title }}"/>
   <meta property="og:title" content="{{ page.title }} - {{ page.subtitle }}"/>
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}"/>
   <meta property="og:description" content="{{ site.description }}"/>
-  <meta property="og:image" content="{{ site.url }}/assets/images/logo/logo-360x360.png"/>
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/logo/logo-360x360.png"/>
 
   {% if site.download_url == "" or site.download_url == nil %}
     {% assign download_url = site.url | append: '/episodes' %}
