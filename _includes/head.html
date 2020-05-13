@@ -27,8 +27,8 @@
     <meta content="{{ page.real-date | date_to_xmlschema }}" property="article:published_time">
     <meta content="{{ site.url }}{{ site.baseurl }}/about/" property="article:author">
   {% endif %}
-  {% if page.img %}
-    <meta content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.img }}" property="og:image">
+  {% if page.cover-image %}
+    <meta content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.cover-image }}" property="og:image">
   {% else %}
     <meta content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.author-img }}" property="og:image">
   {% endif %}
@@ -61,8 +61,8 @@
   {% else %}
     <meta name="twitter:description" content="{{ site.description }}">
   {% endif %}
-  {% if page.img %}
-    <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.img }}">
+  {% if page.cover-image %}
+    <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.cover-image }}">
   {% else %}
     <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.author-img }}">
   {% endif %}

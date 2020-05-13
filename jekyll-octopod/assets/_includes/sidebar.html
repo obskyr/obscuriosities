@@ -12,7 +12,7 @@
 {% if site.description %}<p>{{ site.description }}</p>{% endif %}
 
   <script class="podlove-subscribe-button"
-          src="/subscribe-button/javascripts/app.js"
+          src="{{ '/subscribe-button/javascripts/app.js' | relative_url }}"
           data-language="{{ site.language }}"
           data-size="medium auto"
           data-style="filled"

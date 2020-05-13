@@ -22,7 +22,8 @@ layout: null
  },
  "items": [
  {%- for post in site.posts limit:36 -%}
- {% assign url = download_url | append: '/' | append: post.audio[page.format] %}
+ {% assign encoded_filename = post.audio[page.format] | uri_escape %}
+ {% assign url = download_url | append: '/' | append: encoded_filename %}
    {"id": "{{ post.url | absolute_url | sha1 }}",
     "title": {{ post.title | jsonify }},
     "summary": "",

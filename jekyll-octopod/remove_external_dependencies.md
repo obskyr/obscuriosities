@@ -33,7 +33,7 @@ disqus_developer: 0 # 1 / 0
 with
 ```
 <script class="podlove-subscribe-button"
-        src="/subscribe-button/javascripts/app.js"
+        src="{{ '/subscribe-button/javascripts/app.js' | relative_url }}"
         data-language="{{ site.language }}"
         data-size="medium auto"
         data-style="filled"

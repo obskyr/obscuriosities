@@ -1,16 +1,17 @@
 title: Obscuriosities
-description: > # this means to ignore newlines until the next property
+subtitle: The podcast about obscure video games.
+description: >- # this means to ignore newlines until the next property
   The podcast about obscure video games. Do you believe that there's value in the unknown?
 theme-color: '#191F42'
 permalink: ':title/'
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://podcast.obskyr.io"
+url: "https://obskyr.io" # Don't include the base path here!
+baseurl: "/top-secret" # the subpath of your site, e.g. /blog
 site-twitter: # if your site has a twitter account, enter it here
 
 # Author settings
 author: Obskyr
 author-img: logo/logo.png
-about-author: >
+about-author: >-
   The podcast about obscure video games. Do you believe that there's value in the unknown?
 social-twitter: obskyr
 social-facebook:
@@ -22,7 +23,7 @@ social-email: powpowd@gmail.com
 author_url: "https://obskyr.io/"
 email: powpowd@gmail.com
 keywords: ['video games', games, technology, obscure]
-itunes_categories: ['Video Games', Technology, Education]
+itunes_categories: [['Leisure', 'Video Games'], Technology, Education]
 language: en
 explicit: 'no'
 episodes_per_feed_page: 100
