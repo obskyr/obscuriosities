@@ -1,0 +1,32 @@
+{"version": "https://jsonfeed.org/version/1",
+ "title": "Obscuriosities",
+ "home_page_url": "https://podcast.obskyr.io/",
+ "feed_url": "https://podcast.obskyr.io/feed.json",
+ "description": "The podcast about obscure video games. Do you believe that there's value in the unknown?",
+ "user_comment": "The podcast about obscure video games. Do you believe that there's value in the unknown?",
+ "icon": "https://podcast.obskyr.io/assets/images/logo/logo.png",
+ "favicon": "https://podcast.obskyr.io/assets/images/favicon.ico",
+ "expired": false,
+ "author": {
+   "name": "Obskyr",
+   "url": "https://obskyr.io/"
+ },
+ "items": [
+ 
+   {"id": "c9953238",
+    "title": "Episode 1: The Post-Pokémon Gold Rush",
+    "summary": "",
+    "content_text": "Episode page: https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/On this inaugural episode of Obscuriosities, we talk about mon games – games inspired to ride the coattails of Pokémon’s creature-collecting craze. But of course, unlike a Digimon or a Monster Rancher… these games didn’t make it big.Today, we explore Kotobattle: Tengai no Moribito (Game Boy Color), Kanzume Monsters (Game Boy), Kanzume Monsters: Parfait (Game Boy Color), Kaseki Sōsei Reborn (Game Boy), and Kaseki Sōsei Reborn II: Monster Digger (Game Boy Color).",
+    "content_html": "<p>Episode page: <a href=\"https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/\">https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/</a></p><p>On this inaugural episode of Obscuriosities, we talk about mon games – games inspired to ride the coattails of Pokémon’s creature-collecting craze. But of course, unlike a Digimon or a Monster Rancher… these games didn’t make it big.</p><p>Today, we explore <em>Kotobattle: Tengai no Moribito</em> (Game Boy Color), <em>Kanzume Monsters</em> (Game Boy), <em>Kanzume Monsters: Parfait</em> (Game Boy Color), <em>Kaseki Sōsei Reborn</em> (Game Boy), and <em>Kaseki Sōsei Reborn II: Monster Digger</em> (Game Boy Color).</p>",
+    "url": "https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/",
+    "attachments": [
+      {"url": "https://podcast.obskyr.io/episodes/Episode%201%20-%20The%20Post-Pok%C3%A9mon%20Gold%20Rush.ogg",
+       "mime_type": "audio/mpeg","size_in_bytes": "32449813"}
+    ],
+    "date_published": "2020-05-12T00:00:00+0900",
+    "date_modified": "2020-05-12T00:00:00+0900",
+    "author": {
+      "name": "Obskyr"
+    }
+  }]
+}

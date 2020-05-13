@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Obscuriosities</title>
+  <link href="https://podcast.obskyr.io/general_feed.xml" rel="self"/>
+  <link href="https://podcast.obskyr.io"/>
+  <updated>2020-05-13T08:45:39+0000</updated>
+  <id>https://podcast.obskyr.io/</id>
+  <author>
+    <name>Obskyr</name>
+    <email>powpowd@gmail.com</email>
+  </author>
+
+  
+    <entry>
+      <title>Episode 1: The Post-Pokémon Gold Rush</title>
+      <link href="https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/"/>
+      <updated>2020-05-12T00:00:00+0900</updated>
+      <id>https://podcast.obskyr.io/episode-1-the-post-pokémon-gold-rush</id>
+      <content type="html">&lt;p&gt;On this inaugural episode of Obscuriosities, we talk about mon games – games inspired to ride the coattails of Pokémon’s creature-collecting craze. But of course, unlike a Digimon or a Monster Rancher… these games didn’t make it big.&lt;/p&gt;
+
+&lt;script&gt;
+  window.playerConfiguration = {&quot;options&quot;:{&quot;theme&quot;:&quot;obscuriosities&quot;,&quot;startPanel&quot;:&quot;ChapterMarks&quot;},&quot;extensions&quot;:{&quot;ChapterMarks&quot;:{},&quot;EpisodeInfo&quot;:{},&quot;Playlist&quot;:{}},&quot;title&quot;:null,&quot;episode&quot;:{&quot;media&quot;:{&quot;m4a&quot;:&quot;https://podcast.obskyr.io/episodes/Episode 1 - The Post-Pokémon Gold Rush.m4a&quot;,&quot;ogg&quot;:&quot;https://podcast.obskyr.io/episodes/Episode 1 - The Post-Pokémon Gold Rush.ogg&quot;},&quot;coverUrl&quot;:&quot;https://podcast.obskyr.io/assets/episodes/episode-1-the-post-pokémon-gold-rush/cover.jpg&quot;,&quot;title&quot;:&quot;Episode 1: The Post-Pokémon Gold Rush&quot;,&quot;subtitle&quot;:null,&quot;url&quot;:&quot;https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/&quot;,&quot;description&quot;:null,&quot;chaptermarks&quot;:[{&quot;start&quot;:&quot;0:00:01.000&quot;,&quot;title&quot;:&quot;Opening&quot;},{&quot;start&quot;:&quot;0:02:00.755&quot;,&quot;title&quot;:&quot;Kotobattle: Tengai no Moribito&quot;},{&quot;start&quot;:&quot;0:16:53.387&quot;,&quot;title&quot;:&quot;Kanzume Monsters&quot;},{&quot;start&quot;:&quot;0:30:43.098&quot;,&quot;title&quot;:&quot;Lil' Monster&quot;},{&quot;start&quot;:&quot;0:40:35.092&quot;,&quot;title&quot;:&quot;Kaseki Sōsei Reborn&quot;},{&quot;start&quot;:&quot;0:53:27.221&quot;,&quot;title&quot;:&quot;Kaseki Sōsei Reborn II: Monster Digger&quot;},{&quot;start&quot;:&quot;0:59:24.040&quot;,&quot;title&quot;:&quot;Ending&quot;}]}}
+&lt;/script&gt;
+
+&lt;script class=&quot;podigee-podcast-player&quot; data-configuration=&quot;playerConfiguration&quot; src=&quot;https://podcast.obskyr.io/podigee-player/javascripts/podigee-podcast-player.js&quot;&gt;
+&lt;/script&gt;
+
+&lt;h2 id=&quot;kotobattle-tengai-no-moribito-lit-kotobattle-protectors-of-heavens-outskirts&quot;&gt;Kotobattle: Tengai no Moribito; lit. &lt;em&gt;Kotobattle: Protectors of Heaven’s Outskirts&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;March 9th 2001; developed and published by Alphadream for the Game Boy Color.&lt;/p&gt;
+
+&lt;div class=&quot;images&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/cover.jpg&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/1.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;images three-wide&quot;&gt;
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/3.jpg&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;&quot;…I'm thinking of establishing a kingdom just for cats.&quot;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/2.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;The overworld.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;images three-wide captiony&quot;&gt;
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/4.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;A boss battle.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/5.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;The battle interface – currently selected is a combo of the kanji &quot;medicine&quot; and &quot;poison&quot;.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;cards&quot;&gt;Cards&lt;/h3&gt;
+
+&lt;div class=&quot;images four-wide&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/6.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/7.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/8.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/9.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/10.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/11.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/12.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/13.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/14.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/15.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/16.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/17.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;kanzume-monsters-lit-monsters-in-a-can&quot;&gt;Kanzume Monsters; lit. &lt;em&gt;Monsters in a Can&lt;/em&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;kanzume-monsters&quot;&gt;Kanzume Monsters&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Kanzume Monsters&lt;/em&gt; developed by KID and published by I’MAX for the Game Boy on March 27th, 1998.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Kanzume Monsters: Parfait&lt;/em&gt; developed by KID and published by Starfish Inc. for the Game Boy Color on June 24th, 1999.&lt;/p&gt;
+
+&lt;div class=&quot;images&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kanzume-monsters/cover-1.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kanzume-monsters/cover-2.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;images three-wide captiony&quot;&gt;
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kanzume-monsters/1.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;For the original game, just imagine the rest of these screenshots were monochromatic.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kanzume-monsters/2.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;Kanzume Monsters Parfait!&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kanzume-monsters/3.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;&quot;Choose a can!&quot;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kanzume-monsters/4.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kanzume-monsters/5.png&quot; /&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kanzume-monsters/6.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;&quot;I'm Cool Joe, the humble janitor of this here circus…&quot;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kanzume-monsters/7.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;My darling Shumai battles an enemy Pocky.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;lil-monster-jp-gem-gem-monsters&quot;&gt;Lil’ Monster; JP: Gem Gem Monsters&lt;/h3&gt;
+
+&lt;p&gt;Published by KID on July 30th, 1999 in Japan, and by Agetec in August or September(?) 2000 in North America; developed by KID for the Game Boy Color.&lt;/p&gt;
+
+&lt;div class=&quot;images&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/lil-monster/cover-1.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/lil-monster/cover-2.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;images three-wide captiony&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/lil-monster/1.png&quot; /&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/lil-monster/2.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;That stands for &quot;deck&quot;.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/lil-monster/3.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/lil-monster/4.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/lil-monster/5.png&quot; /&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/lil-monster/6.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;Cool Joe is BACK!&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;kaseki-sōsei-reborn-lit-fossil-genesis-reborn&quot;&gt;Kaseki Sōsei Reborn; lit. &lt;em&gt;Fossil Genesis Reborn&lt;/em&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;kaseki-sōsei-reborn&quot;&gt;Kaseki Sōsei Reborn&lt;/h3&gt;
+
+&lt;p&gt;July 17th 1998; developed by Freeqsoft and published by Starfish Inc. for the Game Boy.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/cover.png&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;images three-wide captiony&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/1.png&quot; /&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/2.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;&quot;They're creatures unlike anything we've ever seen.&quot;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/3.png&quot; /&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/4.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;Could that be that a turtle?&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/5.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;No! It's a UNICORN SEA OTTER!&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/6.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;&quot;Tomate attacks. Palm slap!&quot;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/7.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;The dungeon map uses sub-tile graphics – each square is 4×4 instead of 8×8 – which is quite rare on Game Boy!&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/8.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;&quot;Crawls along the ground and is hard to spot. Usually timid, but is fearsome when angered. Its legs double as fins.&quot;&quot;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/9.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;Surrounded by three enemies who all do battle with you simultaneously – a bad situation to be in.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;kaseki-sōsei-reborn-ii-monster-digger&quot;&gt;Kaseki Sōsei Reborn II: Monster Digger&lt;/h3&gt;
+
+&lt;p&gt;February 12th, 1999; developed by Freeqsoft and published by Starfish Inc. for the Game Boy Color.&lt;/p&gt;
+
+&lt;div class=&quot;images&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn-ii/cover.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;images three-wide captiony&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn-ii/1.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn-ii/2.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn-ii/3.png&quot; /&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn-ii/4.png&quot; /&gt;
+&lt;div class=&quot;caption&quot;&gt;The character designs in Reborn II are a bit more kid's show-like; a bit more &quot;out there&quot; in comparison to the sober faces of the original.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn-ii/5.png&quot; /&gt;
+
+&lt;img src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn-ii/6.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;music-used-in-this-episode&quot;&gt;Music used in this episode&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Kotobattle: Tengai no Moribito – &lt;em&gt;Dekakeyō&lt;/em&gt; (lit. “Let’s Go for a Walk”)&lt;/li&gt;
+  &lt;li&gt;Kanzume Monsters – &lt;em&gt;Hoshi ni Nare!&lt;/em&gt; (lit. “Become a Star!”; idiomatically “pass away”)&lt;/li&gt;
+  &lt;li&gt;Kanzume Monsters – &lt;em&gt;Sleep&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Lil’ Monster – &lt;em&gt;Battle Kids&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Kaseki Sōsei Reborn – Opening theme&lt;/li&gt;
+  &lt;li&gt;Lil’ Monster – &lt;em&gt;You got monster&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+      
+        
+          <link rel="enclosure" 
+                type="audio/mp4a-latm" 
+                length="30370796" 
+                href="https://podcast.obskyr.io/episodes/Episode 1 - The Post-Pokémon Gold Rush.m4a"/> 
+        
+      
+        
+          <link rel="enclosure" 
+                type="audio/ogg; codecs=vorbis" 
+                length="32449813" 
+                href="https://podcast.obskyr.io/episodes/Episode 1 - The Post-Pokémon Gold Rush.ogg"/> 
+        
+      
+      
+    </entry>
+  
+</feed>

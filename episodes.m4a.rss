@@ -1,0 +1,102 @@
+<?xml version="1.0"
+      encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:bitlove="http://bitlove.org"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:psc="http://podlove.org/simple-chapters"
+     version="2.0">
+
+  <channel>
+    <title>Obscuriosities</title>
+    <link>https://podcast.obskyr.io</link>
+    <atom:link href="https://podcast.obskyr.io/episodes.m4a.rss" rel="self" type="application/rss+xml" title="m4a Episode RSS-Feed"/>
+    <atom:link href="https://podcast.obskyr.io/episodes.m4a.rss" rel="first" type="application/rss+xml" />
+    <atom:link href="https://podcast.obskyr.io/episodes.m4a.rss" rel="last" type="application/rss+xml" />
+    
+    
+
+    <atom:link rel="alternate" href="https://podcast.obskyr.io/episodes.ogg.rss" type="application/rss+xml" title="ogg Episode RSS-Feed"/>
+    <description>The podcast about obscure video games. Do you believe that there’s value in the unknown?
+</description>
+    <lastBuildDate>Wed, 13 May 2020 08:45:39 +0000</lastBuildDate>
+    <language>en</language>
+    <generator>Jekyll-Octopod 0.9.23-obskyr</generator>
+
+    <itunes:summary>The podcast about obscure video games. Do you believe that there’s value in the unknown?
+</itunes:summary>
+    <itunes:author>Obskyr</itunes:author>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="https://podcast.obskyr.io/assets/images/logo/logo-itunes.png" />
+    <itunes:owner>
+      <itunes:name>Obskyr</itunes:name>
+      <itunes:email>powpowd@gmail.com</itunes:email>
+    </itunes:owner>
+    <managingEditor>powpowd@gmail.com (Obskyr)</managingEditor>
+    <copyright></copyright>
+    <itunes:subtitle>The podcast about obscure video games.</itunes:subtitle>
+    <itunes:keywords>video games, games, technology, obscure</itunes:keywords>
+    <image>
+      <title>Obscuriosities</title>
+      <url>https://podcast.obskyr.io/assets/images/logo/logo-itunes.png</url>
+      <link>https://podcast.obskyr.io</link>
+    </image>
+    
+    
+    <itunes:category text="Leisure">
+      <itunes:category text="Video Games" />
+    </itunes:category>
+    
+    
+    
+    <itunes:category text="Technology" />
+    
+    
+    
+    <itunes:category text="Education" />
+    
+    <item>
+            <title>Episode 1: The Post-Pokémon Gold Rush</title>
+            <link>https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/</link>
+            <atom:link rel="http://podlove.org/deep-link" href="https://podcast.obskyr.io/players/episode-1-the-post-pokémon-gold-rush"/>
+            <comments>https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/#disqus_thread</comments>
+            <pubDate>Tue, 12 May 2020 00:00:00 +0900</pubDate>
+            
+            <guid isPermaLink="false">https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/</guid>
+            <description><![CDATA[<p>Episode page: <a href="https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/">https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/</a></p>
+
+<p>On this inaugural episode of Obscuriosities, we talk about mon games – games inspired to ride the coattails of Pokémon’s creature-collecting craze. But of course, unlike a Digimon or a Monster Rancher… these games didn’t make it big.</p>
+
+<p>Today, we explore <em>Kotobattle: Tengai no Moribito</em> (Game Boy Color), <em>Kanzume Monsters</em> (Game Boy), <em>Kanzume Monsters: Parfait</em> (Game Boy Color), <em>Kaseki Sōsei Reborn</em> (Game Boy), and <em>Kaseki Sōsei Reborn II: Monster Digger</em> (Game Boy Color).</p>
+]]></description>
+            <content:encoded><![CDATA[<p>Episode page: <a href="https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/">https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/</a></p>
+
+<p>On this inaugural episode of Obscuriosities, we talk about mon games – games inspired to ride the coattails of Pokémon’s creature-collecting craze. But of course, unlike a Digimon or a Monster Rancher… these games didn’t make it big.</p>
+
+<p>Today, we explore <em>Kotobattle: Tengai no Moribito</em> (Game Boy Color), <em>Kanzume Monsters</em> (Game Boy), <em>Kanzume Monsters: Parfait</em> (Game Boy Color), <em>Kaseki Sōsei Reborn</em> (Game Boy), and <em>Kaseki Sōsei Reborn II: Monster Digger</em> (Game Boy Color).</p>
+]]></content:encoded>
+            
+            <enclosure url="https://podcast.obskyr.io/episodes/Episode%201%20-%20The%20Post-Pok%C3%A9mon%20Gold%20Rush.m4a" 
+                         length="30370796" 
+                         type="audio/mp4a-latm" />
+            <itunes:keywords></itunes:keywords>
+            <itunes:subtitle></itunes:subtitle>
+            <itunes:summary></itunes:summary>
+            <itunes:author>Obskyr</itunes:author>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:duration>1:01:56</itunes:duration>
+            <psc:chapters version="1.1" xmlns:psc="http://podlove.org/simple-chapters"><psc:chapter start="0:00:00.000" title="Opening" />
+              <psc:chapter start="0:02:00.755" title="Kotobattle: Tengai no Moribito" />
+              <psc:chapter start="0:16:53.387" title="Kanzume Monsters" />
+              <psc:chapter start="0:30:43.098" title="Lil' Monster" />
+              <psc:chapter start="0:40:35.092" title="Kaseki Sōsei Reborn" />
+              <psc:chapter start="0:53:27.221" title="Kaseki Sōsei Reborn II: Monster Digger" />
+              <psc:chapter start="0:59:24.040" title="Ending" />
+              
+            </psc:chapters><itunes:image href="https://podcast.obskyr.io/assets/episodes/episode-1-the-post-pokémon-gold-rush/cover.jpg" />
+              <image>
+                <title></title>
+                <url>https://podcast.obskyr.io/assets/episodes/episode-1-the-post-pokémon-gold-rush/cover.jpg</url>
+                <link>https://podcast.obskyr.io</link>
+              </image></item></channel>
+</rss>
