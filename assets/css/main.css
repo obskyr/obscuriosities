@@ -380,7 +380,7 @@ table tfoot td { font-size: 14px; }
 
 .about { margin: 0 0 40px; text-align: center; }
 
-.about .cover-image { position: relative; left: -10px; width: calc(100% + 20px); margin: 0 auto 10px; overflow: hidden; background-color: #191F42; }
+.about .cover-image { position: relative; left: -10px; width: 240px; height: 240px; margin: 0 auto 10px; overflow: hidden; background-color: #191F42; }
 
 .about img { width: 100%; height: 100%; transition: transform 0.35s; }
 
