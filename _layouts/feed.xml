@@ -107,10 +107,10 @@ layout: null
               {%- endfor -%}
             {%- endif -%}
             {%- if post.image -%}
-              <itunes:image href="{{ site.url }}{{ site.baseurl }}/assets/images/{{post.image}}" />
+              <itunes:image href="{{ site.url }}{{ site.baseurl }}/assets/{{post.image}}" />
               <image>
                 <title>{{ post.image_title }}</title>
-                <url>{{ site.url }}{{ site.baseurl }}/assets/images/{{post.image}}</url>
+                <url>{{ site.url }}{{ site.baseurl }}/assets/{{post.image}}</url>
                 <link>{{ site.url }}{{ site.baseurl }}</link>
               </image>
             {%- endif -%}
