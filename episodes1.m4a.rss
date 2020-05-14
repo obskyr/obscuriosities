@@ -19,7 +19,7 @@
     <atom:link rel="alternate" href="https://podcast.obskyr.io/episodes.ogg.rss" type="application/rss+xml" title="ogg Episode RSS-Feed"/>
     <description>The podcast about obscure video games. Do you believe that there’s value in the unknown?
 </description>
-    <lastBuildDate>Thu, 14 May 2020 05:03:06 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2020 05:25:26 +0000</lastBuildDate>
     <language>en</language>
     <generator>Jekyll-Octopod 0.9.23-obskyr</generator>
 
@@ -77,7 +77,7 @@
 ]]></content:encoded>
             
             <enclosure url="https://dts.podtrac.com/redirect.m4a/podcast.obskyr.io/episodes/Episode%201%20-%20The%20Post-Pok%C3%A9mon%20Gold%20Rush.m4a" 
-                         length="30370796" 
+                         length="30371887" 
                          type="audio/mp4a-latm" />
             <itunes:keywords></itunes:keywords>
             <itunes:subtitle></itunes:subtitle>
