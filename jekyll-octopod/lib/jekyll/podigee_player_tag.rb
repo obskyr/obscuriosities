@@ -10,7 +10,7 @@ module Jekyll
       download_url = config["download_url"] || config["url"] + config["baseurl"] + "/episodes"
       page["audio"].each { |key, value| audio[key] = download_url + "/" + value }
       if config['use_podtrac'] && Jekyll.env != 'development'
-        page["audio"].each { |key, value| audio[key] = Jekyll::PodtracFilters.with_podtrac(value) }
+        audio.each { |key, value| audio[key] = Jekyll::PodtracFilters.with_podtrac(value) }
       end
 
       { options: { theme: config["player_theme"] && PLAYER_THEMES.include?(config["player_theme"]) ? config["player_theme"] : "default",
