@@ -6,13 +6,13 @@ then
     dir=.
 fi
 
-# pngs=$(find $dir -type f -name '*.png')
+pngs=$(find $dir -type f -name '*.png')
 jpegs="$(find $dir -type f -name '*.jpeg') $(find $dir -type f -name '*.jpg')"
 
-for png in $pngs
-do
-    pngout.exe $png
-done
+if [ ! -z "$pngs" ]
+then
+    optipng $pngs
+fi
 
 if [ ! -z "$jpegs" ]
 then
