@@ -28,6 +28,12 @@ Jekyll::Hooks.register [:pages, :posts], :pre_render do |post|
       tz = "+00:00"
     end
     # Store the actual date.
+    # I don't know if modifying post.date like this causes any trouble
+    # anywhere, but... I'm just gonna hope it doesn't for now! This makes
+    # the dates for posts in sitemap.xml correct.
+    post.data["date"] = Time.new(date.year, date.month, date.day,
+                                      date.hour, date.min, date.sec,
+                                      tz)
     post.data["real-date"] = Time.new(date.year, date.month, date.day,
                                       date.hour, date.min, date.sec,
                                       tz)
@@ -36,7 +42,7 @@ end
 module Jekyll
     module RealDateFilters
         def date_to_xmlschema(time)
-            time.strftime "%Y-%m-%dT%H:%M:%S%z"
+            time.strftime "%Y-%m-%dT%H:%M:%S%:z"
         end
 
         def date_to_rfc822(time)
