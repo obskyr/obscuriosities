@@ -41,10 +41,11 @@ layout: main
   'use strict';
   document.addEventListener('DOMContentLoaded', function() {
     var IMAGE_DISPLAY = document.createElement('div');
-    IMAGE_DISPLAY.innerHTML = "<div class='background'></div><div class='arrow left'></div><img><div class='arrow right'></div>"
+    IMAGE_DISPLAY.innerHTML = "<div class='background'></div><div class='arrow left'></div><div class='image-container'><img><div class='caption'></div></div><div class='arrow right'></div>";
     IMAGE_DISPLAY.classList.add('image-display');
     IMAGE_DISPLAY.classList.add('inactive');
     var ENLARGED_IMAGE = IMAGE_DISPLAY.getElementsByTagName('img')[0];
+    var CAPTION = IMAGE_DISPLAY.getElementsByClassName('caption')[0];
     var LEFT_ARROW = IMAGE_DISPLAY.getElementsByClassName('arrow')[0];
     var RIGHT_ARROW = IMAGE_DISPLAY.getElementsByClassName('arrow')[1];
 
@@ -62,7 +63,7 @@ layout: main
         let img = element.getElementsByTagName('img')[0];
         let description = element.getElementsByClassName('caption')[0];
         description = description ? description.innerHTML : null;
-        IMAGES.push([img, null])
+        IMAGES.push([img, description])
       }
     }
     var currentImage = 0;
@@ -73,6 +74,9 @@ layout: main
       ENLARGED_IMAGE.src = IMAGES[i][0].src;
       ENLARGED_IMAGE.alt = IMAGES[i][0].alt;
       ENLARGED_IMAGE.title = IMAGES[i][0].title;
+      let caption = IMAGES[i][1];
+      caption ? CAPTION.classList.remove('inactive') : CAPTION.classList.add('inactive');
+      CAPTION.innerHTML = caption;
       i == 0 ? LEFT_ARROW.classList.add('inactive') : LEFT_ARROW.classList.remove('inactive');
       i == IMAGES.length - 1 ? RIGHT_ARROW.classList.add('inactive') : RIGHT_ARROW.classList.remove('inactive');
       IMAGE_DISPLAY.classList.remove('inactive');

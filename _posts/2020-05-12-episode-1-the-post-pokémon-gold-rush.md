@@ -192,7 +192,7 @@ July 17th 1998; developed by Freeqsoft and published by Starfish Inc. for the Ga
 
 <div class="image-container">
 <img src="{{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/4.png">
-<div class="caption">Could that be that a turtle?</div>
+<div class="caption">Could that be a turtle?</div>
 </div>
 
 <div class="image-container">
