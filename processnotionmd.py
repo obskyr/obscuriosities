@@ -8,6 +8,7 @@ import os
 import re
 import sys
 
+from html import escape
 from io import StringIO
 from urllib.parse import urlparse, quote
 
@@ -29,19 +30,21 @@ def _skip_front_matter(lines):
                 return i
 
 SLUG_RE = re.compile(r"^[0-9]+-[0-9]+-[0-9]+-(?P<slug>.+)$")
-IMAGE_RE = re.compile(r"^!\[.*]\((?P<src>.*)\)$")
+IMAGE_RE = re.compile(r"^!\[(?P<alt>.*)\]\((?P<src>.*)\)$")
 def _process_images(lines, start=0, path=""):
     slug = quote(SLUG_RE.match(os.path.splitext(os.path.basename(path))[0]).group('slug'))
     for i, line in enumerate(lines[start:], start):
         m = IMAGE_RE.match(line)
         if m is None:
             continue
+        alt = m.group('alt')
         src = m.group('src')
         parsed = urlparse(src)
         if not parsed.netloc and parsed.path.startswith('Export-'):
             src = f"{{{{ site.baseurl }}}}/assets/episodes/{slug}/images/{parsed.path.split('/', 1)[1]}"
 
-        lines[i] = f'<img src="{src}">'
+        alt = f'alt="{escape(alt, quote=True)}" ' if alt and alt != src else ""
+        lines[i] = f'<img {alt}src="{src}">'
 
 def main(*argv):
     script_name = os.path.basename(__file__)
