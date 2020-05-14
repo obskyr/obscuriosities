@@ -178,7 +178,9 @@ Published by KID on July 30th, 1999 in Japan, and by Agetec in August or Septemb
 
 July 17th 1998; developed by Freeqsoft and published by Starfish Inc. for the Game Boy.
 
+<div class="images">
 <img alt="Cover of Reborn" src="{{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/cover.png">
+</div>
 
 <div class="images three-wide captiony">
 <img alt="Screenshot of Reborn" src="{{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/1.png">
