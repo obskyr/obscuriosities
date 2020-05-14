@@ -498,11 +498,11 @@ a.newer-posts:hover { transform: translateX(-5px); }
 
 img.enlargeable { cursor: pointer; }
 
-.image-display { opacity: 1; transition: opacity 0.25s cubic-bezier(0.62, 0.28, 0.23, 0.99); }
+.image-display { display: flex; align-items: center; justify-content: center; position: fixed; left: 0; top: 0; width: 100%; height: 100%; padding-bottom: 5%; opacity: 1; transition: opacity 0.25s cubic-bezier(0.62, 0.28, 0.23, 0.99); }
 
-.image-display .background { position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }
+.image-display .background { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }
 
-.image-display .image-container { display: flex; flex-direction: column; align-items: center; position: fixed; left: 50%; top: 47.5%; transform: translate(-50%, -50%); max-width: 80%; max-height: 80%; color: white; }
+.image-display .image-container { display: flex; flex-direction: column; align-items: center; max-width: 80%; max-height: 80%; color: white; z-index: 1; }
 
 .image-display img { box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
@@ -544,7 +544,7 @@ img.enlargeable { cursor: pointer; }
 @media only screen and (max-width: 992px) { .post { width: 48%; max-width: 100%; margin: 0 0.9% 1.5%; flex-direction: column; } .post .post-thumbnail { width: 100%; } .post .post-content { width: 100%; } .post .post-content .post-title { margin: 0 0 5px; } .post .post-content .post-title a { font-size: 21px; } }
 
 /* Small Devices, Tablets */
-@media only screen and (max-width: 768px) { .sidebar { position: relative; display: flex; flex-direction: column; justify-content: space-between; width: 100%; padding: 10px; background-color: #FFF5CF; box-shadow: 0 1px 1px 0 rgba(31, 35, 46, 0.15); } .sidebar footer { margin-bottom: 10px; } .about { text-align: center; max-width: 480px; margin: 10px auto auto; } .about .cover-image { width: 100px; height: 100px; margin-bottom: 10px; } .about img { width: 100px; height: 100px; } .about .site-title { padding-bottom: 0; } .about .site-title::after { display: none; } .contact ul li a { padding-top: 0; padding-bottom: 0; } .content-box { padding: 20px 10px; display: flex; flex-direction: row; flex-wrap: wrap; align-items: stretch; } .contact-title, .copyright { display: none; } .images.three-wide > img, .images.three-wide > .image-container { max-width: calc(50% - 30px); } .images.four-wide > img, .images.four-wide > .image-container { max-width: calc(33% - 30px); } }
+@media only screen and (max-width: 768px) { .sidebar { position: relative; display: flex; flex-direction: column; justify-content: space-between; width: 100%; padding: 10px; background-color: #FFF5CF; box-shadow: 0 1px 1px 0 rgba(31, 35, 46, 0.15); } .sidebar footer { margin-bottom: 10px; } .about { text-align: center; max-width: 480px; margin: 10px auto auto; } .about .cover-image { width: 100px; height: 100px; margin-bottom: 10px; } .about img { width: 100px; height: 100px; } .about .site-title { padding-bottom: 0; } .about .site-title::after { display: none; } .contact ul li a { padding-top: 0; padding-bottom: 0; } .content-box { padding: 20px 10px; display: flex; flex-direction: row; flex-wrap: wrap; align-items: stretch; } .contact-title, .copyright { display: none; } .images.three-wide > img, .images.three-wide > .image-container { max-width: calc(50% - 30px); } .images.four-wide > img, .images.four-wide > .image-container { max-width: calc(33% - 30px); } .image-display .image-container { font-size: 0.8em; } .image-display .arrow { font-size: 25px; } }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) { .content-box { padding: 10px; } .post { width: 98%; max-width: 100%; margin: 2%; flex-direction: column; } .post .post-thumbnail { width: 100%; } .post .post-content { width: 100%; } .post .post-content .post-title { margin: 0 0 5px; } .post .post-content .post-title a { font-size: 21px; } .images.four-wide > img, .images.four-wide > .image-container { max-width: calc(50% - 30px); } }
