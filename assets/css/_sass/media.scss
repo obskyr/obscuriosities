@@ -81,6 +81,15 @@
   .images.four-wide > img, .images.four-wide > .image-container {
     max-width: calc(33% - 30px);
   }
+
+  .image-display {
+    .image-container {
+      font-size: 0.8em;
+    }
+    .arrow {
+      font-size: 25px;
+    }
+  }
 }
 
 /* Extra Small Devices, Phones */
