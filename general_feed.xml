@@ -4,7 +4,7 @@
   <title>Obscuriosities</title>
   <link href="https://podcast.obskyr.io/general_feed.xml" rel="self"/>
   <link href="https://podcast.obskyr.io"/>
-  <updated>2020-05-14T05:25:26+00:00</updated>
+  <updated>2020-05-14T06:42:56+00:00</updated>
   <id>https://podcast.obskyr.io/</id>
   <author>
     <name>Obskyr</name>
@@ -169,7 +169,9 @@
 
 &lt;p&gt;July 17th 1998; developed by Freeqsoft and published by Starfish Inc. for the Game Boy.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&quot;Cover of Reborn&quot; src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/cover.png&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;images&quot;&gt;
+&lt;img alt=&quot;Cover of Reborn&quot; src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/cover.png&quot; /&gt;
+&lt;/div&gt;
 
 &lt;div class=&quot;images three-wide captiony&quot;&gt;
 &lt;img alt=&quot;Screenshot of Reborn&quot; src=&quot;/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/1.png&quot; /&gt;
