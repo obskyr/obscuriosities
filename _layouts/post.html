@@ -37,3 +37,71 @@ layout: main
     </div> <!-- End Wrap Content -->
   </div> <!-- End Page Content -->
 </article> <!-- End Article Page -->
+<script type="text/javascript">
+  'use strict';
+  document.addEventListener('DOMContentLoaded', function() {
+    var IMAGE_DISPLAY = document.createElement('div');
+    IMAGE_DISPLAY.innerHTML = "<div class='background'></div><div class='arrow left'></div><img><div class='arrow right'></div>"
+    IMAGE_DISPLAY.classList.add('image-display');
+    IMAGE_DISPLAY.classList.add('inactive');
+    var ENLARGED_IMAGE = IMAGE_DISPLAY.getElementsByTagName('img')[0];
+    var LEFT_ARROW = IMAGE_DISPLAY.getElementsByClassName('arrow')[0];
+    var RIGHT_ARROW = IMAGE_DISPLAY.getElementsByClassName('arrow')[1];
+
+    IMAGE_DISPLAY.getElementsByClassName('background')[0].addEventListener('click', function(event) {
+      IMAGE_DISPLAY.classList.add('inactive');
+    }, false);
+
+    var image_elements = document.getElementsByClassName('article-page')[0].querySelectorAll("p > img, .images > img, .images > .image-container");
+    var IMAGES = [];
+    for (let i = 0; i < image_elements.length; i++) {
+      let element = image_elements[i];
+      if (element.tagName == 'IMG') {
+        IMAGES.push([element, null]);
+      } else {
+        let img = element.getElementsByTagName('img')[0];
+        let description = element.getElementsByClassName('caption')[0];
+        description = description ? description.innerHTML : null;
+        IMAGES.push([img, null])
+      }
+    }
+    var currentImage = 0;
+
+    function displayImageNo(i) {
+      if (i < 0 || i >= IMAGES.length) {return;}
+      currentImage = i;
+      ENLARGED_IMAGE.src = IMAGES[i][0].src;
+      ENLARGED_IMAGE.alt = IMAGES[i][0].alt;
+      ENLARGED_IMAGE.title = IMAGES[i][0].title;
+      i == 0 ? LEFT_ARROW.classList.add('inactive') : LEFT_ARROW.classList.remove('inactive');
+      i == IMAGES.length - 1 ? RIGHT_ARROW.classList.add('inactive') : RIGHT_ARROW.classList.remove('inactive');
+      IMAGE_DISPLAY.classList.remove('inactive');
+    }
+
+    for (let i = 0; i < IMAGES.length; i++) {
+      IMAGES[i][0].addEventListener('click', function() {
+        displayImageNo(i);
+      }, false);
+    }
+
+    LEFT_ARROW.addEventListener('click', function() {displayImageNo(currentImage - 1);}, false);
+    RIGHT_ARROW.addEventListener('click', function() {displayImageNo(currentImage + 1);}, false);
+
+    document.addEventListener('keydown', function(event) {
+      if (IMAGE_DISPLAY.classList.contains('inactive')) {return;}
+      switch (event.key) {
+        case 'ArrowLeft':
+          displayImageNo(currentImage - 1);
+          break;
+        case 'ArrowRight':
+          displayImageNo(currentImage + 1);
+          break;
+        case 'Escape':
+          IMAGE_DISPLAY.classList.add('inactive');
+          break;
+      }
+    }, false);
+
+    document.body.appendChild(IMAGE_DISPLAY);
+  }, false);
+</script>
