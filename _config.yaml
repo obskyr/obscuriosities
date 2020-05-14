@@ -11,6 +11,7 @@ site-twitter: # if your site has a twitter account, enter it here
 # Author settings
 author: Obskyr
 author-img: logo/logo.png
+card-image: logo/card.png
 about-author: >-
   The podcast about obscure video games. Do you believe that there's value in the unknown?
 social-twitter: obskyr

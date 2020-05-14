@@ -29,6 +29,10 @@
   {% endif %}
   {% if page.cover-image %}
     <meta content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.cover-image }}" property="og:image">
+  {% elsif page.image %}
+    <meta content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}" property="og:image">
+  {% elsif site.card-image %}
+    <meta content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.card-image }}" property="og:image">
   {% else %}
     <meta content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.author-img }}" property="og:image">
   {% endif %}
@@ -63,6 +67,10 @@
   {% endif %}
   {% if page.cover-image %}
     <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.cover-image }}">
+  {% elsif page.image %}
+    <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}">
+  {% elsif site.card-image %}
+    <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.card-image }}">
   {% else %}
     <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.author-img }}">
   {% endif %}
@@ -70,7 +78,6 @@
 	<meta name="description" content="{{ page.description }}">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta property="og:image" content="">
 	<link rel="shortcut icon" href="{{ "/assets/images/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
 	<!-- Chrome, Firefox OS and Opera -->
 	<meta name="theme-color" content="{{ site.theme-color }}">
