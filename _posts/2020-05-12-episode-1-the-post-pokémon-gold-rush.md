@@ -212,7 +212,7 @@ July 17th 1998; developed by Freeqsoft and published by Starfish Inc. for the Ga
 
 <div class="image-container">
 <img src="{{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/8.png">
-<div class="caption">"Crawls along the ground and is hard to spot. Usually timid, but is fearsome when angered. Its legs double as fins.""</div>
+<div class="caption">"Crawls along the ground and is hard to spot. Usually timid, but is fearsome when angered. Its legs double as fins."</div>
 </div>
 
 <div class="image-container">
