@@ -28,13 +28,13 @@
     <meta content="{{ site.url }}{{ site.baseurl }}/about/" property="article:author">
   {% endif %}
   {% if page.cover-image %}
-    <meta content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.cover-image }}" property="og:image">
+    <meta content="{{ site.url }}{{ site.baseurl }}/assets/{{ page.cover-image }}" property="og:image">
   {% elsif page.image %}
-    <meta content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}" property="og:image">
+    <meta content="{{ site.url }}{{ site.baseurl }}/assets/{{ page.image }}" property="og:image">
   {% elsif site.card-image %}
-    <meta content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.card-image }}" property="og:image">
+    <meta content="{{ site.url }}{{ site.baseurl }}/assets/{{ site.card-image }}" property="og:image">
   {% else %}
-    <meta content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.author-img }}" property="og:image">
+    <meta content="{{ site.url }}{{ site.baseurl }}/assets/{{ site.author-img }}" property="og:image">
   {% endif %}
   {% if page.categories %}
     {% for category in page.categories limit:1 %}
@@ -66,13 +66,13 @@
     <meta name="twitter:description" content="{{ site.description }}">
   {% endif %}
   {% if page.cover-image %}
-    <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.cover-image }}">
+    <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/{{ page.cover-image }}">
   {% elsif page.image %}
-    <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}">
+    <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/{{ page.image }}">
   {% elsif site.card-image %}
-    <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.card-image }}">
+    <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/{{ site.card-image }}">
   {% else %}
-    <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.author-img }}">
+    <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/{{ site.author-img }}">
   {% endif %}
 
 	<meta name="description" content="{{ page.description }}">
