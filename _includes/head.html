@@ -17,6 +17,8 @@
   {% endif %}
   {% if page.description %}
     <meta content="{{ page.description }}" property="og:description">
+  {% elsif page.id %}{% comment %}Checks if the page is a post.{% endcomment %}
+    <meta content="{{ page.content | after_hr | first_p | strip_html | truncatewords: 50 | xml_escape }}" property="og:description">
   {% else %}
     <meta content="{{ site.description }}" property="og:description">
   {% endif %}
@@ -48,9 +50,9 @@
   {% endif %}
 
     <meta name="twitter:card" content="summary">
-    {% if site.site-twitter %}
+  {% if site.site-twitter %}
     <meta name="twitter:site" content="@{{ site.site-twitter }}">
-    {% endif %}
+  {% endif %}
     <meta name="twitter:creator" content="@{{ site.social-twitter }}">
   {% if page.title %}
     <meta name="twitter:title" content="{{ page.title }}">
@@ -62,6 +64,8 @@
   {% endif %}
   {% if page.description %}
     <meta name="twitter:description" content="{{ page.description }}">
+  {% elsif page.id %}{% comment %}Checks if the page is a post.{% endcomment %}
+    <meta name="twitter:description" content="{{ page.content | after_hr | first_p | strip_html | truncatewords: 50 | xml_escape }}">
   {% else %}
     <meta name="twitter:description" content="{{ site.description }}">
   {% endif %}
