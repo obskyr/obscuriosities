@@ -23,6 +23,7 @@ social-email: powpowd@gmail.com
 # Octopod settings. Why couldn't they have placed this in an object...
 author_url: "https://obskyr.io/"
 email: powpowd@gmail.com
+google_podcasts_url: https://podcasts.google.com/?feed=aHR0cHM6Ly9wb2RjYXN0Lm9ic2t5ci5pby9lcGlzb2Rlcy5tNGEucnNz
 itunes_url: https://podcasts.apple.com/podcast/obscuriosities/id1513125957
 keywords: ['video games', games, technology, obscure]
 itunes_categories: [['Leisure', 'Video Games'], Technology, Education]
