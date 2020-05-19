@@ -1,7 +1,7 @@
 title: Obscuriosities
 subtitle: The podcast about obscure video games.
 description: >- # this means to ignore newlines until the next property
-  The podcast about obscure video games. Do you believe that there's value in the unknown?
+  The podcast about obscure video games. Well-kept Japanese-only secrets, forgotten retro games, and everything in between. Do you believe that there's value in the unknown?
 theme-color: '#191F42'
 permalink: ':title/'
 url: "https://podcast.obskyr.io" # Don't include the base path here!
@@ -13,7 +13,7 @@ author: Obskyr
 author-img: logo/logo.png
 card-image: logo/card.png
 about-author: >-
-  The podcast about obscure video games. Do you believe that there's value in the unknown?
+  The podcast about obscure video games. Well-kept Japanese-only secrets, forgotten retro games, and everything in between.<br>Do you believe that there's value in the unknown?
 social-twitter: obskyr
 social-facebook:
 social-github: obskyr/obscuriosities
@@ -52,7 +52,7 @@ date_format: ordinal
 # To add comments, set a Disqus identifier.
 # disqus-identifier:
 # Or use Isso.
-use_isso: yes
+# use_isso: yes
 
 # Google Analytics
 # analytics:
