@@ -506,7 +506,7 @@ img.enlargeable { cursor: pointer; }
 
 .image-display .image-container.spoilers { pointer-events: all; }
 
-.image-display .image-container.spoilers::before { z-index: 4; }
+.image-display .image-container.spoilers::before { top: 50%; transform: translate(-50%, -50%); margin-top: 0; z-index: 4; }
 
 .image-display .image-container > * { pointer-events: all; }
 
