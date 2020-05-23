@@ -197,6 +197,9 @@ img.enlargeable {
   .image-container.spoilers {
     pointer-events: all;
     &::before {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0;
       z-index: 4;
     }
   }
