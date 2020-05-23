@@ -241,3 +241,43 @@ img.enlargeable {
     content: "▶";
   }
 }
+
+.spoilers {
+  position: relative;
+  cursor: pointer;
+
+  &:not(.revealed) > * {
+    pointer-events: none;
+    filter: blur(44px);
+  }
+
+  &::before {
+    content: "Spoiler\A Click to reveal";
+    filter: none;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    max-width: 20em;
+    margin-top: 1em;
+    padding: 0.5em 0.75em;
+    border-radius: 0.5em;
+    text-align: center;
+    white-space: pre-wrap;
+    font-family: "Jost", sans-serif;
+    text-transform: uppercase;
+    background-color: $background-color;
+    color: $white;
+    opacity: 0.9;
+
+    z-index: 1;
+  }
+  &[data-for]::before {
+    content: "Spoiler:\A " attr(data-for) "\A (Click to reveal)";
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+
