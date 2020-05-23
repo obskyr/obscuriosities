@@ -193,19 +193,22 @@ img.enlargeable {
     color: white;
     z-index: 3;
     pointer-events: none;
-  }
-  .image-container.spoilers {
-    pointer-events: all;
-    &::before {
+
+    &.spoilers::before {
       top: 50%;
       transform: translate(-50%, -50%);
       margin-top: 0;
       z-index: 4;
     }
+    & > * {pointer-events: all;}
   }
-  .image-container > * {pointer-events: all;}
+  &:not(.inactive) {
+    .image-container.spoilers {
+      pointer-events: all;
+    }
+  }
   &.inactive {
-    .image-container > * {pointer-events: none;}
+    .image-container > *, {pointer-events: none;}
   }
   img {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
