@@ -203,7 +203,7 @@ img.enlargeable {
     & > * {pointer-events: all;}
   }
   &:not(.inactive) {
-    .image-container.spoilers {
+    .image-container.spoilers:not(.revealed) {
       pointer-events: all;
     }
   }
