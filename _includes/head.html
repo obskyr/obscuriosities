@@ -18,7 +18,7 @@
   {% if page.description %}
     <meta content="{{ page.description }}" property="og:description">
   {% elsif page.id %}{% comment %}Checks if the page is a post.{% endcomment %}
-    <meta content="{{ page.content | after_hr | first_p | strip_html | truncatewords: 50 | xml_escape }}" property="og:description">
+    <meta content="{{ page.content | after_hr | first_p | strip_html | truncatewords: 55 | xml_escape }}" property="og:description">
   {% else %}
     <meta content="{{ site.description }}" property="og:description">
   {% endif %}
@@ -65,7 +65,7 @@
   {% if page.description %}
     <meta name="twitter:description" content="{{ page.description }}">
   {% elsif page.id %}{% comment %}Checks if the page is a post.{% endcomment %}
-    <meta name="twitter:description" content="{{ page.content | after_hr | first_p | strip_html | truncatewords: 50 | xml_escape }}">
+    <meta name="twitter:description" content="{{ page.content | after_hr | first_p | strip_html | truncatewords: 55 | xml_escape }}">
   {% else %}
     <meta name="twitter:description" content="{{ site.description }}">
   {% endif %}
