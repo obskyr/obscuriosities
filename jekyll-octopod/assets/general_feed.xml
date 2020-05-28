@@ -20,7 +20,7 @@ layout: null
       <link href="{{ site.url }}{{ site.baseurl }}{{ post.url }}"/>
       <updated>{{ post.real-date | date_to_xmlschema }}</updated>
       <id>{{ site.url }}{{ site.baseurl }}{{ post.id }}</id>
-      <content type="html">{{ post.content | after_hr | xml_escape }}</content>
+      <content type="html">{{ post.content | after_hr | no_blurb | xml_escape }}</content>
       {% for file in post.audio %}
         {% if post.filesize %}
           <link rel="enclosure" 
