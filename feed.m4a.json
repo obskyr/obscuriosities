@@ -13,6 +13,23 @@
  },
  "items": [
  
+   {"id": "44ca5ae4",
+    "title": "Episode 2: Mon Dieu, It's Jumping Flash 3!",
+    "summary": "",
+    "content_text": "Episode page: https://podcast.obskyr.io/episode-2-mon-dieu,-it’s-jumping-flash-3!/Jumping Flash made a splash in 1995, when it was the first 3D platformer to hit consoles. But did you know there’s a third game in the series, released only in Japan? Today’s all about the Jumping Flash series, and more specifically, the personality-packed Robbit Mon Dieu for the PlayStation 1.",
+    "content_html": "<p>Episode page: <a href=\"https://podcast.obskyr.io/episode-2-mon-dieu,-it's-jumping-flash-3!/\">https://podcast.obskyr.io/episode-2-mon-dieu,-it’s-jumping-flash-3!/</a></p><p><em>Jumping Flash</em> made a splash in 1995, when it was the first 3D platformer to hit consoles. But did you know there’s a <em>third</em> game in the series, released only in Japan? Today’s all about the <em>Jumping Flash</em> series, and more specifically, the personality-packed <em>Robbit Mon Dieu</em> for the PlayStation 1.</p>",
+    "url": "https://podcast.obskyr.io/episode-2-mon-dieu,-it's-jumping-flash-3!/",
+    "attachments": [
+      {"url": "https://dts.podtrac.com/redirect.m4a/podcast.obskyr.io/episodes/Episode%202%20-%20Mon%20Dieu,%20It's%20Jumping%20Flash%203-finished.m4a",
+       "mime_type": "audio/mpeg","size_in_bytes": "37019893"}
+    ],
+    "date_published": "2020-06-13T00:00:00+09:00",
+    "date_modified": "2020-06-13T00:00:00+09:00",
+    "author": {
+      "name": "Obskyr"
+    }
+  },
+ 
    {"id": "c9953238",
     "title": "Episode 1: The Post-Pokémon Gold Rush",
     "summary": "",

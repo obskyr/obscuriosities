@@ -478,7 +478,7 @@ a.newer-posts:hover { transform: translateX(-5px); }
 
 .comment-area { margin-top: 30px; }
 
-.article-page p > img, .article-page .images > img, .article-page .images > .image-container { cursor: pointer; }
+.article-page p > img, .article-page .images > img, .article-page .images > .image-container > img { cursor: pointer; }
 
 .article-page p > img { display: block; position: relative; left: 50%; transform: translateX(-50%); max-width: 100%; max-height: 380px; cursor: pointer; }
 
@@ -508,7 +508,7 @@ img.enlargeable { cursor: pointer; }
 
 .image-display .image-container > * { pointer-events: all; }
 
-.image-display:not(.inactive) .image-container.spoilers { pointer-events: all; }
+.image-display:not(.inactive) .image-container.spoilers:not(.revealed) { pointer-events: all; }
 
 .image-display.inactive .image-container > * { pointer-events: none; }
 
@@ -544,6 +544,8 @@ img.enlargeable { cursor: pointer; }
 
 .spoilers.revealed::before { display: none; }
 
+iframe.youtube { position: relative; left: 50%; transform: translateX(-50%); width: 560px; height: 420px; }
+
 /* - - - - - - - - - - Tag Styles - - - - - - - - - - */
 .blog-tags { width: 100%; background-color: #FFF5CF; padding: 0 20px 20px; }
 
@@ -563,12 +565,12 @@ img.enlargeable { cursor: pointer; }
 
 /* - - - - - - - - - - Media Styles - - - - - - - - - - */
 /* Medium Devices, Desktops */
-@media only screen and (max-width: 992px) { .post { width: 48%; max-width: 100%; margin: 0 0.9% 1.5%; flex-direction: column; } .post .post-thumbnail { width: 100%; } .post .post-content { width: 100%; } .post .post-content .post-title { margin: 0 0 5px; line-height: 1.1; } .post .post-content .post-title a { font-size: 21px; } }
+@media only screen and (max-width: 992px) { .post { width: 48%; max-width: 100%; margin: 0 0.9% 1.5%; flex-direction: column; } .post .post-thumbnail { width: 100%; } .post .post-content { width: 100%; } .post .post-content .post-title { margin: 0 0 5px; line-height: 1.1; } .post .post-content .post-title a { font-size: 21px; } iframe.youtube { width: 400px; height: 300px; } }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) { .sidebar { position: relative; display: flex; flex-direction: column; justify-content: space-between; width: 100%; padding: 10px; background-color: #FFF5CF; box-shadow: 0 1px 1px 0 rgba(31, 35, 46, 0.15); } .sidebar footer { margin-bottom: 10px; } .about { text-align: center; max-width: 480px; margin: 10px auto auto; } .about .cover-image { width: 100px; height: 100px; margin-bottom: 10px; } .about img { width: 100px; height: 100px; } .about .site-title { padding-bottom: 0; } .about .site-title::after { display: none; } .contact ul { margin-top: 10px; } .contact ul li a { padding-top: 0; padding-bottom: 0; } .content-box { padding: 20px 10px; display: flex; flex-direction: row; flex-wrap: wrap; align-items: stretch; } .contact-title, .copyright { display: none; } .images.three-wide > img, .images.three-wide > .image-container { max-width: calc(50% - 30px); } .images.four-wide > img, .images.four-wide > .image-container { max-width: calc(33% - 30px); } .image-display .image-container { font-size: 0.8em; } .image-display .arrow { font-size: 25px; } }
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width: 480px) { .content-box { padding: 10px; } .post { width: 98%; max-width: 100%; margin: 2%; flex-direction: column; } .post .post-thumbnail { width: 100%; } .post .post-content { width: 100%; } .post .post-content .post-title { margin: 0 0 5px; line-height: 1.1; } .post .post-content .post-title a { font-size: 21px; } .images.four-wide > img, .images.four-wide > .image-container { max-width: calc(50% - 30px); } }
+@media only screen and (max-width: 480px) { .content-box { padding: 10px; } .post { width: 98%; max-width: 100%; margin: 2%; flex-direction: column; } .post .post-thumbnail { width: 100%; } .post .post-content { width: 100%; } .post .post-content .post-title { margin: 0 0 5px; line-height: 1.1; } .post .post-content .post-title a { font-size: 21px; } .images.four-wide > img, .images.four-wide > .image-container { max-width: calc(50% - 30px); } iframe.youtube { width: 320px; height: 240px; } }
 
 /*# sourceMappingURL=main.css.map */

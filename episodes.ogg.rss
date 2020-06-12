@@ -19,7 +19,7 @@
     <atom:link rel="alternate" href="https://podcast.obskyr.io/episodes.m4a.rss" type="application/rss+xml" title="m4a Episode RSS-Feed"/>
     <description>The podcast about obscure video games. Well-kept Japanese-only secrets, forgotten retro games, and everything in between. Do you believe that there’s value in the unknown?
 </description>
-    <lastBuildDate>Tue, 26 May 2020 23:48:33 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 20:54:56 +0000</lastBuildDate>
     <language>en</language>
     <generator>Jekyll-Octopod 0.9.23-obskyr</generator>
 
@@ -56,6 +56,49 @@
     <itunes:category text="Education" />
     
     <item>
+            <title>Episode 2: Mon Dieu, It's Jumping Flash 3!</title>
+            <link>https://podcast.obskyr.io/episode-2-mon-dieu,-it's-jumping-flash-3!/</link>
+            <atom:link rel="http://podlove.org/deep-link" href="https://podcast.obskyr.io/players/episode-2-mon-dieu,-it's-jumping-flash-3!"/>
+            <comments>https://podcast.obskyr.io/episode-2-mon-dieu,-it's-jumping-flash-3!/#disqus_thread</comments>
+            <pubDate>Sat, 13 Jun 2020 00:00:00 +0900</pubDate>
+            
+            <guid isPermaLink="false">https://podcast.obskyr.io/episode-2-mon-dieu,-it's-jumping-flash-3!/</guid>
+            <description><![CDATA[<p>Episode page: <a href="https://podcast.obskyr.io/episode-2-mon-dieu,-it's-jumping-flash-3!/">https://podcast.obskyr.io/episode-2-mon-dieu,-it’s-jumping-flash-3!/</a></p>
+
+<p><em>Jumping Flash</em> made a splash in 1995, when it was the first 3D platformer to hit consoles. But did you know there’s a <em>third</em> game in the series, released only in Japan? Today’s all about the <em>Jumping Flash</em> series, and more specifically, the personality-packed <em>Robbit Mon Dieu</em> for the PlayStation 1.</p>
+]]></description>
+            <content:encoded><![CDATA[<p>Episode page: <a href="https://podcast.obskyr.io/episode-2-mon-dieu,-it's-jumping-flash-3!/">https://podcast.obskyr.io/episode-2-mon-dieu,-it’s-jumping-flash-3!/</a></p>
+
+<p><em>Jumping Flash</em> made a splash in 1995, when it was the first 3D platformer to hit consoles. But did you know there’s a <em>third</em> game in the series, released only in Japan? Today’s all about the <em>Jumping Flash</em> series, and more specifically, the personality-packed <em>Robbit Mon Dieu</em> for the PlayStation 1.</p>
+]]></content:encoded>
+            
+            <enclosure url="https://dts.podtrac.com/redirect.ogg/podcast.obskyr.io/episodes/Episode%202%20-%20Mon%20Dieu,%20It's%20Jumping%20Flash%203-finished.ogg" 
+                         length="37348126" 
+                         type="audio/ogg; codecs=vorbis" />
+            <itunes:keywords></itunes:keywords>
+            <itunes:subtitle></itunes:subtitle>
+            <itunes:summary></itunes:summary>
+            <itunes:author>Obskyr</itunes:author>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:duration>1:15:30</itunes:duration>
+            <psc:chapters version="1.1" xmlns:psc="http://podlove.org/simple-chapters"><psc:chapter start="0:00:00.000" title="Opening" />
+              <psc:chapter start="0:02:21.308" title="Jumping Flash 1 & 2" />
+              <psc:chapter start="0:15:36.468" title="MuuMuu rap time, baby!!!" />
+              <psc:chapter start="0:23:58.498" title="Robbit Mon Dieu" />
+              <psc:chapter start="0:34:08.329" title="Letters from Hanauma" />
+              <psc:chapter start="0:44:44.201" title="Characters" />
+              <psc:chapter start="0:55:05.248" title="Gameplay" />
+              <psc:chapter start="1:01:59.634" title="Why was Robbit Mon Dieu different?" />
+              <psc:chapter start="1:04:14.538" title="Yukihito Morikawa" />
+              <psc:chapter start="1:10:04.226" title="Where are they now?" />
+              <psc:chapter start="1:13:29.079" title="Ending" />
+              
+            </psc:chapters><itunes:image href="https://podcast.obskyr.io/assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-cover.jpg" />
+              <image>
+                <title></title>
+                <url>https://podcast.obskyr.io/assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-cover.jpg</url>
+                <link>https://podcast.obskyr.io</link>
+              </image></item><item>
             <title>Episode 1: The Post-Pokémon Gold Rush</title>
             <link>https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/</link>
             <atom:link rel="http://podlove.org/deep-link" href="https://podcast.obskyr.io/players/episode-1-the-post-pokémon-gold-rush"/>
