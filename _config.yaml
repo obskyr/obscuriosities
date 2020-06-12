@@ -80,3 +80,6 @@ sass:
 
 # Not actually, but to make per-post timezones actually somewhat work...
 timezone: UTC
+# Needed in order to be able to publish posts in the early morning of a
+# time zone ahead of UTC. :|
+future: true
