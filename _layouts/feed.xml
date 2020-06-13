@@ -64,7 +64,9 @@ layout: null
             <title>{{ post.title }}{% if post.subtitle %} - {{ post.subtitle }}{% endif %}</title>
             <link>{{ site.url }}{{ site.baseurl }}{{ post.url }}</link>
             <atom:link rel="http://podlove.org/deep-link" href="{{ site.url }}{{ site.baseurl }}/players/{{ post.slug }}"/>
+            {%- if site.disqus-identifier -%}
             <comments>{{ site.url }}{{ site.baseurl }}{{ post.url }}#disqus_thread</comments>
+            {% endif %}
             <pubDate>{{ post.real-date | time_to_rssschema }}</pubDate>
             {% for category in post.categories %}
             <category><![CDATA[{{ category }}]]></category>
@@ -93,7 +95,7 @@ layout: null
             {%- if post.chapters -%}
             <psc:chapters version="1.1" xmlns:psc="http://podlove.org/simple-chapters">
               {%- for chapter in post.chapters -%}
-              <psc:chapter start="{{ chapter | split_chapter:'start' }}" title="{{ chapter | split_chapter:'title' }}" />
+              <psc:chapter start="{{ chapter | split_chapter: 'start' | xml_escape }}" title="{{ chapter | split_chapter: 'title' | xml_escape }}" />
               {% endfor %}
             </psc:chapters>
             {%- endif -%}
@@ -107,7 +109,7 @@ layout: null
               {%- endfor -%}
             {%- endif -%}
             {%- if post.image -%}
-              <itunes:image href="{{ site.url }}{{ site.baseurl }}/assets/{{post.image}}" />
+              <itunes:image href="{{ '/assets/' | append: post.image | relative_url | xml_escape }}" />
               <image>
                 <title>{{ post.image_title }}</title>
                 <url>{{ site.url }}{{ site.baseurl }}/assets/{{post.image}}</url>
