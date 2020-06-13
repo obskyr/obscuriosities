@@ -66,7 +66,7 @@ Episode page: [{{ page.url | absolute_url }}]({{ page.url | absolute_url }})
 
     <div class="image-container">
         <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-8.png' | relative_url }}">
-        <div class="caption">Before and after ach mission, you get a fully voice-acted cutscene, packed full of character!</div>
+        <div class="caption">Before and after each mission, you get a fully voice-acted cutscene, packed full of character!</div>
     </div>
 
     <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-9.png' | relative_url }}">
@@ -80,7 +80,7 @@ Episode page: [{{ page.url | absolute_url }}]({{ page.url | absolute_url }})
 
     <div class="image-container">
         <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-12.png' | relative_url }}">
-        <div class="caption">A request addressed from the “Great Weasel Gang”. In it, they explain that they've kidnapped the president's daughter, and that if you don't play and win their “game of horror”, they'll… *pour flour on her*!!!</div>
+        <div class="caption">A request addressed from the “Great Weasel Gang”. In it, they explain that they've kidnapped the president's daughter, and that if you don't play and win their “game of horror”, they'll… <em>pour flour on her</em>!!!</div>
     </div>
 
     <div class="image-container">
@@ -100,7 +100,7 @@ Episode page: [{{ page.url | absolute_url }}]({{ page.url | absolute_url }})
 
     <div class="image-container">
         <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-30-201524.png' | relative_url }}">
-        <div class="caption">The Dot Cards are *so* bizarre. They're all short animations of random objects. The early 3D age was wild.</div>
+        <div class="caption">The Dot Cards are <em>so</em> bizarre. They're all short animations of random objects. The early 3D age was wild.</div>
     </div>
 
     <div class="image-container">
@@ -110,7 +110,7 @@ Episode page: [{{ page.url | absolute_url }}]({{ page.url | absolute_url }})
 
     <div class="image-container">
         <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-30-195920.png' | relative_url }}">
-        <div class="caption">The volcanically fried eggs are *back*!</div>
+        <div class="caption">The volcanically fried eggs are <em>back</em>!</div>
     </div>
 
     <div class="image-container">
