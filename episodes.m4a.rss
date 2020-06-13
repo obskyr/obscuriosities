@@ -19,7 +19,7 @@
     <atom:link rel="alternate" href="https://podcast.obskyr.io/episodes.ogg.rss" type="application/rss+xml" title="ogg Episode RSS-Feed"/>
     <description>The podcast about obscure video games. Well-kept Japanese-only secrets, forgotten retro games, and everything in between. Do you believe that there’s value in the unknown?
 </description>
-    <lastBuildDate>Fri, 12 Jun 2020 20:54:56 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2020 06:30:01 +0000</lastBuildDate>
     <language>en</language>
     <generator>Jekyll-Octopod 0.9.23-obskyr</generator>
 
@@ -59,7 +59,6 @@
             <title>Episode 2: Mon Dieu, It's Jumping Flash 3!</title>
             <link>https://podcast.obskyr.io/episode-2-mon-dieu,-it's-jumping-flash-3!/</link>
             <atom:link rel="http://podlove.org/deep-link" href="https://podcast.obskyr.io/players/episode-2-mon-dieu,-it's-jumping-flash-3!"/>
-            <comments>https://podcast.obskyr.io/episode-2-mon-dieu,-it's-jumping-flash-3!/#disqus_thread</comments>
             <pubDate>Sat, 13 Jun 2020 00:00:00 +0900</pubDate>
             
             <guid isPermaLink="false">https://podcast.obskyr.io/episode-2-mon-dieu,-it's-jumping-flash-3!/</guid>
@@ -82,7 +81,7 @@
             <itunes:explicit>no</itunes:explicit>
             <itunes:duration>1:15:30</itunes:duration>
             <psc:chapters version="1.1" xmlns:psc="http://podlove.org/simple-chapters"><psc:chapter start="0:00:00.000" title="Opening" />
-              <psc:chapter start="0:02:21.308" title="Jumping Flash 1 & 2" />
+              <psc:chapter start="0:02:21.308" title="Jumping Flash 1 &amp; 2" />
               <psc:chapter start="0:15:36.468" title="MuuMuu rap time, baby!!!" />
               <psc:chapter start="0:23:58.498" title="Robbit Mon Dieu" />
               <psc:chapter start="0:34:08.329" title="Letters from Hanauma" />
@@ -93,7 +92,7 @@
               <psc:chapter start="1:10:04.226" title="Where are they now?" />
               <psc:chapter start="1:13:29.079" title="Ending" />
               
-            </psc:chapters><itunes:image href="https://podcast.obskyr.io/assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-cover.jpg" />
+            </psc:chapters><itunes:image href="/assets/episodes/episode-2-mon-dieu,-it's-jumping-flash-3!/robbit-mon-dieu-cover.jpg" />
               <image>
                 <title></title>
                 <url>https://podcast.obskyr.io/assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-cover.jpg</url>
@@ -102,7 +101,6 @@
             <title>Episode 1: The Post-Pokémon Gold Rush</title>
             <link>https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/</link>
             <atom:link rel="http://podlove.org/deep-link" href="https://podcast.obskyr.io/players/episode-1-the-post-pokémon-gold-rush"/>
-            <comments>https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/#disqus_thread</comments>
             <pubDate>Tue, 12 May 2020 00:00:00 +0900</pubDate>
             
             <guid isPermaLink="false">https://podcast.obskyr.io/episode-1-the-post-pok%C3%A9mon-gold-rush/</guid>
@@ -136,7 +134,7 @@
               <psc:chapter start="0:53:27.221" title="Kaseki Sōsei Reborn II: Monster Digger" />
               <psc:chapter start="0:59:24.040" title="Ending" />
               
-            </psc:chapters><itunes:image href="https://podcast.obskyr.io/assets/episodes/episode-1-the-post-pokémon-gold-rush/cover.jpg" />
+            </psc:chapters><itunes:image href="/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/cover.jpg" />
               <image>
                 <title></title>
                 <url>https://podcast.obskyr.io/assets/episodes/episode-1-the-post-pokémon-gold-rush/cover.jpg</url>
