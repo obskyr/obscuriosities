@@ -103,7 +103,7 @@ GEM
     minitest (5.14.1)
     moumar-wmainfo-rb (0.8)
     multi_json (1.14.1)
-    nokogiri (1.11.3)
+    nokogiri (1.11.5)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     pathutil (0.16.2)
