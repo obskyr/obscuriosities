@@ -1,8 +1,11 @@
-_site
+/_site/
+/_drafts/
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
 vendor
+/assets/episodes/episode-x*/
+/episodes/Episode X - *
 
 # macOS
 *.DS_Store
