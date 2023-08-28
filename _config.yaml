@@ -1,5 +1,6 @@
 title: Obscuriosities
-subtitle: The podcast about obscure video games.
+# This subtitle will be part of the title in podcast apps, after a colon.
+subtitle: The Depths of Video Game History
 description: >- # this means to ignore newlines until the next property
   The podcast about obscure video games. Well-kept Japanese-only secrets, forgotten retro games, and everything in between. Do you believe that there's value in the unknown?
 theme-color: '#191F42'

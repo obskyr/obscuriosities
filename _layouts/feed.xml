@@ -11,7 +11,7 @@ layout: null
      version="2.0">
 
   <channel>
-    <title>{{ site.title }}</title>
+    <title>{{ site.title }}{% unless site.subtitle == blank or site.subtitle == nil %}: {{ site.subtitle }}{% endunless %}</title>
     <link>{{ site.url }}{{ site.baseurl }}</link>
     <atom:link href="{{ site.url }}{{ site.baseurl }}/episodes.{{ page.format }}.rss{{page.myself}}" rel="self" type="application/rss+xml" title="{{ page.format }} Episode RSS-Feed"/>
     <atom:link href="{{ site.url }}{{ site.baseurl }}/episodes.{{ page.format }}.rss" rel="first" type="application/rss+xml" />
@@ -35,7 +35,7 @@ layout: null
     </itunes:owner>
     <managingEditor>{{site.email}} ({{site.author}})</managingEditor>
     <copyright>{{ site.license }}</copyright>
-    <itunes:subtitle>{{ site.subtitle }}</itunes:subtitle>
+    <!--<itunes:subtitle>{{ site.subtitle }}</itunes:subtitle>-->
     <itunes:keywords>{{ site.keywords | join:', ' }}</itunes:keywords>
     <image>
       <title>{{ site.title }}</title>
