@@ -29,7 +29,7 @@ layout: null
     <itunes:summary>{{ site.description | markdownify | strip_html }}</itunes:summary>
     <itunes:author>{{ site.author }}</itunes:author>
     <itunes:explicit>{{ site.explicit }}</itunes:explicit>
-    <itunes:image href="{{ site.url }}{{ site.baseurl }}/assets/images/logo/logo-itunes.png" />
+    <itunes:image href="{{ site.url }}{{ site.baseurl }}/assets/images/logo/logo-itunes.jpeg" />
     <itunes:owner>
       <itunes:name>{{ site.author }}</itunes:name>
       <itunes:email>{{ site.email }}</itunes:email>
@@ -40,7 +40,7 @@ layout: null
     <itunes:keywords>{{ site.keywords | join:', ' }}</itunes:keywords>
     <image>
       <title>{{ site.title }}</title>
-      <url>{{ site.url }}{{ site.baseurl }}/assets/images/logo/logo-itunes.png</url>
+      <url>{{ site.url }}{{ site.baseurl }}/assets/images/logo/logo-itunes.jpeg</url>
       <link>{{ site.url }}{{ site.baseurl }}</link>
     </image>
     {% for category in site.itunes_categories %}
