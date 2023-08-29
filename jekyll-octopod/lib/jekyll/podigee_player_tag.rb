@@ -27,9 +27,10 @@ module Jekyll
                    description: page["description"],
                    chaptermarks: page["chapters"] ? page["chapters"].map do |chapter|
                      parts = OctopodFilters::split_chapter(chapter)
+                     parts = parts ? parts : {}
                      # For some reason, chapters placed at 0 seconds don't work
                      # in the Podigee web player. Who knows?
-                     parts['start'] = "0:00:01.000" if parts['start'] === "0:00:00.000"
+                     parts['start'] = "0:00:01.000" if not parts.include? 'start' or parts['start'] === "0:00:00.000"
                      parts
                    end : nil
                  }

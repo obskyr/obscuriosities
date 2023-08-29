@@ -8,24 +8,30 @@
 # here. Mamma mia.
 
 Jekyll::Hooks.register [:pages, :posts], :pre_render do |post|
+    # Sass sourcemap files have a date with UTC, for some reason.
+    next if post.instance_of? Jekyll::SourceMapPage
+
     # Get date and timezone.
-    next unless post.data.key? "date"
     date = post.data["date"]
-    if post.data.key? "tz"
-      # Normalize timezone.
-      begin
-        m_tz = /^([-+])(\d\d):?(\d\d)$/.match(post.data["tz"])
-      rescue TypeError
-        raise "The \"tz\" field in #{post.path} must be a string!"
+    if not date.nil?
+      if post.data.key? "tz"
+        # Normalize timezone.
+        begin
+          m_tz = /^([-+])(\d\d):?(\d\d)$/.match(post.data["tz"])
+        rescue TypeError
+          raise "The \"tz\" field in #{post.path} must be a string!"
+        end
+        raise "Wrong timezone format in field \"tz\" in file #{post.path}" \
+          unless m_tz
+        tz = m_tz[1] + m_tz[2] + ":" + m_tz[3]
+      else
+        # The tz field is missing.
+        puts "WARNING: File #{post.path} has a date without " + \
+            "a \"tz\" in the front matter, using UTC."
+        tz = "+00:00"
       end
-      raise "Wrong timezone format in field \"tz\" in file #{post.path}" \
-        unless m_tz
-      tz = m_tz[1] + m_tz[2] + ":" + m_tz[3]
     else
-      # The tz field is missing.
-      puts "WARNING: File #{post.path} has a date without " + \
-           "a \"tz\" in the front matter, using UTC."
-      tz = "+00:00"
+      date = post.site.time
     end
     # Store the actual date.
     # I don't know if modifying post.date like this causes any trouble
