@@ -33,7 +33,7 @@ itunes_url: https://podcasts.apple.com/podcast/obscuriosities/id1513125957
 keywords: ['video games', games, technology, obscure]
 itunes_categories: [['Leisure', 'Video Games'], Technology, Education]
 language: en
-explicit: 'no'
+explicit: no
 episodes_per_feed_page: 100
 
 use_podtrac: yes
