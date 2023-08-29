@@ -27,11 +27,13 @@ chapters:
 - "3564.039798 Ending"
 ---
 
-Episode page: [{{ page.url | absolute_url }}]({{ page.url | absolute_url }})
-
 On this inaugural episode of Obscuriosities, we talk about mon games – games inspired to ride the coattails of Pokémon's creature-collecting craze. But of course, unlike a Digimon or a Monster Rancher… these games didn't make it big.
 
 Today, we explore *Kotobattle: Tengai no Moribito* (Game Boy Color), *Kanzume Monsters* (Game Boy), *Kanzume Monsters: Parfait* (Game Boy Color), *Kaseki Sōsei Reborn* (Game Boy), and *Kaseki Sōsei Reborn II: Monster Digger* (Game Boy Color).
+
+Episode page: [{{ page.url | absolute_url }}]({{ page.url | absolute_url }})
+
+Tags: {{ page.rich_tags | map: 'long_name_with_abbreviation' | join: ", " }}
 
 -----
 
