@@ -9,7 +9,7 @@ author: Obskyr
 image: episodes/episode-1-the-post-pokémon-gold-rush/cover.jpg
 tz: "+09:00"
 type: full # “full”, “trailer”, or “bonus”
-explicit: 'no'
+explicit: no
 duration: '1:01:56'
 audio:
   m4a: Episode 1 - The Post-Pokémon Gold Rush.m4a

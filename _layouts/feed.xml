@@ -75,7 +75,8 @@ layout: null
               <category><![CDATA[{{ category }}]]></category>
             {% endfor %}
             <guid isPermaLink="false">{{ site.url }}{{ site.baseurl }}{{ post.url }}</guid>
-            <description><![CDATA[{{ post.content | before_hr | expand_urls: site.url | cdata_escape | remove_script_and_audio }}]]></description>
+            <description><![CDATA[{{ post.content | before_hr | first_p | expand_urls: site.url | cdata_escape | remove_script_and_audio }}]]></description>
+            <content:encoded><![CDATA[{{ post.content | before_hr | expand_urls: site.url | cdata_escape | remove_script_and_audio }}]]></content:encoded>
             {% assign encoded_filename = post.audio[page.format] | uri_escape %}
             {% assign url = download_url | append: '/' | append: encoded_filename | possibly_with_podtrac %}
             {%- if post.filesize -%}

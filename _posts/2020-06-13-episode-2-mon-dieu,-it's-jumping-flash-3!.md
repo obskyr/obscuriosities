@@ -8,7 +8,7 @@ author: Obskyr
 image: episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-cover.jpg
 tz: "+09:00"
 type: full # “full”, “trailer”, or “bonus”
-explicit: 'no'
+explicit: no
 duration: '1:15:30'
 audio:
   m4a: Episode 2 - Mon Dieu, It's Jumping Flash 3-finished.m4a
