@@ -7,7 +7,8 @@ gem 'ruby-audioinfo', :require => 'audioinfo', :git => 'https://github.com/obsky
 gem 'jekyll-octopod', path: 'jekyll-octopod'
 
 group :jekyll_plugins do
-  gem "jekyll-sitemap"
-  gem "jekyll-paginate"
-  gem "jemoji"
+  gem 'jekyll-sitemap'
+  gem 'jekyll-paginate'
+  gem 'jemoji'
+  gem 'jekyll-tagging'
 end

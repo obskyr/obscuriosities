@@ -85,7 +85,7 @@ layout: null
                          length="{{ post.audio | audio:page.format | file_size }}" 
                          type="{{ page.format | mime_type }}" />
             {% endif %}
-            <itunes:keywords>{{ post.tags }}</itunes:keywords>
+            <itunes:keywords>{{ post.rich_tags | map: 'long_name_with_abbreviation' }}</itunes:keywords>
             <itunes:subtitle>{{ post.subtitle }}</itunes:subtitle>
             <itunes:summary>{{ post.summary }}</itunes:summary>
             <itunes:author>{{ post.author | otherwise:site.author }}</itunes:author>

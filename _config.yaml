@@ -21,6 +21,10 @@ social-github: obskyr/obscuriosities
 social-linkedin:
 social-email: obskyr@obskyr.io
 
+# jekyll-tagging settings.
+tag_page_layout: tag_post_list
+tag_page_dir: tags
+
 # Octopod settings. Why couldn't they have placed this in an object...
 author_url: "https://obskyr.io/"
 email: obskyr@obskyr.io
@@ -65,6 +69,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jemoji
+  - jekyll/tagging
 
 paginate: 8
 paginate_path: "/page/:num"

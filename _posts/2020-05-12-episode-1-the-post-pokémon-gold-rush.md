@@ -1,5 +1,8 @@
 ---
 title: 'Episode 1: The Post-Pokémon Gold Rush'
+tags:
+  - GBC
+  - GB
 layout: post
 author: Obskyr
 image: episodes/episode-1-the-post-pokémon-gold-rush/cover.jpg

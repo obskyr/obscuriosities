@@ -30,7 +30,7 @@ layout: null
     "content_text": {{ post.content | before_hr | strip_html | strip_newlines | jsonify }},
     "content_html": {{ post.content | before_hr | strip_newlines | jsonify }},
     "url": "{{ post.url | absolute_url }}",
-    {%- if post.tags.size > 0 -%}"tags": {{ post.tags | jsonify }}, {%- endif -%}
+    {%- if post.rich_tags.size > 0 -%}"tags": {{ post.rich_tags | map: 'long_name_with_abbreviation' | jsonify }}, {%- endif -%}
     {% if post.audio.size > 1 %}
     "attachments": [
       {"url": "{{ url }}",

@@ -1,0 +1,151 @@
+# These will be processed and expanded before being accessible under
+# site.data.rich_tags as an object, and under site.data.rich_tags_arr
+# as an array. For example, if you write:
+#
+# md:
+#   abbreviation: MD
+#   long_name: Mega Drive
+#   aliases:
+#     - SMD
+#     - Sega Mega Drive
+#     - Genesis
+#     - Sega Genesis
+#
+# That expands to a site.data.rich_tags of:
+# 
+# md:
+#   canonical_key: md
+#   abbreviation: MD
+#   long_name: Mega Drive
+#   long_name_with_abbreviation: Mega Drive (MD)
+# smd:
+#   canonical_key: md
+#   abbreviation: MD
+#   long_name: Mega Drive
+#   long_name_with_abbreviation: Mega Drive (MD)
+# sega mega drive:
+#   canonical_key: md
+#   abbreviation: MD
+#   long_name: Mega Drive
+#   long_name_with_abbreviation: Mega Drive (MD)
+# genesis:
+#   canonical_key: md
+#   abbreviation: MD
+#   long_name: Mega Drive
+#   long_name_with_abbreviation: Mega Drive (MD)
+# sega genesis:
+#   canonical_key: md
+#   abbreviation: MD
+#   long_name: Mega Drive
+#   long_name_with_abbreviation: Mega Drive (MD)
+
+3ds:
+  abbreviation: 3DS
+  long_name: Nintendo 3DS
+amiga:
+  long_name: Amiga
+  aliases:
+    - Commodore Amiga
+arcade:
+  long_name: Arcade
+atari 8-bit:
+  long_name: Atari 8-bit
+atari st:
+  long_name: Atari ST
+c64:
+  abbreviation: C64
+  long_name: Commodore 64
+dc:
+  abbreviation: DC
+  long_name: Dreamcast
+ds:
+  abbreviation: DS
+  long_name: Nintendo DS
+fds:
+  abbreviation: FDS
+  long_name: Famicom Disk System
+fm-7:
+  abbreviation: FM-7
+  long_name: Fujitsu FM-7
+fm towns:
+  long_name: FM Towns
+gb:
+  abbreviation: GB
+  long_name: Game Boy
+gbc:
+  abbreviation: GBC
+  long_name: Game Boy Color
+gba:
+  abbreviation: GBA
+  long_name: Game Boy Advance
+md:
+  abbreviation: MD
+  long_name: Mega Drive
+  aliases:
+    - SMD
+    - Sega Mega Drive
+    - Genesis
+    - Sega Genesis
+ms:
+  abbreviation: MS
+  long_name: Master System
+  aliases:
+    - SMS
+    - Sega Master System
+msx:
+  long_name: MSX
+msx 2:
+  long_name: MSX2
+nes:
+  abbreviation: NES
+  long_name: Nintendo Entertainment System
+  aliases:
+    - Famicom
+pc-6000:
+  long_name: PC-6000
+  aliases:
+    - PC-6001
+pc-88:
+  long_name: PC-88
+  aliases:
+    - PC-8801
+pc-98:
+  long_name: PC-98
+  aliases:
+    - PC-9801
+    - PC-9821
+ps1:
+  abbreviation: PS1
+  long_name: PlayStation 1
+ps2:
+  abbreviation: PS2
+  long_name: PlayStation 2
+ps3:
+  abbreviation: PS3
+  long_name: PlayStation 3
+ps4:
+  abbreviation: PS4
+  long_name: PlayStation 4
+ps5:
+  abbreviation: PS5
+  long_name: PlayStation 5
+sg-1000:
+  long_name: SG-1000
+snes:
+  abbreviation: SNES
+  long_name: Super Nintendo Entertainment System
+spectrum:
+  abbreviation: Spectrum
+  long_name: ZX Spectrum
+switch:
+  abbreviation: Switch
+  long_name: Nintendo Switch
+vb:
+  abbreviation: VB
+  long_name: Virtual Boy
+x1:
+  abbreviation: X1
+  long_name: Sharp X1
+x68000:
+  abbreviation: X68000
+  long_name: Sharp X68000

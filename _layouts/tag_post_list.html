@@ -1,0 +1,9 @@
+---
+layout: main
+---
+
+{% assign tag = page.tag | downcase %}
+{% assign tag = site.data.rich_tags | map: tag | first %}
+{% assign tag = tag.long_name %}
+<h2><a href="{{ site.baseurl }}/tags">⮪ Tags</a> Posts tagged “{{ tag }}”</h2>
+{% include post_list_page.html posts=page.posts %}
