@@ -34,8 +34,8 @@ layout: null
       <itunes:name>{{ site.author }}</itunes:name>
       <itunes:email>{{ site.email }}</itunes:email>
     </itunes:owner>
-    <managingEditor>{{site.email}} ({{site.author}})</managingEditor>
-    <copyright>{{ site.license }}</copyright>
+    <managingEditor>{{ site.email }} ({{ site.author }})</managingEditor>
+    <copyright>© 2020–{{ site.time | date: '%Y' }} {{site.author}}</copyright>
     <!--<itunes:subtitle>{{ site.subtitle }}</itunes:subtitle>-->
     <itunes:keywords>{{ site.keywords | join:', ' }}</itunes:keywords>
     <image>
@@ -63,18 +63,19 @@ layout: null
         {%- if check == page.page_number -%}
           <item>
             <title>{{ post.title }}{% if post.subtitle %} - {{ post.subtitle }}{% endif %}</title>
-            <link>{{ site.url }}{{ site.baseurl }}{{ post.url }}</link>
-            <atom:link rel="http://podlove.org/deep-link" href="{{ site.url }}{{ site.baseurl }}/players/{{ post.slug }}"/>
+            <link>{{ post.url | absolute_url }}</link>
+            {% if post.season and post.season != nil %}<itunes:season>{{ post.season }}</itunes:season>{% endif %}
+            {% if post.episode and post.episode != nil %}<itunes:episode>{{ post.episode }}</itunes:episode>{% endif %}
+            <atom:link rel="http://podlove.org/deep-link" href="{{ post.url | absolute_url }}#"/>
             {%- if site.disqus-identifier -%}
             <comments>{{ site.url }}{{ site.baseurl }}{{ post.url }}#disqus_thread</comments>
             {% endif %}
             <pubDate>{{ post.real-date | time_to_rssschema }}</pubDate>
             {% for category in post.categories %}
-            <category><![CDATA[{{ category }}]]></category>
+              <category><![CDATA[{{ category }}]]></category>
             {% endfor %}
             <guid isPermaLink="false">{{ site.url }}{{ site.baseurl }}{{ post.url }}</guid>
             <description><![CDATA[{{ post.content | before_hr | expand_urls: site.url | cdata_escape | remove_script_and_audio }}]]></description>
-            <content:encoded><![CDATA[{{ post.content | before_hr | expand_urls: site.url | cdata_escape | remove_script_and_audio }}]]></content:encoded>
             {% assign encoded_filename = post.audio[page.format] | uri_escape %}
             {% assign url = download_url | append: '/' | append: encoded_filename | possibly_with_podtrac %}
             {%- if post.filesize -%}
@@ -86,8 +87,6 @@ layout: null
                          length="{{ post.audio | audio:page.format | file_size }}" 
                          type="{{ page.format | mime_type }}" />
             {% endif %}
-            {% if post.season and post.season != nil %}<itunes:season>{{ post.season }}</itunes:season>{% endif %}
-            {% if post.episode and post.episode != nil %}<itunes:episode>{{ post.episode }}</itunes:episode>{% endif %}
             <itunes:episodeType>{% if post.type and post.type != nil %}{% assign type = post.type | downcase %}{% if type == 'full' or type == 'trailer' or type == 'bonus' %}{{ type }}{% else %}full{% endif %}{% else %}full{% endif %}</itunes:episodeType>
             <itunes:keywords>{{ post.rich_tags | map: 'long_name_with_abbreviation' }}</itunes:keywords>
             <itunes:subtitle>{{ post.subtitle }}</itunes:subtitle>
@@ -97,19 +96,19 @@ layout: null
             <itunes:duration>{{ post.duration }}</itunes:duration>
             {{ site | flattr_rss:post }}
             {%- if post.chapters -%}
-            <psc:chapters version="1.1" xmlns:psc="http://podlove.org/simple-chapters">
-              {%- for chapter in post.chapters -%}
-              <psc:chapter start="{{ chapter | split_chapter: 'start' | xml_escape }}" title="{{ chapter | split_chapter: 'title' | xml_escape }}" />
-              {% endfor %}
-            </psc:chapters>
+              <psc:chapters version="1.1" xmlns:psc="http://podlove.org/simple-chapters">
+                {%- for chapter in post.chapters -%}
+                  <psc:chapter start="{{ chapter | split_chapter: 'start' | xml_escape }}" title="{{ chapter | split_chapter: 'title' | xml_escape }}" />
+                {% endfor %}
+              </psc:chapters>
             {%- endif -%}
             {%- if post.contributors -%}
               {%- for contributor in post.contributors -%}
-              <atom:contributor>
-                <atom:name>{{ contributor.name}}</atom:name>
-                <atom:uri>{{ contributor.uri}}</atom:uri>
-                <atom:email>{{ contributor.email}}</atom:email>
-              </atom:contributor>
+                <atom:contributor>
+                  <atom:name>{{ contributor.name }}</atom:name>
+                  <atom:uri>{{ contributor.uri }}</atom:uri>
+                  <atom:email>{{ contributor.email }}</atom:email>
+                </atom:contributor>
               {%- endfor -%}
             {%- endif -%}
             {%- if post.image -%}
