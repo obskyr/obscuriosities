@@ -85,6 +85,9 @@ layout: null
                          length="{{ post.audio | audio:page.format | file_size }}" 
                          type="{{ page.format | mime_type }}" />
             {% endif %}
+            {% if post.season and post.season != nil %}<itunes:season>{{ post.season }}</itunes:season>{% endif %}
+            {% if post.episode and post.episode != nil %}<itunes:episode>{{ post.episode }}</itunes:episode>{% endif %}
+            <itunes:episodeType>{% if post.type and post.type != nil %}{% assign type = post.type | downcase %}{% if type == 'full' or type == 'trailer' or type == 'bonus' %}{{ type }}{% else %}full{% endif %}{% else %}full{% endif %}</itunes:episodeType>
             <itunes:keywords>{{ post.rich_tags | map: 'long_name_with_abbreviation' }}</itunes:keywords>
             <itunes:subtitle>{{ post.subtitle }}</itunes:subtitle>
             <itunes:summary>{{ post.summary }}</itunes:summary>

@@ -1,5 +1,6 @@
 ---
-title: 'Episode 1: The Post-Pokémon Gold Rush'
+title: 'The Post-Pokémon Gold Rush'
+episode: 1
 tags:
   - GBC
   - GB
@@ -7,6 +8,7 @@ layout: post
 author: Obskyr
 image: episodes/episode-1-the-post-pokémon-gold-rush/cover.jpg
 tz: "+09:00"
+type: full # “full”, “trailer”, or “bonus”
 explicit: 'no'
 duration: '1:01:56'
 audio:

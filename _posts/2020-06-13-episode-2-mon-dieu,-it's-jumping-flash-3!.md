@@ -1,11 +1,13 @@
 ---
-title: "Episode 2: Mon Dieu, It's Jumping Flash 3!"
+title: "Mon Dieu, It's Jumping Flash 3!"
+episode: 2
 tags:
     - PS1
 layout: post
 author: Obskyr
 image: episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-cover.jpg
 tz: "+09:00"
+type: full # “full”, “trailer”, or “bonus”
 explicit: 'no'
 duration: '1:15:30'
 audio:
