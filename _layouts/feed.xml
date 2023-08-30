@@ -35,7 +35,7 @@ layout: null
       <itunes:email>{{ site.email }}</itunes:email>
     </itunes:owner>
     <managingEditor>{{ site.email }} ({{ site.author }})</managingEditor>
-    <copyright>© 2020–{{ site.time | date: '%Y' }} {{site.author}}</copyright>
+    <copyright>© 2020 – {{ site.time | date: '%Y' }} {{site.author}}</copyright>
     <!--<itunes:subtitle>{{ site.subtitle }}</itunes:subtitle>-->
     <itunes:keywords>{{ site.keywords | join:', ' }}</itunes:keywords>
     <image>
@@ -44,13 +44,13 @@ layout: null
       <link>{{ site.url }}{{ site.baseurl }}</link>
     </image>
     {% for category in site.itunes_categories %}
-    {% if category.first %}
-    <itunes:category text="{{ category[0] | xml_escape }}">
-      <itunes:category text="{{ category[1] | xml_escape }}" />
-    </itunes:category>
-    {% else %}
-    <itunes:category text="{{ category | xml_escape }}" />
-    {% endif %}
+      {% if category.first %}
+        <itunes:category text="{{ category[0] | xml_escape }}">
+          <itunes:category text="{{ category[1] | xml_escape }}" />
+        </itunes:category>
+      {% else %}
+        <itunes:category text="{{ category | xml_escape }}" />
+      {% endif %}
     {% endfor %}
     {%- if site.download_url == "" or site.download_url == nil -%}
       {% assign download_url = '/episodes' | absolute_url %}
@@ -75,8 +75,9 @@ layout: null
               <category><![CDATA[{{ category }}]]></category>
             {% endfor %}
             <guid isPermaLink="false">{{ site.url }}{{ site.baseurl }}{{ post.url }}</guid>
-            <description><![CDATA[{{ post.content | before_hr | first_p | expand_urls: site.url | cdata_escape | remove_script_and_audio }}]]></description>
-            <content:encoded><![CDATA[{{ post.content | before_hr | expand_urls: site.url | cdata_escape | remove_script_and_audio }}]]></content:encoded>
+            <description>{{ post.content | before_hr | first_p | expand_urls: site.url | remove_script_and_audio | strip_html }}</description>
+            <itunes:summary>{{ post.content | before_hr | first_p | expand_urls: site.url | remove_script_and_audio | strip_html }}</itunes:summary>
+            <content:encoded><![CDATA[ {{ post.content | before_hr | expand_urls: site.url | cdata_escape | remove_script_and_audio }} ]]></content:encoded>
             {% assign encoded_filename = post.audio[page.format] | uri_escape %}
             {% assign url = download_url | append: '/' | append: encoded_filename | possibly_with_podtrac %}
             {%- if post.filesize -%}
@@ -113,7 +114,7 @@ layout: null
               {%- endfor -%}
             {%- endif -%}
             {%- if post.image -%}
-              <itunes:image href="{{ '/assets/' | append: post.image | relative_url | xml_escape }}" />
+              <itunes:image href="{{ '/assets/' | append: post.image | absolute_url | uri_escape }}" />
               <image>
                 <title>{{ post.image_title }}</title>
                 <url>{{ site.url }}{{ site.baseurl }}/assets/{{post.image}}</url>
