@@ -45,7 +45,22 @@
     }
 
     footer {
-      margin-bottom: 10px;
+      display: none;
+    }
+  }
+  .footer {
+    display: block;
+    padding: 10px 0;
+    background-color: $white;
+    footer {
+      display: block;
+
+      ul {
+        margin-top: 0;
+      }
+      .copyright {
+        display: initial;
+      }
     }
   }
   .about {
@@ -53,15 +68,23 @@
     max-width: 480px;
     margin: 10px auto auto;
     .cover-image {
-      width: 100px;
-      height: 100px;
-      margin-bottom: 10px;
-    }
-    img {
-      width: 100px;
-      height: 100px;
+      position: relative;
+      left: -20px;
+      width: calc(100% + 40px);
+      height: auto;
+      margin-bottom: 0;
+      img.square {
+        display: none;
+      }
+      img.banner {
+        display: initial;
+      }
+      &::after {
+        display: none;
+      }
     }
     .site-title {
+      display: none;
       padding-bottom: 0;
       &::after {
         display: none;

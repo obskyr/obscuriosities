@@ -49,13 +49,16 @@
       background-color: $white;
     }
   }
-  img {
+  img.square {
     width: 100%;
     height: 100%;
     transition: transform 0.35s;
     &:hover {
       transform: scale3d(0.90,0.90,1);
     }
+  }
+  img.banner {
+    display: none;
   }
   .site-title {
     font-family: 'Jost', sans-serif;
@@ -81,6 +84,10 @@
     font-size: 16px;
     margin: 0 0 10px;
   }
+}
+.footer {
+  /* Only for mobile. */
+  display: none;
 }
 .content-box {
   padding: 20px;
@@ -166,6 +173,10 @@ footer {
     font-size: 14px;
     text-align: center;
     margin: 0;
+    p {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
   }
 }
 
