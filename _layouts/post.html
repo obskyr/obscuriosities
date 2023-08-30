@@ -17,7 +17,18 @@ layout: main
     <div class="wrap-content">
       <header class="header-page">
         <h1 class="page-title">{{page.title}}</h1>
-        <div class="page-date"><span>{% include date.html date=page.real-date %}&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div class="page-date">
+          <span>
+          {% include date.html date=page.real-date -%}
+          {%- if page.episode and page.episode != blank %}
+              – Episode {{ page.episode -}}
+              {%- assign type = page.type | downcase -%}
+              {%- if type and type != blank and type != "full" %}
+                  {{ type }}
+              {%- endif -%}
+          {%- endif %}
+          </span>
+        </div>
       </header>
       {% if page.audio or page.download_url %}{{content | after_hr}}{% else %}{{content}}{% endif %}
       <div class="page-footer">
