@@ -1,17 +1,12 @@
 GIT
-  remote: https://github.com/arbarlow/ruby-mp4info.git
-  revision: ba04292683188b5f1020aba164eb951e3a835044
+  remote: https://github.com/moumar/ruby-audioinfo.git
+  revision: 92cda5209e266342d7a08532d1322cd73ff640e8
   specs:
-    mp4info (1.7.3)
-
-GIT
-  remote: https://github.com/obskyr/ruby-audioinfo.git
-  revision: 901c55e738a4ac17be5e3d7abcb15760297d85a8
-  specs:
-    ruby-audioinfo (0.5.3)
+    ruby-audioinfo (0.5.5)
       apetag (>= 1.1.4)
       flacinfo-rb (>= 0.4)
       moumar-wmainfo-rb (>= 0.7)
+      mp4info (>= 1.7.3)
       ruby-mp3info (>= 0.8)
       ruby-ogginfo (>= 0.6.13)
       wavefile (~> 0.6.0)
@@ -103,6 +98,7 @@ GEM
     mercenary (0.4.0)
     minitest (5.19.0)
     moumar-wmainfo-rb (0.8)
+    mp4info (1.7.3)
     multi_json (1.15.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
@@ -159,7 +155,6 @@ DEPENDENCIES
   jekyll-sitemap
   jekyll-tagging
   jemoji
-  mp4info!
   ruby-audioinfo!
 
 BUNDLED WITH
