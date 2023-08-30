@@ -77,8 +77,25 @@ layout: null
               <category><![CDATA[{{ category }}]]></category>
             {% endfor %}
             <guid isPermaLink="false">{{ site.url }}{{ site.baseurl }}{{ post.url }}</guid>
-            <description>{{ post.content | before_hr | first_p | expand_urls: site.url | remove_script_and_audio | strip_html }}</description>
-            <content:encoded><![CDATA[ {{ post.content | before_hr | expand_urls: site.url | cdata_escape | remove_script_and_audio }} ]]></content:encoded>
+            {% capture notes_footer %}
+              {% comment %}
+                Spotify has an annoying quirk: In show notes, it auto-links URLs…
+                *even if they're already a link*. This would be fine, if not for the
+                fact that it also detects URLs improperly, and for example replaces
+                apostrophes (') with directional apostrophes (’) and stops the URL
+                upon encountering an exclamation mark. So for links containing apostrophes
+                or exclamation marks to work in the show notes on Spotify, we've
+                got to take matters into our own hands. (There may be other punctuation
+                that breaks links in Spotify show notes, but if so, I've yet to find them.
+                Commas work just fine, and I presume periods do as well.)
+              {% endcomment -%}
+              {% assign url = post.url | absolute_url | uri_encode | replace: "'", "%27" | replace: "!", "%21" -%}
+              <p>Episode page: <a href="{{ url }}">{{ url }}</a></p>
+              <p>Tags: {{ post.rich_tags | map: 'long_name_with_abbreviation' | join: ", " }}</p>
+            {% endcapture -%}
+            <description><![CDATA[ {{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | strip_newlines_between_paragraphs }} ]]></description>
+            <itunes:summary><![CDATA[ {{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | format_for_apple_podcasts }} ]]></itunes:summary>
+            <content:encoded><![CDATA[ {{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | strip_newlines_between_paragraphs }} ]]></content:encoded>
             {% assign encoded_filename = post.audio[page.format] | uri_escape %}
             {% assign url = download_url | append: '/' | append: encoded_filename | possibly_with_podtrac %}
             {%- if post.filesize -%}
