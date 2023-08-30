@@ -8,6 +8,7 @@ module Jekyll
       site.config["episode_feed_formats"].each do |page_format|
         name = "episodes." + page_format + ".rss"
         page = PagedFeedPage.new(site, site.source, ".", name, 1, pages_total, page_format)
+        site.pages.reject! { |existing_page| existing_page.relative_path == page.relative_path }
         site.pages << page
         (1..pages_total).each do |page_number|
           name = "episodes" + page_number.to_s + "." + page_format + ".rss"
