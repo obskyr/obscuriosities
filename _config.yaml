@@ -7,6 +7,7 @@ theme-color: '#191F42'
 permalink: ':title/'
 url: "https://podcast.obskyr.io" # Don't include the base path here!
 baseurl: "" # the subpath of your site, e.g. /blog
+copyright-start-year: 2020
 site-twitter: # if your site has a twitter account, enter it here
 
 # Author settings

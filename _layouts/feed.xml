@@ -35,7 +35,9 @@ layout: null
       <itunes:email>{{ site.email }}</itunes:email>
     </itunes:owner>
     <managingEditor>{{ site.email }} ({{ site.author }})</managingEditor>
-    <copyright>© 2020 – {{ site.time | date: '%Y' }} {{site.author}}</copyright>
+    {% assign copyright_start_year = site.copyright-start-year | append: "" -%}
+    {% assign current_year = site.time | date: '%Y' -%}
+    <copyright>© {% if copyright_start_year != current_year %}{{ copyright_start_year }} – {% endif %}{{ current_year }} {{site.author}}</copyright>
     <!--<itunes:subtitle>{{ site.subtitle }}</itunes:subtitle>-->
     <itunes:keywords>{{ site.keywords | join:', ' }}</itunes:keywords>
     <image>
