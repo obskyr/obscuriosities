@@ -76,7 +76,6 @@ layout: null
             {% endfor %}
             <guid isPermaLink="false">{{ site.url }}{{ site.baseurl }}{{ post.url }}</guid>
             <description>{{ post.content | before_hr | first_p | expand_urls: site.url | remove_script_and_audio | strip_html }}</description>
-            <itunes:summary>{{ post.content | before_hr | first_p | expand_urls: site.url | remove_script_and_audio | strip_html }}</itunes:summary>
             <content:encoded><![CDATA[ {{ post.content | before_hr | expand_urls: site.url | cdata_escape | remove_script_and_audio }} ]]></content:encoded>
             {% assign encoded_filename = post.audio[page.format] | uri_escape %}
             {% assign url = download_url | append: '/' | append: encoded_filename | possibly_with_podtrac %}
