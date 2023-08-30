@@ -93,9 +93,58 @@ layout: null
               <p>Episode page: <a href="{{ url }}">{{ url }}</a></p>
               <p>Tags: {{ post.rich_tags | map: 'long_name_with_abbreviation' | join: ", " }}</p>
             {% endcapture -%}
-            <description><![CDATA[ {{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | strip_newlines_between_paragraphs }} ]]></description>
-            <itunes:summary><![CDATA[ {{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | format_for_apple_podcasts }} ]]></itunes:summary>
-            <content:encoded><![CDATA[ {{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | strip_newlines_between_paragraphs }} ]]></content:encoded>
+            {% comment %}
+              After hours upon hours of reverse engineering, I've figured out the
+              practical situation for episode descriptions as of 2023-08-30.
+              My findings are as following:
+
+              • Apple Podcasts first prioritizes <itunes:summary>, and goes for
+                <description> if that is not present.
+              • Apple Podcasts will entirely discard your description if it contains
+                any HTML tags that are not <p>, <ul>, <ol>, <li>, or <a>. That
+                includes <em>. (There may be other tags that are secretly allowed,
+                but if so, I haven't found them.)
+              • Apple Podcasts preserves <p>s and turns newlines into <br>.
+                There is no space between paragraphs.
+                (Thus, in order to create what looks like two linebreaks,
+                you must have exactly one newline between <p> elements.)
+              • Apple Podcasts replaces (runs of?) newlines and paragraph
+                breaks with spaces only in the episode list.
+              • Spotify uses <description> in episode lists everywhere, and on
+                episode pages on the mobile site. It replaces (runs of?)
+                newlines with spaces, and ignores paragraph tags.
+                Whether it uses a different tag if <description> is not present,
+                I have not found out.
+              • Spotify uses <content:encoded> on episode pages in the app and
+                on the desktop website, and simply strips out most HTML.
+                Whether it uses a different tag if <content:encoded> is not present,
+                I have not found out.
+              • On episode pages on the desktop website, Spotify preserves <p>s
+                and turns newlines into <br>s. There is one line of space
+                between paragraphs. The app will always have a reasonable
+                amount of newlines, and even keeps <a> elements.
+                (Not sure whether the web interface allows <a> elements.)
+              • Pocket Casts uses <content:encoded>, and allows most(?) HTML.
+                Whether it uses a different tag if <content:encoded> is not present,
+                I have not found out.
+              
+              This means that:
+
+              • You need to have zero newlines between paragraphs in
+                <content:encoded> to accommodate Spotify.
+              • You need to have exactly one newline between paragraphs in
+                <itunes:summary> to accommodate Apple Podcasts.
+              • <description> should be written to look good even if paragraphs
+                are joined with a space into a single paragraph. (Thus, I don't
+                append the episode page link and tags to the end of <description>
+                here, as I haven't found a case where tags in <description>
+                help discoverability or where the episode page link won't
+                be accessible elsewhere. Such a case may exist in a different
+                podcast app, however. Worth keeping an eye out for.)
+            {% endcomment -%}
+            <description><![CDATA[{{ post.content | before_hr | expand_urls: site.url | cdata_escape | remove_script_and_audio | newlines_between_paragraphs: 1 }}]]></description>
+            <itunes:summary><![CDATA[{{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | format_for_apple_podcasts }}]]></itunes:summary>
+            <content:encoded><![CDATA[{{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | newlines_between_paragraphs: 0 }}]]></content:encoded>
             {% assign encoded_filename = post.audio[page.format] | uri_escape %}
             {% assign url = download_url | append: '/' | append: encoded_filename | possibly_with_podtrac %}
             {%- if post.filesize -%}

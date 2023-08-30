@@ -21,7 +21,7 @@ module Jekyll
 
     # Replaces relative urls with full urls
     #
-    #   {{ "about.html" | expand_urls }}             => "/about.html"
+    #   {{ "about.html" | expand_urls }}           => "/about.html"
     #   {{ "about.html" | expand_urls:site.url }}  => "http://example.com/about.html"
     def expand_urls(input, url='')
       url ||= '/'
@@ -39,15 +39,15 @@ module Jekyll
     # HTML tags are present, it'll simply *not show your description.*
     def format_for_apple_podcasts(s)
       s = s.gsub(/<\s*(?<tag>[A-Za-z]+)\b[^>]*>|<\s*\/\s*(?<tag>[A-Za-z]+)\s*>/) { |tag| ['p', 'ol', 'ul', 'li', 'a'].include?(Regexp.last_match['tag'].downcase) ? tag : "" }
-      s = strip_newlines_between_paragraphs(s)
+      s = newlines_between_paragraphs(s, 1)
       s
     end
 
-    # Both Apple Podcasts and Spotify strip HTML in the show notes  in a way
+    # Both Apple Podcasts and Spotify strip HTML in the show notes in a way
     # that turns "</p>\n\n<p>" into the equivalent of *three* linebreaks,
     # as opposed to just two. This fixes that.
-    def strip_newlines_between_paragraphs(s)
-      s.gsub(/<\s*\/p\s*>\n\n/i, "</p>\n")
+    def newlines_between_paragraphs(s, num_newlines)
+      s.gsub(/<\s*\/p\s*>\s*/i, "</p>#{"\n" * num_newlines}")
     end
 
     # Formats a Time to be RSS compatible like "Wed, 15 Jun 2005 19:00:00 GMT"
