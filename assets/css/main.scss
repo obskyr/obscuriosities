@@ -158,14 +158,9 @@ table tfoot td {
   }
 }
 
-::-moz-selection {
+::-moz-selection, ::selection {
   background: $selection-background;
-  color: $content-text-color;
-}
-
-::selection {
-  background: $selection-background;
-  color: $content-text-color;
+  color: auto;
 }
 
 .clearfix::before, .clearfix::after {
