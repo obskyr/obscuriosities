@@ -1,21 +1,22 @@
 title: Obscuriosities
 # This subtitle will be part of the title in podcast apps, after a colon.
 subtitle: The Depths of Video Game History
-description: >- # this means to ignore newlines until the next property
-  The podcast about obscure video games. Well-kept Japanese-only secrets, forgotten retro games, and everything in between. Do you believe in the value of the unknown?
+frontpage-blurb-heading: Do you believe in the value of the unknown?
+frontpage-blurb: <em>Obscuriosities</em> is a journey through the farthest reaches of video game history with Japanese translator Samuel “Obskyr” Messner.
+description: >-
+  The podcast about obscure video games. Journey to the farthest reaches of video game history – well-kept Japanese-only secrets, forgotten retro games, and everything in between – with Japanese translator and video game preservationist Samuel “Obskyr” Messner. Do you believe in the value of the unknown?
 theme-color: '#191F42'
 permalink: ':title/'
 url: "https://podcast.obskyr.io" # Don't include the base path here!
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "" # The subpath of your site, e.g. "/blog".
 copyright-start-year: 2020
-site-twitter: # if your site has a twitter account, enter it here
+site-twitter: # If the website itself has a Twitter account.
 
 # Author settings
 author: Obskyr
 author-img: logo/logo.png
 card-image: logo/card.png
-about-author: >-
-  The podcast about obscure video games. Well-kept Japanese-only secrets, forgotten retro games, and everything in between.<br>Do you believe in the value of the unknown?
+about-author:
 social-twitter: obskyr
 social-facebook:
 # social-github: obskyr/obscuriosities
