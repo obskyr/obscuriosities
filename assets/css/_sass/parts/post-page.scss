@@ -1,6 +1,7 @@
 .article-cover {
   position: relative;
   height: 300px;
+  -webkit-mask-image: linear-gradient(to bottom, white, transparent);
   mask-image: linear-gradient(to bottom, white, transparent);
   
   &::before {
