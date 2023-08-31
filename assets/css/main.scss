@@ -25,6 +25,7 @@ body {
 
 body::before {
   content: '';
+  z-index: -100;
   position: fixed;
   left: 0;
   top: 0;
@@ -139,7 +140,7 @@ table tfoot td {
 .wrapper {
   display: inline-block;
   position: relative;
-  width: 1250px;
+  width: 960px + 20px * 2;
   max-width: 100%;
 }
 
