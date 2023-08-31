@@ -16,7 +16,7 @@ html {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  color: $text-color;
+  color: $background-text-color;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -46,7 +46,7 @@ a {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   font-family: 'Jost', sans-serif;
-  color: $heading-color;
+  color: $background-heading-color;
 }
 
 h1 {
@@ -69,11 +69,11 @@ img + em {
 }
 
 blockquote {
-  border-left: 5px solid $text-color;
+  border-left: 5px solid $content-text-color;
   padding-left: 1.1rem;
   margin-left: 1rem;
   font-style: italic;
-  color: $text-color;
+  color: $content-text-color;
 }
 
 pre {
@@ -119,7 +119,7 @@ table thead {
 table thead th {
   font-size: 14px;
   font-weight: bold;
-  color: $text-color;
+  color: $content-text-color;
   border-left: 1px solid #d0e4f5;
 }
 table thead th:first-child {
@@ -129,7 +129,7 @@ table thead th:first-child {
 table tfoot {
   font-size: 14px;
   font-weight: bold;
-  color: $text-color;
+  color: $content-text-color;
   background: #d0e4f5;
   background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
   border-top: 2px solid #444;
@@ -150,16 +150,21 @@ table tfoot td {
 .post, .article-page {
   @include card;
   width: 100%;
+  color: $content-text-color;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $content-heading-color;
+  }
 }
 
 ::-moz-selection {
   background: $selection-background;
-  color: $text-color;
+  color: $content-text-color;
 }
 
 ::selection {
   background: $selection-background;
-  color: $text-color;
+  color: $content-text-color;
 }
 
 .clearfix::before, .clearfix::after {

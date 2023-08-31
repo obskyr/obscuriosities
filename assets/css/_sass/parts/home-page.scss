@@ -50,38 +50,42 @@ header.navbar {
   }
 }
 
-.showcase {
-  display: flex;
+.showcase-container {
   position: relative;
   left: calc((100% - 1100px) / 2);
+  width: 1100px;
+  flex-shrink: 0;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    margin-bottom: 0;
+    line-height: 1.4;
+    font-size: 1.5em;
+  }
+
+  h1.episodes-heading {
+    margin-bottom: 1em;
+  }
+}
+
+.showcase {
+  display: flex;
   margin-bottom: 3.5rem;
-  flex-basis: 1100px;
+  flex-basis: 100%;
   flex-shrink: 0;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  
-
   .blurb {
     margin-right: 2.5em;
-    h1, h2, h3, h4, h5, h6, p {
-      color: white;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      margin: 0;
-    }
-
-    h1 {
-      font-size: 2em;
-    }
-
-    p {
-      margin-bottom: 0;
-      line-height: 1.4;
-      font-size: 1.5em;
-    }
   }
 
   .cover {
@@ -110,13 +114,12 @@ header.navbar {
   & > h1, & > h2, & > h3, & > h4, & > h5, & > h6 {
     margin-top: 0;
     margin-bottom: 1rem;
-    color: $heading-color;
 
     a {
       opacity: 0.333;
       font-weight: normal;
       text-decoration: none;
-      color: $text-color;
+      color: inherit;
       transition: opacity 0.2s;
       &:hover {
         opacity: 1;
@@ -215,7 +218,7 @@ footer.website-footer {
       a {
         font-family: 'Jost', sans-serif;
         text-decoration: none;
-        color: $heading-color;
+        color: $content-heading-color;
       }
     }
     p {
@@ -234,7 +237,7 @@ footer.website-footer {
 a.older-posts, a.newer-posts {
   font-size: 18px;
   display: inline-block;
-  color: $text-color;
+  color: $content-text-color;
   transition: transform .2s;
 }
 

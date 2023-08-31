@@ -1,12 +1,19 @@
 @media only screen and (max-width : 1300px) {
-  .showcase {
+  .showcase-container {
     left: 0;
-    flex-basis: 100%;
+    width: 100%;
   }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+  .showcase-container {
+    .episodes-heading {
+      margin-left: 0.9%;
+      margin-right: 0.9%;
+    }
+  }
+
   .showcase {
     .cover {
       height: 300px;
@@ -107,6 +114,16 @@
     padding-bottom: 0;
   }
 
+  .showcase-container {
+    h1 {
+      font-size: 1.5em;
+    }
+
+    p {
+      font-size: 1.25em;
+    }
+  }
+
   .showcase {
     flex-direction: column-reverse;
 
@@ -120,14 +137,6 @@
       margin: 0;
       margin-top: 1.5em;
       width: 80%;
-
-      h1 {
-        font-size: 1.5em;
-      }
-
-      p {
-        font-size: 1.25em;
-      }
     }
   }
 
@@ -166,6 +175,21 @@
     padding: 10px;
   }
 
+  .showcase-container {
+    h1 {
+      font-size: 1.5em;
+    }
+
+    p {
+      font-size: 1.25em;
+    }
+
+    .episodes-heading {
+      margin-left: 2%;
+      margin-right: 2%;
+    }
+  }
+
   .showcase {
     padding: 0 2.5rem;
 
@@ -176,14 +200,6 @@
     .blurb {
       margin-top: 1.5em;
       width: 100%;
-
-      h1 {
-        font-size: 1.5em;
-      }
-
-      p {
-        font-size: 1.25em;
-      }
     }
   }
 
