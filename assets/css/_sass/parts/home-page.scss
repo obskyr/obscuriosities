@@ -43,10 +43,10 @@ header.navbar {
   }
 }
 .buttons {
+  font-size: 0;
   a {
     display: inline-block;
     margin: 2px 4px;
-    font-size: 0;
   }
 }
 
@@ -168,6 +168,10 @@ footer.website-footer {
 
   .contact {
     display: none;
+    margin-bottom: 10px;
+    ul li a {
+      background: none;
+    }
   }
 
   .copyright {
