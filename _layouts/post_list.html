@@ -1,6 +1,21 @@
 ---
 layout: main
 ---
+
+{% unless paginator.previous_page %}
+    <div class="showcase">
+        <div class="blurb">
+            <h1>Do you believe in the value of the unknown?</h1>
+            <p>
+                <em>Obscuriosities</em> is a journey through the farthest reaches of video game history with Japanese translator Samuel “Obskyr” Messner.
+            </p>
+        </div>
+        <div class="cover">
+            <img src="{{ site.baseurl }}/assets/images/logo/logo-itunes.jpeg">
+        </div>
+    </div>
+{% endunless %}
+
 {% include post_list_page.html posts=paginator.posts %}
 
 {% include pagination.html %}

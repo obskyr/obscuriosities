@@ -44,6 +44,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
   font-family: 'Jost', sans-serif;
   color: $heading-color;
 }
@@ -138,8 +139,10 @@ table tfoot td {
 }
 
 .wrapper {
-  display: inline-block;
+  display: block;
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   width: 960px + 20px * 2;
   max-width: 100%;
 }
