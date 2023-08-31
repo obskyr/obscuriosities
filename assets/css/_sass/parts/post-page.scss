@@ -1,5 +1,36 @@
+.article-cover {
+  position: relative;
+  height: 300px;
+  mask-image: linear-gradient(to bottom, white, transparent);
+  
+  &::before {
+    content: '';
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    background: var(--cover);
+    background-position: center;
+    background-size: cover;
+    
+    // $blur: 5px;
+    // left: -$blur;
+    // top: -$blur;
+    // width: calc(100% + $blur + $blur);
+    // height: calc(100% + $blur + $blur);
+    // filter: blur($blur);
+  }
+
+  & + * {
+    margin-top: -150px;
+  }
+}
+
 .wrap-content {
+  position: relative;
   padding: 3rem 6rem;
+  z-index: 1;
   h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5rem;
   }
@@ -100,6 +131,8 @@
 }
 
 .article-page {
+  overflow: hidden;
+
   p > img, .images img {
     cursor: pointer;
   }
