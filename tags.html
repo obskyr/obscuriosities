@@ -1,14 +1,12 @@
 ---
-layout: main
+layout: post
 title: Tags
 permalink: /tags/
+no_footer: true
 ---
 
-<section class="blog-tags">
-  <h1>Tags</h1>
-  <ul class="tags">
-  {% for tag in site.data.rich_tags_arr %}
-    <li ><a href="{{ tag.slug }}" class="tag">{{ tag.long_name }} <span>({{ site.tags[tag.canonical_key].size }})</span></a></li>
-  {% endfor %}
-  </ul>
-</section>
+<ul class="tags">
+{% for tag in site.data.rich_tags_arr %}
+  <li ><a href="{{ tag.slug }}" class="tag">{{ tag.long_name }} <span>({{ site.tags[tag.canonical_key].size }})</span></a></li>
+{% endfor %}
+</ul>

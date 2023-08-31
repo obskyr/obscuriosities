@@ -1,6 +1,7 @@
 ---
 ---
 @import 'variables';
+@import 'mixins';
 @import 'normalize';
 @import 'syntax';
 
@@ -10,11 +11,12 @@
 
 html {
   line-height: 1.5;
+  font-size: 15.5px;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
-  color: $body-color;
+  color: $text-color;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,7 +30,7 @@ body::before {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, $background-color 0, $background-gradient-to 100%);
+  background: $background;
 }
 
 body > * {
@@ -36,12 +38,13 @@ body > * {
 }
 
 a {
-  color: #FD38B0;
+  color: $link-color;
   text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Jost', sans-serif;
+  color: $heading-color;
 }
 
 h1 {
@@ -64,11 +67,11 @@ img + em {
 }
 
 blockquote {
-  border-left: 5px solid $body-color;
+  border-left: 5px solid $text-color;
   padding-left: 1.1rem;
   margin-left: 1rem;
   font-style: italic;
-  color: $lighter-color;
+  color: $text-color;
 }
 
 pre {
@@ -114,7 +117,7 @@ table thead {
 table thead th {
   font-size: 14px;
   font-weight: bold;
-  color: $white;
+  color: $text-color;
   border-left: 1px solid #d0e4f5;
 }
 table thead th:first-child {
@@ -124,7 +127,7 @@ table thead th:first-child {
 table tfoot {
   font-size: 14px;
   font-weight: bold;
-  color: $white;
+  color: $text-color;
   background: #d0e4f5;
   background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
   border-top: 2px solid #444;
@@ -141,18 +144,18 @@ table tfoot td {
 }
 
 .post, .article-page {
+  @include card;
   width: 100%;
-  background-color: $white;
 }
 
 ::-moz-selection {
-  background: $background-color; // rgba(38, 57, 89, 0.8);
-  color: $white;
+  background: $selection-background;
+  color: $text-color;
 }
 
 ::selection {
-  background: $background-color; // rgba(38, 57, 89, 0.8);
-  color: $white;
+  background: $selection-background;
+  color: $text-color;
 }
 
 .clearfix::before, .clearfix::after {
