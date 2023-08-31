@@ -40,98 +40,67 @@ chapters:
 
 ## Screenshots
 
-<div class="images">
-    <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-cover.jpg' | relative_url }}">
-</div>
+:: width [1]
 
-<div class="images captiony three-wide">
-    <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-1.png' | relative_url }}">
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-cover.jpg' | relative_url }})
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-2.png' | relative_url }}">
-        <div class="caption">The game opens with a pre-rendered cutscenes of various citizens of Hanauma looking up at Universal City Hall.</div>
-    </div>
+:: width [3]
 
-    <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-3.png' | relative_url }}">
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-1.png' | relative_url }})
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-4.png' | relative_url }}">
-        <div class="caption">The map from which you select which mission to play is a tourist map!</div>
-    </div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-2.png' | relative_url }})
+The game opens with a pre-rendered cutscene of various citizens of Hanauma looking up at Universal City Hall.
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-5.png' | relative_url }}">
-        <div class="caption">Though the environments often aren't too intense in their art direction, the game looks quite beautiful at times. </div>
-    </div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-3.png' | relative_url }})
 
-    <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-7.png' | relative_url }}">
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-4.png' | relative_url }})
+The map from which you select which mission to play is a tourist map!
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-8.png' | relative_url }}">
-        <div class="caption">Before and after each mission, you get a fully voice-acted cutscene, packed full of character!</div>
-    </div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-5.png' | relative_url }})
+Though the environments often aren't too intense in their art direction, the game looks quite beautiful at times. 
 
-    <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-9.png' | relative_url }}">
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-7.png' | relative_url }})
 
-    <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-10.png' | relative_url }}">
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-8.png' | relative_url }})
+Before and after each mission, you get a fully voice-acted cutscene, packed full of character!
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-11.png' | relative_url }}">
-        <div class="caption">The MuuMuus return!</div>
-    </div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-9.png' | relative_url }})
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-12.png' | relative_url }}">
-        <div class="caption">A request addressed from the “Great Weasel Gang”. In it, they explain that they've kidnapped the president's daughter, and that if you don't play and win their “game of horror”, they'll… <em>pour flour on her</em>!!!</div>
-    </div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-10.png' | relative_url }})
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-31-003724.png' | relative_url }}">
-        <div class="caption">One of the many newspapers.</div>
-    </div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-11.png' | relative_url }})
+The MuuMuus return!
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-31-031539.png' | relative_url }}">
-        <div class="caption">One of the Dot Snack shops, in which you can spend your hard-earned Kiwi (the currency of Hanauma) on snacks that come with Dot Cards.</div>
-    </div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-12.png' | relative_url }})
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-30-201542.png' | relative_url }}">
-        <div class="caption">There are 100 Dot Cards! One of them is a reference to the antagonist of the second game.</div>
-    </div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-31-003724.png' | relative_url }})
+One of the many newspapers.
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-30-201524.png' | relative_url }}">
-        <div class="caption">The Dot Cards are <em>so</em> bizarre. They're all short animations of random objects. The early 3D age was wild.</div>
-    </div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-31-031539.png' | relative_url }})
+One of the Dot Snack shops, in which you can spend your hard-earned Kiwi (the currency of Hanauma) on snacks that come with Dot Cards.
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-06-01-021032.png' | relative_url }}">
-        <div class="caption">Gathering branches to feed the fire so we can roast sweet potatoes.</div>
-    </div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-30-201542.png' | relative_url }})
+There are 100 Dot Cards! One of them is a reference to the antagonist of the second game.
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-30-195920.png' | relative_url }}">
-        <div class="caption">The volcanically fried eggs are <em>back</em>!</div>
-    </div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-30-201524.png' | relative_url }})
+The Dot Cards are *so* bizarre. They're all short animations of random objects. The early 3D age was wild.
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-06-01-030344.png' | relative_url }}">
-        <div class="caption">One of the airier courses.</div>
-    </div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-06-01-021032.png' | relative_url }})
+Gathering branches to feed the fire so we can roast sweet potatoes.
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-31-231629.png' | relative_url }}">
-        <div class="caption">The classic cannon pig is back in one of the stages where you reenact the first game!</div>
-    </div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-30-195920.png' | relative_url }})
+The volcanically fried eggs are *back!*
 
-    <div class="image-container">
-        <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-30-212635.png' | relative_url }}">
-        <div class="caption">We got bosses.</div>
-    </div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-06-01-030344.png' | relative_url }})
+One of the airier courses.
 
-    <img src="{{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-30-204846.png' | relative_url }}">
-</div>
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-31-231629.png' | relative_url }})
+The classic cannon pig is back in one of the stages where you reenact the first game!
+
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-30-212635.png' | relative_url }})
+We got bosses.
+
+![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/2020-05-30-204846.png' | relative_url }})
 
 ## Music used in this episode
 

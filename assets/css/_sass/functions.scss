@@ -1,0 +1,3 @@
+@function flex-column-width($num-columns, $gap) {
+    @return calc(100% / $num-columns - ($gap * ($num-columns - 1)) / $num-columns);
+}
