@@ -159,8 +159,17 @@
   gap: 15px;
   margin: 30px 0;
 
-  &.captiony {
+  &.align-top {
     align-items: flex-start;
+  }
+  &.align-middle {
+    align-items: center;
+  }
+  &.align-baseline {
+    align-items: flex-end;
+  }
+  &.align-bottom {
+    align-items: flex-end;
   }
 
   .image-container {

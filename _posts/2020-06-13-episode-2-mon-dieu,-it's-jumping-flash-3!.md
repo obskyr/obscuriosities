@@ -45,6 +45,7 @@ chapters:
 ![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-cover.jpg' | relative_url }})
 
 :: width [3]
+:: vertical-align [top]
 
 ![]({{ 'assets/episodes/episode-2-mon-dieu%2C-it%27s-jumping-flash-3%21/robbit-mon-dieu-1.png' | relative_url }})
 

@@ -96,6 +96,8 @@ msx:
   long_name: MSX
 msx 2:
   long_name: MSX2
+mz:
+  long_name: Sharp MZ
 nes:
   abbreviation: NES
   long_name: Nintendo Entertainment System
