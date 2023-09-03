@@ -79,9 +79,10 @@ class ImageDisplay {
   display_image_no(i) {
     if (i < 0 || i >= this.images.length) {return;}
     this.cur_image_index = i;
-    this.enlarged_image.src = this.images[i][0].src;
-    this.enlarged_image.alt = this.images[i][0].alt;
-    this.enlarged_image.title = this.images[i][0].title;
+    let new_img = this.images[i][0].cloneNode();
+    new_img.id = '';
+    this.enlarged_image.replaceWith(new_img);
+    this.enlarged_image = new_img;
 
     let caption = this.images[i][1];
     caption ? this.caption.classList.remove('inactive') : this.caption.classList.add('inactive');

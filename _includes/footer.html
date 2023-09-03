@@ -18,9 +18,9 @@
       {% endif %}
     </ul>
   </section>
-  <div class="copyright">
+  <div class="copyright-and-source-link">
     {% assign copyright_start_year = site.copyright-start-year | append: "" -%}
     {% assign current_year = site.time | date: '%Y' -%}
-    <p>&copy; {% if copyright_start_year != current_year %}{{ copyright_start_year }}&thinsp;–&thinsp;{% endif %}{{ current_year }} {{site.author}}</p>
+    <p>&copy; {% if copyright_start_year != current_year %}{{ copyright_start_year }}&thinsp;–&thinsp;{% endif %}{{ current_year }} {{site.author}}{% if site.site-source-link %}&ensp;&middot;&ensp;<a href="{{ site.site-source-link | xml_escape }}" style="color: inherit;"><svg xmlns="http://www.w3.org/2000/svg" style="height: 1.2em; transform: translateY(-0.08em); vertical-align: middle;" viewBox="0 -960 960 960"><path fill="currentColor" d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/></svg> Source</a>{% endif %}</p>
   </div>
 </footer>

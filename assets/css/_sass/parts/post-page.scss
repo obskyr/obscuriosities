@@ -316,6 +316,16 @@ img.enlargeable {
 
 .spoilers {
   position: relative;
+
+  & > * {
+    transition: filter 0.1s ease-out;
+  }
+
+  &.revealed {
+    & > * {
+      transition: filter 0s;
+    }
+  }
   
   &:not(.revealed) {
     cursor: pointer;
@@ -327,33 +337,73 @@ img.enlargeable {
 
   &::before {
     content: "Spoiler\A Click to reveal";
+    display: block;
     filter: none;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    max-width: unquote("min(100%, 20em)");
-    margin-top: 1em;
-    padding: 0.5em 0.75em;
-    border-radius: 0.5em;
+    z-index: 1;
+    max-width: unquote("min(100%, 23em)");
+    border: 1px solid $card-border-color;
+    padding: 2em;
+    border-radius: 12px;
     text-align: center;
     white-space: pre-wrap;
-    font-family: "Jost", sans-serif;
-    text-transform: uppercase;
-    background: $background;
+    background: $highlight-content-background;
     color: $content-text-color;
-    opacity: 0.9;
 
-    z-index: 1;
+    transition: background 0.2s;
   }
   &[data-for]::before {
-    content: "Spoiler:\A " attr(data-for) "\A (Click to reveal)";
+    content: "SPOILER:\A " attr(data-for) "\A (Click to reveal)";
   }
-  &:hover::before {
-    opacity: 1;
+  @media (hover: hover) {
+    &:hover::before {
+      background: $content-background;
+    }
   }
-  &.revealed::before {
-    display: none;
+}
+
+.article-page {
+  .spoilers {
+    &:not(.revealed) {
+      cursor: pointer;
+      & > * {
+        transition: filter 0.4s;
+      }
+  
+      @media (hover: hover) {
+        &:hover > * {
+          filter: blur(38px);
+        }
+      }
+    }
+
+    &::before {
+      position: relative;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+
+    &.revealed::before {
+      content: "SPOILER:\A " attr(data-for) "\A (Revealed)";
+      background: $content-background;
+    }
+  }
+}
+
+.image-display {
+  .spoilers {
+    &.revealed::before {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &::before {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.2s;
+    }
   }
 }
 

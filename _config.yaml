@@ -11,6 +11,7 @@ url: "https://podcast.obskyr.io" # Don't include the base path here!
 baseurl: "" # The subpath of your site, e.g. "/blog".
 copyright-start-year: 2020
 site-twitter: # If the website itself has a Twitter account.
+site-source-link: https://github.com/obskyr/obscuriosities
 
 # Author settings
 author: Obskyr
