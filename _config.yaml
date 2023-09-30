@@ -31,9 +31,17 @@ tag_page_dir: tags
 # Octopod settings. Why couldn't they have placed this in an object...
 author_url: "https://obskyr.io/"
 email: obskyr@obskyr.io
-google_podcasts_url: https://podcasts.google.com/?feed=aHR0cHM6Ly9wb2RjYXN0Lm9ic2t5ci5pby9lcGlzb2Rlcy5tNGEucnNz
 itunes_url: https://podcasts.apple.com/podcast/obscuriosities/id1513125957
 spotify_url: https://open.spotify.com/show/79sk8ST8WysPrY2ccJfrcs
+# At the time of writing:
+# • YouTube Music's podcast feature is only available in the USA(???).
+# • YouTube Music does not support podcasts via RSS feeds (yet?).
+# • I'm miffed that Google discontinued Google Podcasts. It didn't capture
+#   enough market share? Might that perhaps have something to do with the
+#   complete lack of marketing and feature updates!? (╯ °□°) ╯
+# So I don't think I'll include the following at the present moment.
+# youtube_music_url: 
+pocket_casts_url: https://pca.st/cid4glzr
 keywords: ['video games', games, technology, obscure]
 itunes_categories: [['Leisure', 'Video Games'], Technology, Education]
 language: en

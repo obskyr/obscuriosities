@@ -3,7 +3,19 @@
     <a href="{{site.baseurl}}/"><img class="fill-vertical" src="{{site.baseurl}}/assets/images/logo/logo-text.svg" alt="{{site.title}}"><img class="fill-horizontal" src="{{site.baseurl}}/assets/images/logo/logo-banner.png" alt="{{site.title}}"></a>
   </div>
   <div class="buttons">
-    {% if site.google_podcasts_url %}<!-- Google Podcasts button --><a aria-label="google-podcast" href="{{ site.google_podcasts_url | xml_encode }}">{% include listen-button-google.svg %}</a>{% endif %}{% if site.itunes_url %}<!-- Apple Podcasts button --><a aria-label="apple-podcast" href="{{ site.itunes_url | xml_encode }}">{% include listen-button-apple.svg %}</a>{% endif %}<!-- Spotify button -->{% if site.spotify_url %}<a aria-label="spotify" href="{{ site.spotify_url | xml_encode }}">{% include listen-button-spotify.svg %}</a>{% endif %}<!-- RSS feed button --><a target="_blank" href="{{ site['url']}}{{ site['baseurl'] }}/episodes{% if site['episode_feed_formats'] contains 'ogg' %}.ogg{% elsif site['episode_feed_formats'] contains 'm4a' %}.m4a{% elsif site['episode_feed_formats'] contains 'mp3' %}.mp3{% endif %}.rss">{% include listen-button-rss.svg %}</a>
+    {% if site.google_podcasts_url -%}
+      <!-- Google Podcasts button --><a aria-label="google-podcast" href="{{ site.google_podcasts_url | xml_encode }}">{% include listen-button-google.svg %}</a>{% endif %}{% if site.itunes_url %}<!-- Apple Podcasts button --><a aria-label="apple-podcast" href="{{ site.itunes_url | xml_encode }}">{% include listen-button-apple.svg %}</a>
+    {% endif -%}
+    {% if site.spotify_url -%}
+      <!-- Spotify button --><a aria-label="spotify" href="{{ site.spotify_url | xml_encode }}">{% include listen-button-spotify.svg %}</a>
+    {% endif -%}
+    {% if site.youtube_music_url -%}
+    <!-- YouTube Music button --><a aria-label="youtube-music" href="{{ site.youtube_music_url | xml_encode }}">{% include listen-button-youtube-music.svg %}</a>
+  {% endif -%}
+    {% if site.pocket_casts_url -%}
+      <!-- Pocket Casts button --><a aria-label="pocket-casts" href="{{ site.pocket_casts_url }}">{% include listen-button-pocket-casts.svg %}</a>
+    {% endif %}
+    <!-- RSS feed button --><a target="_blank" href="{{ site['url']}}{{ site['baseurl'] }}/episodes{% if site['episode_feed_formats'] contains 'ogg' %}.ogg{% elsif site['episode_feed_formats'] contains 'm4a' %}.m4a{% elsif site['episode_feed_formats'] contains 'mp3' %}.mp3{% endif %}.rss">{% include listen-button-rss.svg %}</a>
     {% comment %}
     <script defer class="podlove-subscribe-button"
       src="{{ '/subscribe-button/javascripts/app.js' | relative_url }}"
