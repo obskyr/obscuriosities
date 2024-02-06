@@ -75,6 +75,8 @@ GEM
     jekyll-bootflat (0.3.2)
       jekyll (~> 4.0)
     jekyll-paginate (1.1.0)
+    jekyll-postfiles (3.1.0)
+      jekyll (>= 3.8.6, < 5)
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
     jekyll-sitemap (1.4.0)
@@ -152,6 +154,7 @@ DEPENDENCIES
   jekyll
   jekyll-octopod!
   jekyll-paginate
+  jekyll-postfiles
   jekyll-sitemap
   jekyll-tagging
   jemoji

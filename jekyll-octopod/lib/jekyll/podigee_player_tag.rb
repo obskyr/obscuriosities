@@ -20,7 +20,7 @@ module Jekyll
                       Playlist:     {} },
         title: options['title'],
         episode: { media: audio,
-                   coverUrl: config['url'] + config['baseurl'] + "/assets/" + (page["image"] || "images/logo/logo-360x360.png"),
+                   coverUrl: config['url'] + config['baseurl'] + (page["image"] || "images/logo/logo-360x360.png"),
                    title: page["title"],
                    subtitle: page["subtitle"],
                    url: config['url'] + config['baseurl'] + page["url"],

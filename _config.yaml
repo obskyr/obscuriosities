@@ -82,6 +82,7 @@ plugins:
   - jekyll-paginate
   - jemoji
   - jekyll/tagging
+  - jekyll-postfiles
 
 paginate: 8
 paginate_path: "/page/:num"
@@ -92,6 +93,16 @@ exclude:
   - /processnotionmd.py
   - /optimizeimages.sh
   - /LICENSE
+  - _drafts/template.md
+  # Workaround for a jekyll-postfiles bug. https://github.com/nhoizey/jekyll-postfiles/issues/1
+  - _drafts/**/*.jpg
+  - _drafts/**/*.jpeg
+  - _drafts/**/*.png
+  - _drafts/**/*.webp
+  - _posts/**/*.jpg
+  - _posts/**/*.jpeg
+  - _posts/**/*.png
+  - _posts/**/*.webp
 
 sass:
   sass_dir: assets/css/_sass
