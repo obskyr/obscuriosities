@@ -1,30 +1,39 @@
 require 'nokogiri'
 
 Jekyll::Hooks.register [:posts], :post_convert do |post|
-    doc = Nokogiri::HTML.fragment(post.content)
-    doc = layout_images(doc)
-    post.content = doc.to_html
+    fragment = Nokogiri::HTML.fragment(post.content)
+    fragment = layout_images(fragment)
+    post.content = fragment.to_html
 end
 
 MARKDOWN_DIRECTIVE_RE = /^:: (?<name>[^\s]+)(\s+\[(?<content>[^\]]*)\])?$/
 MARKDOWN_DIRECTIVES_RE = /\A#{MARKDOWN_DIRECTIVE_RE}(\n#{MARKDOWN_DIRECTIVE_RE})*\Z/
 
 class ImageLayouter
-    def layout_images(doc)
+    def layout_images(fragment_or_element)
         @width = 2
 
-        @new_doc = Nokogiri::HTML.fragment nil
+        if fragment_or_element.name == "#document-fragment"
+            @new_fragment_or_element = Nokogiri::HTML.fragment nil
+        else
+            @new_fragment_or_element = Nokogiri::HTML.fragment("<#{fragment_or_element.name}></#{fragment_or_element.name}>").children[0]
+            fragment_or_element.attributes.each do |k, v|
+                @new_fragment_or_element[k] = v
+            end
+            puts fragment_or_element
+            puts @new_fragment_or_element
+        end
 
         @cur_images = []
         @align_class = "align-middle"
         @trailing_whitespace = nil
 
-        doc.children.each do |element|
+        fragment_or_element.children.each do |element|
             self.update(element)
         end
         self.flush_images()
 
-        return @new_doc
+        return @new_fragment_or_element
     end
     
     def update(element)
@@ -37,6 +46,9 @@ class ImageLayouter
             update_from_p(element)
         elsif element.name == "p" and element.text.match(MARKDOWN_DIRECTIVES_RE)
             enact_directives(element.text)
+        elsif element.name == "div"
+            element = ImageLayouter.new().layout_images(element)
+            add_non_image_element(element)
         else
             add_non_image_element(element)
         end
@@ -71,15 +83,15 @@ class ImageLayouter
                 image_container.add_child caption_element
             end
         end
-        @new_doc.add_child images_element
+        @new_fragment_or_element.add_child images_element
 
         @cur_images = []
     end
 
     def add_non_image_element(element)
         self.flush_images
-        @new_doc.add_child @trailing_whitespace if @trailing_whitespace
-        @new_doc.add_child element if element
+        @new_fragment_or_element.add_child @trailing_whitespace if @trailing_whitespace
+        @new_fragment_or_element.add_child element if element
     end
 
     def enact_directives(newline_separated_directives)
@@ -119,6 +131,6 @@ class ImageLayouter
     end
 end
 
-def layout_images(doc)
-    return ImageLayouter.new().layout_images(doc)
+def layout_images(fragment_or_element)
+    return ImageLayouter.new().layout_images(fragment_or_element)
 end
