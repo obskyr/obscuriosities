@@ -1,5 +1,6 @@
 /_site/
-/_drafts/
+/_drafts/*
+!/_drafts/template.md
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
