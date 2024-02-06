@@ -42,11 +42,13 @@ On this inaugural episode of Obscuriosities, we talk about mon games – games i
 March 9th 2001; developed and published by Alphadream for the Game Boy Color.
 
 :: width [2]
+:: vertical-align [middle]
 
 ![Cover of Kotobattle]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/cover.jpg)
 ![Screenshot of Kotobattle]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/1.png)
 
 :: width [3]
+:: vertical-align [middle]
 
 ![Screenshot of Kotobattle]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/3.jpg)
 "…I'm thinking of establishing a kingdom just for cats."
@@ -54,6 +56,7 @@ March 9th 2001; developed and published by Alphadream for the Game Boy Color.
 The overworld.
 
 :: width [3]
+:: vertical-align [top]
 
 ![Screenshot of Kotobattle]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kotobattle/4.png)
 A boss battle.
@@ -91,6 +94,7 @@ The battle interface – currently selected is a combo of the kanji "medicine" a
 ![Cover of Kanzume Monsters: Parfait]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kanzume-monsters/cover-2.png)
 
 :: width [3]
+:: vertical-align [top]
 
 ![Screenshot of Kanzume Monsters: Parfait]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/kanzume-monsters/1.png)
 For the original game, just imagine the rest of these screenshots were monochromatic.
@@ -115,6 +119,7 @@ Published by KID on July 30th, 1999 in Japan, and by Agetec in August or Septemb
 ![Cover of Lil' Monster]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/lil-monster/cover-2.png)
 
 :: width [3]
+:: vertical-align [top]
 
 ![Screenshot of Lil' Monster]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/lil-monster/1.png)
 ![Screenshot of Lil' Monster]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/lil-monster/2.png)
@@ -136,6 +141,7 @@ July 17th 1998; developed by Freeqsoft and published by Starfish Inc. for the Ga
 ![Cover of Reborn]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/cover.png)
 
 :: width [3]
+:: vertical-align [top]
 
 ![Screenshot of Reborn]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/1.png)
 ![Screenshot of Reborn]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn/2.png)
@@ -163,6 +169,7 @@ February 12th, 1999; developed by Freeqsoft and published by Starfish Inc. for t
 ![Cover of Reborn II]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn-ii/cover.png)
 
 :: width [3]
+:: vertical-align [top]
 
 ![Screenshot of Reborn II]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn-ii/1.png)
 ![Screenshot of Reborn II]({{ site.baseurl }}/assets/episodes/episode-1-the-post-pok%C3%A9mon-gold-rush/images/reborn-ii/2.png)
