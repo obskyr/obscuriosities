@@ -37,7 +37,8 @@ layout: null
     <managingEditor>{{ site.email }} ({{ site.author }})</managingEditor>
     {% assign copyright_start_year = site.copyright-start-year | append: "" -%}
     {% assign current_year = site.time | date: '%Y' -%}
-    <copyright>© {% if copyright_start_year != current_year %}{{ copyright_start_year }} – {% endif %}{{ current_year }} {{site.author}}</copyright>
+    {% comment %}This should really be ℗ and not Ⓟ, but Ⓟ displays better on Apple Podcast at the time of writing. {% endcomment -%}
+    <copyright>Ⓟ {% if copyright_start_year != current_year %}{{ copyright_start_year }} – {% endif %}{{ current_year }} {{site.author}}</copyright>
     <!--<itunes:subtitle>{{ site.subtitle }}</itunes:subtitle>-->
     <itunes:keywords>{{ site.keywords | join:', ' }}</itunes:keywords>
     <image>
@@ -64,7 +65,7 @@ layout: null
         {%- assign check = forloop.index0 | divided_by:site.episodes_per_feed_page | plus: 1 -%}
         {%- if check == page.page_number -%}
           <item>
-            <title>{{ post.title }}{% if post.subtitle %} - {{ post.subtitle }}{% endif %}</title>
+            <title>{{ post.title }}{% if post.subtitle %} - {{ post.subtitle }}{% endif %}{% if post.topic %} — {{ post.topic }}{% endif %}</title>
             <link>{{ post.url | absolute_url }}</link>
             {% if post.season and post.season != nil %}<itunes:season>{{ post.season }}</itunes:season>{% endif %}
             {% if post.episode and post.episode != nil %}<itunes:episode>{{ post.episode }}</itunes:episode>{% endif %}

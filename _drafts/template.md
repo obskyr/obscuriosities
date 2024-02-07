@@ -2,6 +2,7 @@
 layout: post
 
 title: A Title
+topic: # Write a game's name here, and it will be added to the episode title.
 episode: 123
 tags:
   - PS1 # TODO

@@ -1,5 +1,6 @@
 ---
 title: "Mon Dieu, It's Jumping Flash 3!"
+topic: Robbit Mon Dieu
 episode: 2
 tags:
     - PS1
