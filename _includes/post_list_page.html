@@ -7,7 +7,7 @@
         {% endif %}
         <div class="post-content">
             <h2 class="post-title"><a href="{{post.url | relative_url}}">{{post.title}}</a></h2>
-            <p>{{ post.content | after_hr | first_p | blurb | strip_html | truncatewords: 50 }}</p>
+            <p>{{ post.content | after_hr | first_p | blurb }}</p>
             <span class="post-date">
                 {% include date.html date=post.real-date -%}
                 {%- if post.episode and post.episode != blank %}

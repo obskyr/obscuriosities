@@ -20,8 +20,6 @@ class ImageLayouter
             fragment_or_element.attributes.each do |k, v|
                 @new_fragment_or_element[k] = v
             end
-            puts fragment_or_element
-            puts @new_fragment_or_element
         end
 
         @cur_images = []

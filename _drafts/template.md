@@ -47,5 +47,5 @@ Caption here!
 
 ## Music used in this episode
 
-* Obscuriosities theme: “Yet Another Isekai Village” by [HeavyViper](https://heavyviper.bandcamp.com/)
-* TODO
+* *Obscuriosities* theme: “Yet Another Isekai Village” by [HeavyViper](https://heavyviper.bandcamp.com/)
+* Artist – “Song Title” from *Video Game*

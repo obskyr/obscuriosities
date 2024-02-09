@@ -31,11 +31,11 @@ chapters:
 - 4409.079015 Ending
 ---
 
-*Jumping Flash* made a splash in 1995, when it was the first 3D platformer to hit consoles. But did you know there's a *third* game in the series, released only in Japan? Today's all about the *Jumping Flash* series, and more specifically, the personality-packed *Robbit Mon Dieu* for the PlayStation 1.
+***Jumping Flash*** made a splash in 1995, when it was the first 3D platformer to hit consoles. But did you know there's a *third* game in the series, released only in Japan? Today's all about the *Jumping Flash* series, and more specifically, the personality-packed ***Robbit Mon Dieu*** for the PlayStation 1.
 
 -----
 
-*Jumping Flash* made a splash in 1995, when it was the first 3D platformer to hit consoles. But did you know there's a *third* game in the series, <span class="no-blurb">released </span>only in Japan? Today's all about the *Jumping Flash* series, and more specifically, the personality-packed *Robbit Mon Dieu* for <span class="no-blurb">the </span>PlayStation 1.
+***Jumping Flash*** made a splash in 1995, when it was the first 3D platformer to hit consoles. But did you know there's a *third* game in the series, <span class="no-blurb">released </span>only in Japan? Today's all about the *Jumping Flash* series, and more specifically, the personality-packed ***Robbit Mon Dieu*** for <span class="no-blurb">the </span>PlayStation 1.
 
 {% podigee_player page %}
 
