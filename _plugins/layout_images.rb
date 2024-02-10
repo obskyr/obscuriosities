@@ -40,9 +40,9 @@ class ImageLayouter
             return
         end
 
-        if element.name == "p" and element.children[0].name == "img"
+        if element.name == "p" && element.children[0].name == "img"
             update_from_p(element)
-        elsif element.name == "p" and element.text.match(MARKDOWN_DIRECTIVES_RE)
+        elsif element.name == "p" && element.text.match(MARKDOWN_DIRECTIVES_RE)
             enact_directives(element.text)
         elsif element.name == "div"
             element = ImageLayouter.new().layout_images(element)

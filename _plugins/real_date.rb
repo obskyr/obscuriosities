@@ -13,7 +13,7 @@ Jekyll::Hooks.register [:pages, :posts], :pre_render do |post|
 
     # Get date and timezone.
     date = post.data["date"]
-    if not date.nil?
+    unless date.nil?
       if post.data.key? "tz"
         # Normalize timezone.
         begin

@@ -5,7 +5,7 @@ Jekyll::Hooks.register [:site], :post_read do |site|
     site.tags.each do |cur_tag, pages|
         key = cur_tag.downcase
         rich_tag = site.data['rich_tags'][key]
-        if not rich_tag.nil?
+        unless rich_tag.nil?
             tag_to_canonical_key[cur_tag] = rich_tag['canonical_key']
         else
             Jekyll.logger.warn "Warning: Tag not in _data/tags.yaml: " + key
@@ -95,6 +95,6 @@ end
 
 def register_rich_tag(rich_tags, name, cur_rich_tag)
     name = name.downcase
-    raise ArgumentError.new "Duplicate rich tag name: \"#{name}\"" if rich_tags.key? name and rich_tags[name] != cur_rich_tag
+    raise ArgumentError.new "Duplicate rich tag name: \"#{name}\"" if rich_tags.key? name && rich_tags[name] != cur_rich_tag
     rich_tags[name] = cur_rich_tag
 end

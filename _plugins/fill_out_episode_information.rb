@@ -9,11 +9,11 @@ require 'wahwah'
 LOGGER_TOPIC = File.basename(__FILE__) + ":"
 
 def empty?(x)
-    return !(x and x != "" and (!(x.respond_to? :upcase) or x.upcase != "TODO"))
+    return !(x && x != "" && (!(x.respond_to? :upcase) || x.upcase != "TODO"))
 end
 
 def extensions_to_populate(post)
-    return [] if not post.data['audio'].is_a? Hash or post.data['audio'].empty?
+    return [] if !post.data['audio'].is_a? Hash || post.data['audio'].empty?
     
     to_populate = {}
     post.data['audio'].each do |extension, path|
@@ -22,16 +22,16 @@ def extensions_to_populate(post)
     return [] if to_populate.empty?
 
     h = post.data['filesize']
-    if h and not h.empty?
+    if h && !h.empty?
         to_populate.keys.each do |extension|
-            to_populate[extension] = true if empty?(h&.[](extension)) or h&.[](extension) == 0
+            to_populate[extension] = true if empty?(h&.[](extension)) || h&.[](extension) == 0
         end
     else
         # Gotta populate all of 'em if there is no "filesize".
         return to_populate.keys.to_a
     end
 
-    if not to_populate.values.include? true and (not post.data['duration'] or empty? post.data['duration'])
+    if !to_populate.values.include? true && (!post.data['duration'] || empty? post.data['duration'])
         # If only the duration needs to be filled in, any of the audio files
         # may be used for that… but it's preferred not to use an Ogg,
         # because you can't determine the duration of an Ogg without reading
@@ -78,7 +78,7 @@ def edit_in(front_matter, chain, cur_spaces = "")
     next_indent = next_indent_m[1]
 
     if chain.length > 2
-        if not cur_value.empty?
+        if !cur_value.empty?
             # Could theoretically still be an object – those can be on one line, too – but it probably won't be.
             # And we're not about those edge cases today.
             Jekyll.logger.error LOGGER_TOPIC, "Failed to edit in the chain \"#{chain}\". The key #{chain} had a value on the same line."
@@ -132,7 +132,7 @@ Jekyll::Hooks.register [:posts], :pre_render do |post|
         audio_path = File.join('episodes', post.data['audio'][extension])
         begin
             File.open(audio_path, 'rb') do |file|
-                post.data['filesize'] = {} if not post.data['filesize']
+                post.data['filesize'] = {} if !post.data['filesize']
                 if empty? post.data['filesize'][extension]
                     post.data['filesize'][extension] = file.size
                     front_matter = edit_in(front_matter, ['filesize', extension, file.size.to_s])
