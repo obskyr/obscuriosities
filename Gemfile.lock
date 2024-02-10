@@ -1,15 +1,9 @@
 GIT
-  remote: https://github.com/moumar/ruby-audioinfo.git
-  revision: 92cda5209e266342d7a08532d1322cd73ff640e8
+  remote: https://github.com/obskyr/wahwah.git
+  revision: 06c4bcc921f0e3617431f7b0c0dcccfa4cba2207
+  branch: lazy-ogg-duration
   specs:
-    ruby-audioinfo (0.5.5)
-      apetag (>= 1.1.4)
-      flacinfo-rb (>= 0.4)
-      moumar-wmainfo-rb (>= 0.7)
-      mp4info (>= 1.7.3)
-      ruby-mp3info (>= 0.8)
-      ruby-ogginfo (>= 0.6.13)
-      wavefile (~> 0.6.0)
+    wahwah (1.5.1)
 
 PATH
   remote: jekyll-octopod
@@ -31,9 +25,6 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
-    apetag (1.1.5)
-      cicphash (>= 1.0.0)
-    cicphash (2.0.0)
     colorator (1.1.0)
     concurrent-ruby (1.2.2)
     em-websocket (0.5.3)
@@ -42,7 +33,6 @@ GEM
     eventmachine (1.2.7)
     facets (3.1.0)
     ffi (1.15.5)
-    flacinfo-rb (1.0)
     forwardable-extended (2.6.0)
     gemoji (4.1.0)
     google-protobuf (3.24.2-x86_64-linux)
@@ -99,8 +89,6 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
     minitest (5.19.0)
-    moumar-wmainfo-rb (0.8)
-    mp4info (1.7.3)
     multi_json (1.15.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
@@ -120,8 +108,6 @@ GEM
       ffi (~> 1.0)
     rexml (3.2.6)
     rouge (4.1.3)
-    ruby-mp3info (0.8.10)
-    ruby-ogginfo (0.7.2)
     ruby2_keywords (0.0.5)
     safe_yaml (1.0.5)
     sass-embedded (1.66.1)
@@ -144,7 +130,6 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
-    wavefile (0.6.0)
     webrick (1.8.1)
 
 PLATFORMS
@@ -158,7 +143,7 @@ DEPENDENCIES
   jekyll-sitemap
   jekyll-tagging
   jemoji
-  ruby-audioinfo!
+  wahwah!
 
 BUNDLED WITH
    2.3.7

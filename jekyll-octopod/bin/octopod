@@ -11,7 +11,7 @@ require 'rubygems'
 require 'optparse'
 require 'yaml'
 require 'fileutils'
-require 'audioinfo'
+require 'wahwah'
 require 'jekyll'
 
 
@@ -115,6 +115,7 @@ end
 def duration_to_string(seconds)
   hours, seconds = seconds.divmod(3600)
   minutes, seconds = seconds.divmod(60)
+  seconds = seconds.round
   "%d:%02d:%02d" % [hours, minutes, seconds]
 end
 
@@ -132,15 +133,10 @@ if ARGV.size > 0 && (ARGV[0] == 'episode' || ARGV[0] == 'deploy' || ARGV[0] == '
     if ARGV[1]
       files = ARGV[1..-1].map{ |fn| [(File.extname(fn)[1..-1] || "").downcase, File.basename(fn)] }.to_h
       sizes = ARGV[1..-1].map{ |fn| [(File.extname(fn)[1..-1] || "").downcase, File.size(fn)] }.to_h
-      AudioInfo.open(ARGV[1]) do |info|
-        title = info.title
-        title = "Episode #{info.tracknum}: #{title}"
-        if ['.mp4', '.aac', '.m4a'].include? File.extname(ARGV[1]).downcase
-          # The mp4info library does... not support Unicode? The heck?
-          title = title.force_encoding("utf-8")
-        end
-        seconds = info.length
-      end
+      info = WahWah.open(ARGV[1])
+      title = info.title
+      title = "Episode #{info.track}: #{title}"
+      seconds = info.duration
     end
     duration_string = duration_to_string(seconds)
     post_header = {

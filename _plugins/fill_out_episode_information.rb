@@ -4,7 +4,7 @@
 # as local ones – should be possible by fetching just the first bits of
 # audio files, where the metadata is, shouldn't it?
 
-require 'audioinfo'
+require 'wahwah'
 
 LOGGER_TOPIC = File.basename(__FILE__) + ":"
 
@@ -33,8 +33,14 @@ def extensions_to_populate(post)
 
     if not to_populate.values.include? true and (not post.data['duration'] or empty? post.data['duration'])
         # If only the duration needs to be filled in, any of the audio files
-        # may be used for that.
-        return [to_populate.keys[0]]
+        # may be used for that… but it's preferred not to use an Ogg,
+        # because you can't determine the duration of an Ogg without reading
+        # to the end(! What in the world!!!), meaning that the whole file will
+        # need to be downloaded if it's remote (or you can do a byte range
+        # request, but that's a heck dang of added complexity, and not all
+        # servers support it either way).
+        non_oggs = to_populate.keys.reject { |key| ["ogg", "oga", "ogv"].include? key.downcase }
+        return [!non_oggs.empty? ? non_oggs[0] : to_populate.keys[0]]
     end
 
     # TODO: Handle chapters.
@@ -43,14 +49,15 @@ def extensions_to_populate(post)
 end
 
 def get_duration(file)
-    audio = AudioInfo.new file
-    seconds = audio.length
+    audio = WahWah.open file
+    seconds = audio.duration
     return seconds_to_timestamp seconds
 end
 
 def seconds_to_timestamp(seconds)
     hours, seconds   = seconds.divmod 3600
     minutes, seconds = seconds.divmod 60
+    seconds = seconds.round
     "%d:%02d:%02d" % [hours, minutes, seconds]
 end
 
