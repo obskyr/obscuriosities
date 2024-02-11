@@ -34,9 +34,13 @@ Jekyll::Hooks.register [:site], :after_init do |site|
     end
 end
 
-copied_files = Set[]
+copied_files = nil
 
-Jekyll::Hooks.register [:posts], :pre_render do |post|
+Jekyll::Hooks.register [:site], :after_reset do |site|
+    copied_files = Set[]
+end
+
+Jekyll::Hooks.register [:posts], :post_write do |post|
     dirs = ['_posts/']
     dirs << '_drafts/' if post.site.config['show_drafts']
 
