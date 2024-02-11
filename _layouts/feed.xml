@@ -55,11 +55,6 @@ layout: null
         <itunes:category text="{{ category | xml_escape }}" />
       {% endif %}
     {% endfor %}
-    {%- if site.download_url == "" or site.download_url == nil -%}
-      {% assign download_url = '/episodes' | absolute_url %}
-    {%- else -%}
-      {% assign download_url = site.download_url %}
-    {% endif %}
     {%- for post in site.posts -%}
       {%- if post.audio[page.format] -%}
         {%- assign check = forloop.index0 | divided_by:site.episodes_per_feed_page | plus: 1 -%}
@@ -146,8 +141,7 @@ layout: null
             <description><![CDATA[{{ post.content | before_hr | expand_urls: site.url | cdata_escape | remove_script_and_audio | newlines_between_paragraphs: 1 }}]]></description>
             <itunes:summary><![CDATA[{{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | format_for_apple_podcasts }}]]></itunes:summary>
             <content:encoded><![CDATA[{{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | newlines_between_paragraphs: 0 }}]]></content:encoded>
-            {% assign encoded_filename = post.audio[page.format] | uri_escape %}
-            {% assign url = download_url | append: '/' | append: encoded_filename | possibly_with_podtrac %}
+            {% assign url = post.audio[page.format] | absolute_url %}
             {%- if post.filesize -%}
               <enclosure url="{{ url }}" 
                          length="{{ post | size_by_format: page.format }}" 

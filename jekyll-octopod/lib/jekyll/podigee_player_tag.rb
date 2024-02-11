@@ -1,3 +1,7 @@
+def url?(s)
+  return s.downcase.start_with?('http://') || s.downcase.start_with?('https://')
+end
+
 module Jekyll
   class PodigeePlayerTag < Liquid::Tag
     PLAYER_THEMES = ["obscuriosities"]
@@ -8,7 +12,7 @@ module Jekyll
 
       audio = {}
       download_url = config["download_url"] || config["url"] + config["baseurl"] + "/episodes"
-      page["audio"].each { |key, value| audio[key] = download_url + "/" + value }
+      page["audio"].each { |key, value| audio[key] = download_url + "/" + value unless url? value }
       if config['use_podtrac'] && Jekyll.env != 'development'
         audio.each { |key, value| audio[key] = Jekyll::PodtracFilters.with_podtrac(value) }
       end
@@ -30,7 +34,7 @@ module Jekyll
                      parts = parts ? parts : {}
                      # For some reason, chapters placed at 0 seconds don't work
                      # in the Podigee web player. Who knows?
-                     parts['start'] = "0:00:01.000" if not parts.include? 'start' or parts['start'] === "0:00:00.000"
+                     parts['start'] = "0:00:01.000" if !parts.include?('start') || parts['start'] === "0:00:00.000"
                      parts
                    end : nil
                  }

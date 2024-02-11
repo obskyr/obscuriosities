@@ -10,11 +10,11 @@ KEYS_TO_PROCESS = [
 ]
 
 Jekyll::Hooks.register [:posts], :pre_render do |post|
-    KEYS_TO_PROCESS.each do |key|
-      next unless post.data.key? key
-      value = post.data[key]
-      unless value.start_with?('/') || value.downcase.start_with?('http://') || value.downcase.start_with?('https://')
-        post.data[key] = post.url + value
-      end
+  KEYS_TO_PROCESS.each do |key|
+    next unless post.data.key? key
+    value = post.data[key]
+    unless value.start_with?('/') || value.downcase.start_with?('http://') || value.downcase.start_with?('https://')
+      post.data[key] = post.url + value
     end
+  end
 end

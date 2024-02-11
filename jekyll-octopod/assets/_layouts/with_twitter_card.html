@@ -30,7 +30,7 @@
   <meta name="twitter:player" content="{{ site.url }}{{ site.baseurl }}/players/{{ page.slug }}" />
   <meta name="twitter:player:width" content="480" />
   <meta name="twitter:player:height" content="480" />
-  <meta name="twitter:player:stream" content="{{ site | download_url_with_fallback }}/{{ page.audio | audio }}" />
+  <meta name="twitter:player:stream" content="{{ page.audio | audio | absolute_url }}" />
   <meta name="twitter:player:stream:content_type" content="{{ page.audio | audio_type }}" />
 
 

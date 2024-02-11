@@ -137,13 +137,8 @@ Jekyll::Hooks.register [:posts], :pre_render do |post|
     actually_populated_anything = false
     to_populate.each_with_index do |extension, i|
         begin
-            unless url? post.data['audio'][extension]
-                audio_path = File.join 'episodes', post.data['audio'][extension]
-                file = File.open audio_path, 'rb'
-            else
-                audio_path = post.data['audio'][extension]
-                file = Down.open audio_path
-            end
+            audio_path = post.data['audio'][extension]
+            file = !url?(audio_path) ? File.open(audio_path, 'rb') : Down.open(audio_path)
 
             post.data['filesize'] = {} if !post.data['filesize']
             if empty? post.data['filesize'][extension]
@@ -153,9 +148,7 @@ Jekyll::Hooks.register [:posts], :pre_render do |post|
             end
 
             if empty? post.data['duration'] && (!EXTENSIONS_THAT_REQUIRE_LOADING_FOR_DURATION.include? extension || i == to_populate.length - 1)
-                puts "Getting duration from #{audio_path}"
                 duration = get_duration file
-                puts duration
                 post.data['duration'] = duration
                 front_matter = edit_in front_matter, ['duration', duration]
                 actually_populated_anything = true

@@ -10,10 +10,10 @@
       {% for file in post.audio %}
         {% if post.filesize %}
           <a class="btn btn-info" 
-          href="{{ site | download_url_with_fallback }}/{{ file.last }}">Download .{{ file.first }} ({{ post | size_by_format: file.first | in_megabytes }})</a>
+          href="{{ file.last }}">Download .{{ file.first }} ({{ post | size_by_format: file.first | in_megabytes }})</a>
         {% else %}
           <a class="btn btn-info" 
-            href="{{ site | download_url_with_fallback }}/{{ file.last }}">Download .{{ file.first }} ({{ file.last | file_size:'./' | string_of_size }})</a>
+            href="{{ file.last }}">Download .{{ file.first }} ({{ file.last | file_size:'./' | string_of_size }})</a>
         {% endif %}
       {% endfor %}
     {% endif %}
