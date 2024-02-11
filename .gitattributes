@@ -1,0 +1,4 @@
+* text=auto eol=lf
+
+*.html linguist-language=liquid
+*.rss  linguist-language=xml
