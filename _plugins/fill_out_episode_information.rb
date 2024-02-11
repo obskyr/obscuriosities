@@ -4,6 +4,7 @@
 # as local ones – should be possible by fetching just the first bits of
 # audio files, where the metadata is, shouldn't it?
 
+require 'down'
 require 'wahwah'
 
 LOGGER_TOPIC = File.basename(__FILE__) + ":"
@@ -11,6 +12,12 @@ LOGGER_TOPIC = File.basename(__FILE__) + ":"
 def empty?(x)
     return !(x && x != "" && (!(x.respond_to? :upcase) || x.upcase != "TODO"))
 end
+
+def url?(s)
+    return s.downcase.start_with?('http://') || s.downcase.start_with?('https://')
+end
+
+EXTENSIONS_THAT_REQUIRE_LOADING_FOR_DURATION = ["ogg", "oga", "ogv", "flac", "opus"]
 
 def extensions_to_populate(post)
     return [] if !post.data['audio'].is_a? Hash || post.data['audio'].empty?
@@ -31,7 +38,7 @@ def extensions_to_populate(post)
         return to_populate.keys.to_a
     end
 
-    if !to_populate.values.include? true && (!post.data['duration'] || empty? post.data['duration'])
+    if !to_populate.values.include? true && (!post.data['duration'] || empty?(post.data['duration']))
         # If only the duration needs to be filled in, any of the audio files
         # may be used for that… but it's preferred not to use an Ogg,
         # because you can't determine the duration of an Ogg without reading
@@ -39,7 +46,7 @@ def extensions_to_populate(post)
         # need to be downloaded if it's remote (or you can do a byte range
         # request, but that's a heck dang of added complexity, and not all
         # servers support it either way).
-        non_oggs = to_populate.keys.reject { |key| ["ogg", "oga", "ogv"].include? key.downcase }
+        non_oggs = to_populate.keys.reject { |key| EXTENSIONS_THAT_REQUIRE_LOADING_FOR_DURATION.include? key.downcase }
         return [!non_oggs.empty? ? non_oggs[0] : to_populate.keys[0]]
     end
 
@@ -128,26 +135,35 @@ Jekyll::Hooks.register [:posts], :pre_render do |post|
     rest_of_post = post_source[start_fence.length + front_matter.length + end_fence.length..]
 
     actually_populated_anything = false
-    to_populate.each do |extension|
-        audio_path = File.join('episodes', post.data['audio'][extension])
+    to_populate.each_with_index do |extension, i|
         begin
-            File.open(audio_path, 'rb') do |file|
-                post.data['filesize'] = {} if !post.data['filesize']
-                if empty? post.data['filesize'][extension]
-                    post.data['filesize'][extension] = file.size
-                    front_matter = edit_in(front_matter, ['filesize', extension, file.size.to_s])
-                    actually_populated_anything = true
-                end
+            unless url? post.data['audio'][extension]
+                audio_path = File.join 'episodes', post.data['audio'][extension]
+                file = File.open audio_path, 'rb'
+            else
+                audio_path = post.data['audio'][extension]
+                file = Down.open audio_path
+            end
 
-                if empty? post.data['duration']
-                    duration = get_duration(file)
-                    post.data['duration'] = duration
-                    front_matter = edit_in(front_matter, ['duration', duration])
-                    actually_populated_anything = true
-                end
+            post.data['filesize'] = {} if !post.data['filesize']
+            if empty? post.data['filesize'][extension]
+                post.data['filesize'][extension] = file.size
+                front_matter = edit_in front_matter, ['filesize', extension, file.size.to_s]
+                actually_populated_anything = true
+            end
+
+            if empty? post.data['duration'] && (!EXTENSIONS_THAT_REQUIRE_LOADING_FOR_DURATION.include? extension || i == to_populate.length - 1)
+                puts "Getting duration from #{audio_path}"
+                duration = get_duration file
+                puts duration
+                post.data['duration'] = duration
+                front_matter = edit_in front_matter, ['duration', duration]
+                actually_populated_anything = true
             end
         rescue Errno::ENOENT
             Jekyll.logger.warn LOGGER_TOPIC, "Failed to open the file \"#{audio_path}\" for \"#{post.basename}\"."
+        ensure
+            file.close if file
         end
     end
 
