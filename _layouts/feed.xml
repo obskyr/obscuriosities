@@ -37,8 +37,7 @@ layout: null
     <managingEditor>{{ site.email }} ({{ site.author }})</managingEditor>
     {% assign copyright_start_year = site.copyright-start-year | append: "" -%}
     {% assign current_year = site.time | date: '%Y' -%}
-    {% comment %}This should really be ℗ and not Ⓟ, but Ⓟ displays better on Apple Podcast at the time of writing. {% endcomment -%}
-    <copyright>Ⓟ {% if copyright_start_year != current_year %}{{ copyright_start_year }} – {% endif %}{{ current_year }} {{site.author}}</copyright>
+    <copyright>© {% if copyright_start_year != current_year %}{{ copyright_start_year }} – {% endif %}{{ current_year }} {{site.author}}</copyright>
     <!--<itunes:subtitle>{{ site.subtitle }}</itunes:subtitle>-->
     <itunes:keywords>{{ site.keywords | join:', ' }}</itunes:keywords>
     <image>
@@ -152,7 +151,7 @@ layout: null
                          type="{{ page.format | mime_type }}" />
             {% endif %}
             <itunes:episodeType>{% if post.type and post.type != nil %}{% assign type = post.type | downcase %}{% if type == 'full' or type == 'trailer' or type == 'bonus' %}{{ type }}{% else %}full{% endif %}{% else %}full{% endif %}</itunes:episodeType>
-            <itunes:keywords>{{ post.rich_tags | map: 'long_name_with_abbreviation' }}</itunes:keywords>
+            <itunes:keywords>{{ post.rich_tags | map: 'long_name_with_abbreviation' | join: ', ' }}</itunes:keywords>
             <itunes:subtitle>{{ post.subtitle }}</itunes:subtitle>
             <itunes:summary>{{ post.summary }}</itunes:summary>
             <itunes:author>{{ post.author | otherwise:site.author }}</itunes:author>
