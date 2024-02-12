@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Temporary workaround because google-protobuf doesn't play nice with Ruby 3.3.0.
+gem 'rake', '>= 13'
+
 gem 'jekyll'
 gem 'jekyll-octopod', path: 'jekyll-octopod'
 gem 'wahwah', git: 'https://github.com/obskyr/wahwah.git', branch: 'lazy-ogg-duration'
