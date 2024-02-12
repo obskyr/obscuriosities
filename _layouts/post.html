@@ -4,7 +4,7 @@ layout: main
 <article class="article-page">
   <div class="page-content">
     {% if page.image %}
-      <div class="article-cover" style='--cover: url("{{ page.image | relative_url | xml_escape }}");'></div>
+      <div class="article-cover" style='--cover: url("{{ page.image | replace: '#', '%23' | relative_url | xml_escape }}");'></div>
     {% endif %}
     <div class="wrap-content">
       <header class="header-page">

@@ -1,13 +1,13 @@
 {% for post in include.posts %}
     <article class="post{% unless post.cover-image or post.image %} no-image{% endunless %}">
         {% if post.cover-image %}
-            <a class="post-thumbnail" style="background-image: url(&quot;{{ post.cover-image | relative_url }}&quot;)" href="{{post.url | relative_url}}"></a>
+            <a class="post-thumbnail" style="background-image: url(&quot;{{ post.cover-image | replace: '#', '%23' | relative_url | xml_escape }}&quot;)" href="{{post.url | relative_url}}"></a>
         {% elsif post.image %}
-        <a class="post-thumbnail" style="background-image: url(&quot;{{ post.image | relative_url }}&quot;)" href="{{post.url | relative_url}}"></a>
+        <a class="post-thumbnail" style="background-image: url(&quot;{{ post.image | replace: '#', '%23' | relative_url | xml_escape }}&quot;)" href="{{post.url | relative_url}}"></a>
         {% endif %}
         <div class="post-content">
             <h2 class="post-title"><a href="{{post.url | relative_url}}">{{post.title}}</a></h2>
-            <p>{{ post.content | after_hr | first_p | blurb }}</p>
+            {{ post.content | after_hr | first_p | blurb }}
             <span class="post-date">
                 {% include date.html date=post.real-date -%}
                 {%- if post.episode and post.episode != blank %}
