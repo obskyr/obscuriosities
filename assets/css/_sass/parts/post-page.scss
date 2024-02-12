@@ -393,7 +393,7 @@ img.enlargeable {
 .image-display {
   .spoilers {
     &.revealed::before {
-      opacity: 0;
+      visibility: hidden;
       pointer-events: none;
     }
 
@@ -402,7 +402,6 @@ img.enlargeable {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      transition: all 0.2s;
     }
   }
 }

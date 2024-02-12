@@ -98,11 +98,13 @@ class ImageDisplay {
 
   update_spoiler_properties() {
     let spoiler_parent = this.images[this.cur_image_index][2];
-    if (spoiler_parent && this.active) {
+    console.log(spoiler_parent);
+    if (spoiler_parent) {
       this.image_container.classList.add('spoilers');
       if (spoiler_parent.classList.contains('revealed')) {
         this.image_container.classList.add('revealed');
       } else {
+        this.image_container.classList.remove('revealed');
         this.image_container.addEventListener('click', this.callback_reveal_spoiler_via_current_image);
       }
       this.image_container.setAttribute('data-for', spoiler_parent.getAttribute('data-for'));
