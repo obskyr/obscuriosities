@@ -17,7 +17,7 @@ def url?(s)
     return s.downcase.start_with?('http://') || s.downcase.start_with?('https://')
 end
 
-EXTENSIONS_THAT_REQUIRE_LOADING_FOR_DURATION = ["ogg", "oga", "ogv", "flac", "opus"]
+EXTENSIONS_THAT_REQUIRE_LOADING_FOR_DURATION = ["flac", "ogg", "oga", "ogv", "opus"]
 
 def extensions_to_populate(post)
     return [] if !post.data['audio'].is_a? Hash || post.data['audio'].empty?
@@ -71,7 +71,7 @@ end
 # This regex could be updated to handle some multiline properties…
 # but I don't think it's worth it. Not when I'm the only one using this.
 PROPERTY_LINE_RE_TEMPLATE = "(^%{cur_spaces}%{key}:[[:blank:]]*)(.*?)([[:blank:]]*(?:#.*)?$\n)"
-NEXT_INDENT_RE = /(?:^ *(?:#.*)?$\n)*^( *)[^#\n].*$/
+NEXT_INDENT_RE = /(?:^ *(?:#.*)?$\n)*^( *)([^#\n].*$)/
 
 # Edit in a value into the front matter in the source of a Jekyll post,
 # creating any nesting required along the way.
@@ -80,9 +80,27 @@ def edit_in(front_matter, chain, cur_spaces = "")
 
     property_line_re = Regexp.new(PROPERTY_LINE_RE_TEMPLATE % {cur_spaces: cur_spaces, key: chain[0]})
     m = front_matter.match property_line_re
-    line_start, cur_value, line_end = m.captures
-    next_indent_m = front_matter.match NEXT_INDENT_RE, m.end(0)
-    next_indent = next_indent_m[1]
+    if m
+        line_head, cur_value, line_tail = m.captures
+        line_start = m.begin(0)
+        line_end = m.end(0)
+        next_indent_m = front_matter.match NEXT_INDENT_RE, m.end(0)
+        if next_indent_m
+            start_of_children = next_indent_m.begin(0)
+            next_indent = next_indent_m[1]
+        else
+            start_of_children = front_matter.length
+        end
+    else
+        line_head = cur_spaces + chain.first + ":"
+        line_head += " " if chain.length == 2
+        cur_value = ""
+        line_tail = ""
+        line_start = front_matter.length
+        line_end = front_matter.length
+        next_indent_m = nil
+        start_of_children = front_matter.length
+    end
 
     if chain.length > 2
         if !cur_value.empty?
@@ -92,29 +110,34 @@ def edit_in(front_matter, chain, cur_spaces = "")
             return
         end
 
-        last_direct_child_m = next_indent_m
-        last_indent = next_indent
-        # Eating through to get to the end of the object.
-        while last_indent.length > cur_spaces.length
-            # + 1 because this regex doesn't include the trailing newline.
-            last_direct_child_m = front_matter.match NEXT_INDENT_RE, last_direct_child_m.end(0) + 1
-            last_indent = last_direct_child_m[1]
+        if next_indent_m
+            last_direct_child_m = next_indent_m
+            last_indent = next_indent
+            # Eating through to get to the end of the object.
+            while last_indent.length > cur_spaces.length
+                # + 1 because this regex doesn't include the trailing newline.
+                last_direct_child_m = front_matter.match NEXT_INDENT_RE, last_direct_child_m.end(0) + 1
+                last_indent = last_direct_child_m[1]
+            end
+            end_of_children = last_direct_child_m.begin(2)
+            new_spaces = next_indent.length > cur_spaces.length ? next_indent : cur_spaces + ("  ")
+        else
+            end_of_children = front_matter.length
+            new_spaces = cur_spaces + (2 * " ")
         end
 
-        new_spaces = next_indent.length > cur_spaces.length ? next_indent : cur_spaces + (2 * " ")
-        
-        return front_matter[...next_indent_m.begin(0)] + edit_in(front_matter[next_indent_m.begin(0)...last_direct_child_m.end(0)], chain[1...], new_spaces) + front_matter[last_direct_child_m.end(0)...]
+        return front_matter[...start_of_children] + edit_in(front_matter[start_of_children...end_of_children], chain[1...], new_spaces) + front_matter[end_of_children...]
     elsif chain.length == 2
-        if next_indent.length > cur_spaces.length
+        if next_indent && next_indent.length > cur_spaces.length
             # We're not currently handling when the value is placed on another line, because…
             # bleugh. Added complexity for a case that almost certainly won't pop up for me personally.
             Jekyll.logger.error LOGGER_TOPIC, "Failed to edit in the key-value pair \"#{chain[0]}: #{chain[1]}\". Should be possible to implement!"
             return
         end
 
-        if line_start
-            new_line = line_start + chain[1].to_s + line_end
-            return front_matter[0...m.begin(0)] + new_line + front_matter[m.end(0)...]
+        if line_head
+            new_line = line_head + chain[1].to_s + line_tail
+            return front_matter[0...line_start] + new_line + (m ? "" : "\n") + front_matter[line_end...]
         else
             return front_matter + "#{cur_spaces}#{chain[0]}: #{chain[1]}" + "\n"
         end
@@ -147,7 +170,7 @@ Jekyll::Hooks.register [:posts], :pre_render do |post|
                 actually_populated_anything = true
             end
 
-            if empty? post.data['duration'] && (!EXTENSIONS_THAT_REQUIRE_LOADING_FOR_DURATION.include? extension || i == to_populate.length - 1)
+            if empty?(post.data['duration']) && (!EXTENSIONS_THAT_REQUIRE_LOADING_FOR_DURATION.include?(extension) || i == to_populate.length - 1)
                 duration = get_duration file
                 post.data['duration'] = duration
                 front_matter = edit_in front_matter, ['duration', duration]
