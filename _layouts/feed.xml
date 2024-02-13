@@ -20,7 +20,7 @@ layout: null
     {% if page.next %}<atom:link href="{{ site.url }}{{ site.baseurl }}/episodes{{page.next}}.{{ page.format }}.rss" rel="next" type="application/rss+xml" />{% endif %}
     {% if page.prev %}<atom:link href="{{ site.url }}{{ site.baseurl }}/episodes{{page.prev}}.{{ page.format }}.rss" rel="prev" type="application/rss+xml" />{% endif %}
 
-    {{ site | episode_feeds_rss:page.format }}
+    {{ site | episode_feeds_rss: page.format }}
     <description>{{ site.description | markdownify | strip_html }}</description>
     <lastBuildDate>{{ site.time | time_to_rssschema }}</lastBuildDate>
     <language>{{ site.language }}</language>
@@ -142,11 +142,11 @@ layout: null
             <content:encoded><![CDATA[{{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | newlines_between_paragraphs: 0 }}]]></content:encoded>
             {% assign url = post.audio[page.format] | absolute_url %}
             {%- if post.filesize -%}
-              <enclosure url="{{ url }}" 
+              <enclosure url="{{ url | possibly_with_podtrac }}" 
                          length="{{ post | size_by_format: page.format }}" 
                          type="{{ page.format | mime_type }}" />
             {%- else -%}
-              <enclosure url="{{ url }}" 
+              <enclosure url="{{ url | possibly_with_podtrac }}" 
                          length="{{ post.audio | audio:page.format | file_size }}" 
                          type="{{ page.format | mime_type }}" />
             {% endif %}
@@ -175,10 +175,10 @@ layout: null
               {%- endfor -%}
             {%- endif -%}
             {%- if post.image -%}
-              <itunes:image href="{{ '/assets/' | append: post.image | absolute_url | uri_escape }}" />
+              <itunes:image href="{{ post.image | replace: '#', '%23' | absolute_url | xml_escape }}" />
               <image>
-                <title>{{ post.image_title }}</title>
-                <url>{{ site.url }}{{ site.baseurl }}/assets/{{post.image}}</url>
+                {% if post.image_title and post.image-title != "" %}<title>{{ post.image-title }}</title>{% endif -%}
+                <url>{{ post.image | replace: '#', '%23' | absolute_url }}</url>
                 <link>{{ site.url }}{{ site.baseurl }}</link>
               </image>
             {%- endif -%}
