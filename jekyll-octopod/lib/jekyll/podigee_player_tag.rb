@@ -11,8 +11,9 @@ module Jekyll
       page = context.registers[:page]
 
       audio = {}
-      download_url = config["download_url"] || config["url"] + config["baseurl"] + "/episodes"
+      download_url = config["download_url"] || config["url"] + config["baseurl"]
       page["audio"].each { |key, value| audio[key] = download_url + "/" + value unless url? value }
+      audio.delete 'ogg' # TODO: Remove this when the Ogg feed has been removed.
       if config['use_podtrac'] && Jekyll.env != 'development'
         audio.each { |key, value| audio[key] = Jekyll::PodtracFilters.with_podtrac(value) }
       end

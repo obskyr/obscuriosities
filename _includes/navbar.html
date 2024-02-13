@@ -15,7 +15,12 @@
     {% if site.pocket_casts_url -%}
       <!-- Pocket Casts button --><a aria-label="pocket-casts" href="{{ site.pocket_casts_url }}">{% include listen-button-pocket-casts.svg %}</a>
     {% endif %}
-    <!-- RSS feed button --><a target="_blank" href="{{ site['url']}}{{ site['baseurl'] }}/episodes{% if site['episode_feed_formats'] contains 'ogg' %}.ogg{% elsif site['episode_feed_formats'] contains 'm4a' %}.m4a{% elsif site['episode_feed_formats'] contains 'mp3' %}.mp3{% endif %}.rss">{% include listen-button-rss.svg %}</a>
+    <!-- RSS feed button --><a target="_blank" href="{{ site['url']}}{{ site['baseurl'] }}/episodes
+      {%- if    site['episode_feed_formats'] contains 'opus' %}.opus
+      {%- elsif site['episode_feed_formats'] contains 'ogg'  %}.ogg
+      {%- elsif site['episode_feed_formats'] contains 'm4a'  %}.m4a
+      {%- elsif site['episode_feed_formats'] contains 'mp3'  %}.mp3
+      {%- endif %}.rss">{% include listen-button-rss.svg %}</a>
     {% comment %}
     <script defer class="podlove-subscribe-button"
       src="{{ '/subscribe-button/javascripts/app.js' | relative_url }}"

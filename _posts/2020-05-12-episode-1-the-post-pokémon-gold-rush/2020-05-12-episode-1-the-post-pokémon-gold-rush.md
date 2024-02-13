@@ -12,11 +12,13 @@ type: full # “full”, “trailer”, or “bonus”
 explicit: no
 duration: '1:01:56'
 audio:
-  m4a: Episode 1 - The Post-Pokémon Gold Rush.m4a
-  ogg: Episode 1 - The Post-Pokémon Gold Rush.ogg
+  opus: Episode 1 - The Post-Pokémon Gold Rush.opus
+  m4a:  Episode 1 - The Post-Pokémon Gold Rush.m4a
+  ogg:  Episode 1 - The Post-Pokémon Gold Rush.opus
 filesize:
-  m4a: 30371887
-  ogg: 32449083
+  opus: 32449083
+  m4a:  30371891
+  ogg:  32449083
 chapters:
 - "0.000000    Opening"
 - "120.755261  Kotobattle: Tengai no Moribito"
