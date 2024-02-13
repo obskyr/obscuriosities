@@ -29,6 +29,7 @@ tag_page_layout: tag_post_list
 tag_page_dir: tags
 
 # Octopod settings. Why couldn't they have placed this in an object...
+download_url: "https://episodes.podcast.obskyr.io/" # Currently hosted via Cloudflare R2.
 author_url: "https://obskyr.io/"
 email: obskyr@obskyr.io
 itunes_url: https://podcasts.apple.com/podcast/obscuriosities/id1513125957

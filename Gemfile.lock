@@ -161,7 +161,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  down (~> 5.0)
+  addressable (~> 2.8)
+  down (~> 5.4)
   jekyll
   jekyll-octopod!
   jekyll-paginate

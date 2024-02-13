@@ -12,9 +12,9 @@ type: full # “full”, “trailer”, or “bonus”
 explicit: no
 duration: '1:15:30'
 audio:
-  opus: Episode 2 - Mon Dieu, It's Jumping Flash 3-finished.opus
-  m4a:  Episode 2 - Mon Dieu, It's Jumping Flash 3-finished.m4a
-  ogg:  Episode 2 - Mon Dieu, It's Jumping Flash 3-finished.opus
+  opus: Episode 2 - Mon Dieu, It's Jumping Flash 3.opus
+  m4a:  Episode 2 - Mon Dieu, It's Jumping Flash 3.m4a
+  ogg:  Episode 2 - Mon Dieu, It's Jumping Flash 3.opus
 filesize:
   opus: 54704079
   m4a:  55137190

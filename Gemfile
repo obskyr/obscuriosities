@@ -6,7 +6,8 @@ gem 'rake', '>= 13'
 gem 'jekyll'
 gem 'jekyll-octopod', path: 'jekyll-octopod'
 gem 'wahwah', git: 'https://github.com/obskyr/wahwah.git', branch: 'lazy-ogg-duration'
-gem "down", "~> 5.0"
+gem 'down', '~> 5.4'
+gem 'addressable', '~> 2.8'
 
 group :jekyll_plugins do
   gem 'jekyll-sitemap'
