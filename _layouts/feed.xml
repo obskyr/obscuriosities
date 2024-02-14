@@ -56,7 +56,7 @@ layout: null
     {% endfor %}
     {%- for post in site.posts -%}
       {%- if post.audio[page.format] -%}
-        {%- assign check = forloop.index0 | divided_by:site.episodes_per_feed_page | plus: 1 -%}
+        {%- assign check = forloop.index0 | divided_by: site.episodes_per_feed_page | plus: 1 -%}
         {%- if check == page.page_number -%}
           <item>
             <title>{{ post.title }}{% if post.subtitle %} - {{ post.subtitle }}{% endif %}{% if post.topic %} — {{ post.topic }}{% endif %}</title>
@@ -141,15 +141,13 @@ layout: null
             <itunes:summary><![CDATA[{{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | format_for_apple_podcasts }}]]></itunes:summary>
             <content:encoded><![CDATA[{{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | newlines_between_paragraphs: 0 }}]]></content:encoded>
             {% assign url = post.audio[page.format] | absolute_url %}
-            {%- if post.filesize -%}
-              <enclosure url="{{ url | possibly_with_podtrac }}" 
-                         length="{{ post | size_by_format: page.format }}" 
-                         type="{{ page.format | mime_type }}" />
-            {%- else -%}
-              <enclosure url="{{ url | possibly_with_podtrac }}" 
-                         length="{{ post.audio | audio:page.format | file_size }}" 
-                         type="{{ page.format | mime_type }}" />
-            {% endif %}
+            <enclosure url="{{ url | possibly_with_podtrac | xml_escape }}" 
+            {%- if post.filesize %}
+                       length="{{ post | size_by_format: page.format }}" 
+            {%- else %}
+                       length="{{ post.audio | audio:page.format | file_size }}" 
+            {%- endif %}
+                       type="{{ page.format | mime_type }}" />
             <itunes:episodeType>{% if post.type and post.type != nil %}{% assign type = post.type | downcase %}{% if type == 'full' or type == 'trailer' or type == 'bonus' %}{{ type }}{% else %}full{% endif %}{% else %}full{% endif %}</itunes:episodeType>
             <itunes:keywords>{{ post.rich_tags | map: 'long_name_with_abbreviation' | join: ', ' }}</itunes:keywords>
             <itunes:subtitle>{{ post.subtitle }}</itunes:subtitle>
