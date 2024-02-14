@@ -54,18 +54,11 @@ use_podtrac: yes
 player_theme: obscuriosities
 date_format: ordinal
 
-## If rsync deployments via Octopod are ever to be done:
+# If rsync deployments via Octopod are ever to be done:
 # ssh_host: user@host.org
 # ssh_port: 22
 # document_root: /path/to/your/htdocs/
 # rsync_delete: true
-
-## Feed links; optional
-# itunes_url: https://itunes.apple.com/at/podcast/myname/id232323
-# google_play_url: https://playmusic.app.goo.gl/...
-# bitlove_url: https://bitlove.org/myaccount
-# fyyd_url: https://fyyd.de/podcast/myaccount/myid
-# gpodder_url: https://gpodder.net/podcast/mypodcast
 
 # To add comments, set a Disqus identifier.
 # disqus-identifier:

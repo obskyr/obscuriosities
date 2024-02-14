@@ -5,6 +5,6 @@
 
   {{ content }}
   
-  {% include analytics.html %}
+  {%- if site.analytics and site.analytics != "" %}{% include analytics.html %}{% endif %}
 </body>
 </html>

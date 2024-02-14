@@ -3,13 +3,12 @@ layout: null
 ---
 <?xml version="1.0"
       encoding="UTF-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom"
-     xmlns:bitlove="http://bitlove.org"
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
      xmlns:podcast="https://podcastindex.org/namespace/1.0"
-     xmlns:psc="http://podlove.org/simple-chapters"
-     version="2.0">
+     xmlns:psc="http://podlove.org/simple-chapters">
 
   <channel>
     <title>{{ site.title }}{% unless site.subtitle == blank or site.subtitle == nil %}: {{ site.subtitle }}{% endunless %}</title>
@@ -140,8 +139,7 @@ layout: null
             <description><![CDATA[{{ post.content | before_hr | expand_urls: site.url | cdata_escape | remove_script_and_audio | newlines_between_paragraphs: 1 }}]]></description>
             <itunes:summary><![CDATA[{{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | format_for_apple_podcasts }}]]></itunes:summary>
             <content:encoded><![CDATA[{{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | newlines_between_paragraphs: 0 }}]]></content:encoded>
-            {% assign url = post.audio[page.format] | absolute_url %}
-            <enclosure url="{{ url | possibly_with_podtrac | xml_escape }}" 
+            <enclosure url="{{ post.audio[page.format] | absolute_url | possibly_with_podtrac | xml_escape }}" 
             {%- if post.filesize %}
                        length="{{ post | size_by_format: page.format }}" 
             {%- else %}
