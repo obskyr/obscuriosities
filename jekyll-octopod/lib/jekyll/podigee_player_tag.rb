@@ -2,6 +2,10 @@ def url?(s)
   return s.downcase.start_with?('http://') || s.downcase.start_with?('https://')
 end
 
+def empty?(x)
+  return !(x && x != "" && (!(x.respond_to? :upcase) || x.upcase != "TODO"))
+end
+
 module Jekyll
   class PodigeePlayerTag < Liquid::Tag
     PLAYER_THEMES = ["obscuriosities"]
@@ -12,7 +16,7 @@ module Jekyll
 
       audio = {}
       download_url = config["download_url"] || config["url"] + config["baseurl"]
-      page["audio"].each { |key, value| audio[key] = download_url + "/" + value unless url? value }
+      page["audio"].each { |key, value| audio[key] = url?(value) ? value : download_url + "/" + value unless empty? value }
       audio.delete 'ogg' # TODO: Remove this when the Ogg feed has been removed.
       if config['use_podtrac'] && Jekyll.env != 'development'
         audio.each { |key, value| audio[key] = Jekyll::PodtracFilters.with_podtrac(value) }

@@ -12,13 +12,6 @@ module Jekyll
       input.gsub(/<!\[CDATA\[/, '&lt;![CDATA[').gsub(/\]\]>/, ']]&gt;')
     end
 
-    # Escapes HTML entities in JSON strings.
-    # More or less a copy of the equivalent method in Active Support.
-    # https://github.com/rails/rails/tree/master/activesupport
-    def j(str)
-      str.to_s.gsub(/[&"><']/) { |e| JSON_ENTITIES[e] }
-    end
-
     # Replaces relative urls with full urls
     #
     #   {{ "about.html" | expand_urls }}           => "/about.html"
@@ -98,6 +91,7 @@ module Jekyll
     #   {{ "m4a" | mime_type }} => "audio/mp4a-latm"
     def mime_type(format)
       types = {
+        'flac' => 'flac',
         'mp3'  => 'mpeg',
         'm4a'  => 'mp4a-latm',
         'ogg'  => 'ogg; codecs=vorbis',
@@ -244,31 +238,6 @@ module Jekyll
       URI.parse(url).host
     end
 
-    # Generates the config for disqus integration
-    # If a page object is given, it generates the config variables only for this
-    # page. Otherwise it generate only the global config variables.
-    #
-    #   {{ site | disqus_config }}
-    #   {{ site | disqus_config:page }}
-    def disqus_config(site, page = nil)
-      if page
-        disqus_vars = {
-          'disqus_identifier'  => page['url'],
-          'disqus_url'         => "#{site['url']}#{site['baseurl']}#{page['url']}",
-          'disqus_category_id' => page['disqus_category_id'] || site['disqus_category_id'],
-          'disqus_title'       => j(page['title'] || site['site'])
-        }
-      else
-        disqus_vars = {
-          'disqus_developer'   => site['disqus_developer'],
-          'disqus_shortname'   => site['disqus_shortname']
-        }
-      end
-
-      disqus_vars.delete_if { |_, v| v.nil? }
-      disqus_vars.map { |k, v| "var #{k} = '#{v}';" }.compact.join("\n")
-    end
-
     # Returns the hex-encoded hash value of a given string. The optional
     # second argument defines the length of the returned string.
     #
@@ -277,47 +246,6 @@ module Jekyll
     def sha1(str, lenght = 8)
       sha1 = Digest::SHA1.hexdigest(str)
       sha1[0, lenght.to_i]
-    end
-
-    # Returns a, ready to use, navigation list of all pages that have
-    # <tt>navigation</tt> set in their YAML front matter. The list is sorted by
-    # the value of <tt>navigation</tt>.
-    #
-    #   {{ site | navigation_list:page }}
-    def navigation_list(site, page)
-      pages = site['pages'].select { |p|
-        p.data['navigation'] && p.data['title']
-      }.sort_by { |p| p.data['navigation'] }
-
-      list = []
-      list << pages.map { |p|
-        active = (p.url == page['url']) || (page.key?('next') && File.join(p.dir, p.basename) == '/index')
-        navigation_list_item(File.join(site['url'], site['baseurl'], p.url), p.data['title'], active)
-      }
-      list.join("\n")
-    end
-
-    def talk_list(site, page)
-      pages = site['pages'].select { |p|
-        p.data['talk'] && p.data['title']
-      }.sort_by { |p| p.data['talk'] }
-
-      list =  ['<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> Talks <span class="caret"></span>
-                </a><ul class="dropdown-menu">']
-      list << pages.map { |p|
-        active = (p.url == page['url']) || (page.key?('next') && File.join(p.dir, p.basename) == '/index')
-        navigation_list_item(File.join(site['url'], site['baseurl'], p.url), p.data['title'], active)
-      }
-      list << ['</ul></li>']
-
-      if pages.any?
-        list.join("\n")
-      end
-    end
-
-    def navigation_list_item(url, title, active = false)
-      a_class = active ? ' class="active"' : ''
-      %Q{<li#{a_class}><a #{a_class} href="#{url}">#{title}</a></li>}
     end
 
     # Returns an array of all episode feeds named by the convetion

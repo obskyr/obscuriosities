@@ -1,0 +1,185 @@
+---
+layout: null
+---
+<?xml version="1.0"
+      encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:podcast="https://podcastindex.org/namespace/1.0"
+     xmlns:psc="http://podlove.org/simple-chapters">
+
+  <channel>
+    <title>{{ site.title }}{% unless site.subtitle == blank or site.subtitle == nil %}: {{ site.subtitle }}{% endunless %}</title>
+    <link>{{ site.url }}{{ site.baseurl }}</link>
+    <atom:link href="{{ site.url }}{{ site.baseurl }}/episodes.{{ page.format }}.rss{{page.myself}}" rel="self" type="application/rss+xml" title="{{ page.format }} Episode RSS-Feed"/>
+    <atom:link href="{{ site.url }}{{ site.baseurl }}/episodes.{{ page.format }}.rss" rel="first" type="application/rss+xml" />
+    <atom:link href="{{ site.url }}{{ site.baseurl }}/episodes{{page.last}}.{{ page.format }}.rss" rel="last" type="application/rss+xml" />
+    {% if page.next %}<atom:link href="{{ site.url }}{{ site.baseurl }}/episodes{{page.next}}.{{ page.format }}.rss" rel="next" type="application/rss+xml" />{% endif %}
+    {% if page.prev %}<atom:link href="{{ site.url }}{{ site.baseurl }}/episodes{{page.prev}}.{{ page.format }}.rss" rel="prev" type="application/rss+xml" />{% endif %}
+
+    {{ site | episode_feeds_rss: page.format }}
+    <description>{{ site.description | markdownify | strip_html }}</description>
+    <lastBuildDate>{{ site.time | time_to_rssschema }}</lastBuildDate>
+    <language>{{ site.language }}</language>
+    <generator>Jekyll-Octopod {{ site | version_string }}</generator>
+
+    <itunes:summary>{{ site.description | markdownify | strip_html }}</itunes:summary>
+    <itunes:author>{{ site.author }}</itunes:author>
+    <itunes:explicit>{{ site.explicit }}</itunes:explicit>
+    <itunes:image href="{{ site.url }}{{ site.baseurl }}/assets/images/logo/logo-itunes.jpeg" />
+    <itunes:owner>
+      <itunes:name>{{ site.author }}</itunes:name>
+      <itunes:email>{{ site.email }}</itunes:email>
+    </itunes:owner>
+    <managingEditor>{{ site.email }} ({{ site.author }})</managingEditor>
+    {% assign copyright_start_year = site.copyright-start-year | append: "" -%}
+    {% assign current_year = site.time | date: '%Y' -%}
+    <copyright>© {% if copyright_start_year != current_year %}{{ copyright_start_year }} – {% endif %}{{ current_year }} {{site.author}}</copyright>
+    <!--<itunes:subtitle>{{ site.subtitle }}</itunes:subtitle>-->
+    <itunes:keywords>{{ site.keywords | join:', ' }}</itunes:keywords>
+    <image>
+      <title>{{ site.title }}</title>
+      <url>{{ site.url }}{{ site.baseurl }}/assets/images/logo/logo-itunes.jpeg</url>
+      <link>{{ site.url }}{{ site.baseurl }}</link>
+    </image>
+    {% for category in site.itunes_categories %}
+      {% if category.first %}
+        <itunes:category text="{{ category[0] | xml_escape }}">
+          <itunes:category text="{{ category[1] | xml_escape }}" />
+        </itunes:category>
+      {% else %}
+        <itunes:category text="{{ category | xml_escape }}" />
+      {% endif %}
+    {% endfor %}
+    {%- for post in site.posts -%}
+      {%- if post.audio[page.format] -%}
+        {%- assign check = forloop.index0 | divided_by: site.episodes_per_feed_page | plus: 1 -%}
+        {%- if check == page.page_number -%}
+          <item>
+            <title>{{ post.title }}{% if post.subtitle %} - {{ post.subtitle }}{% endif %}{% if post.topic %} — {{ post.topic }}{% endif %}</title>
+            <link>{{ post.url | absolute_url }}</link>
+            {% if post.season and post.season != nil %}<itunes:season>{{ post.season }}</itunes:season>{% endif %}
+            {% if post.episode and post.episode != nil %}<itunes:episode>{{ post.episode }}</itunes:episode>{% endif %}
+            <atom:link rel="http://podlove.org/deep-link" href="{{ post.url | absolute_url }}#"/>
+            {%- if site.disqus-identifier -%}
+            <comments>{{ site.url }}{{ site.baseurl }}{{ post.url }}#disqus_thread</comments>
+            {% endif %}
+            <pubDate>{{ post.real-date | time_to_rssschema }}</pubDate>
+            {% for category in post.categories %}
+              <category><![CDATA[{{ category }}]]></category>
+            {% endfor %}
+            <guid isPermaLink="false">{{ site.url }}{{ site.baseurl }}{{ post.url }}</guid>
+            {% capture notes_footer %}
+              {% comment %}
+                Spotify has an annoying quirk: In show notes, it auto-links URLs…
+                *even if they're already a link*. This would be fine, if not for the
+                fact that it also detects URLs improperly, and for example replaces
+                apostrophes (') with directional apostrophes (’) and stops the URL
+                upon encountering an exclamation mark. So for links containing apostrophes
+                or exclamation marks to work in the show notes on Spotify, we've
+                got to take matters into our own hands. (There may be other punctuation
+                that breaks links in Spotify show notes, but if so, I've yet to find them.
+                Commas work just fine, and I presume periods do as well.)
+              {% endcomment -%}
+              {% assign url = post.url | absolute_url | uri_encode | replace: "'", "%27" | replace: "!", "%21" -%}
+              <p>Episode page: <a href="{{ url }}">{{ url }}</a></p>
+              <p>Tags: {{ post.rich_tags | map: 'long_name_with_abbreviation' | join: ", " }}</p>
+            {% endcapture -%}
+            {% comment %}
+              After hours upon hours of reverse engineering, I've figured out the
+              practical situation for episode descriptions as of 2023-08-30.
+              My findings are as following:
+
+              • Apple Podcasts first prioritizes <itunes:summary>, and goes for
+                <description> if that is not present.
+              • Apple Podcasts will entirely discard your description if it contains
+                any HTML tags that are not <p>, <ul>, <ol>, <li>, or <a>. That
+                includes <em>. (There may be other tags that are secretly allowed,
+                but if so, I haven't found them.)
+              • Apple Podcasts preserves <p>s and turns newlines into <br>.
+                There is no space between paragraphs.
+                (Thus, in order to create what looks like two linebreaks,
+                you must have exactly one newline between <p> elements.)
+              • Apple Podcasts replaces (runs of?) newlines and paragraph
+                breaks with spaces only in the episode list.
+              • Spotify uses <description> in episode lists everywhere, and on
+                episode pages on the mobile site. It replaces (runs of?)
+                newlines with spaces, and ignores paragraph tags.
+                Whether it uses a different tag if <description> is not present,
+                I have not found out.
+              • Spotify uses <content:encoded> on episode pages in the app and
+                on the desktop website, and simply strips out most HTML.
+                Whether it uses a different tag if <content:encoded> is not present,
+                I have not found out.
+              • On episode pages on the desktop website, Spotify preserves <p>s
+                and turns newlines into <br>s. There is one line of space
+                between paragraphs. The app will always have a reasonable
+                amount of newlines, and even keeps <a> elements.
+                (Not sure whether the web interface allows <a> elements.)
+              • Pocket Casts uses <content:encoded>, and allows most(?) HTML.
+                Whether it uses a different tag if <content:encoded> is not present,
+                I have not found out.
+              
+              This means that:
+
+              • You need to have zero newlines between paragraphs in
+                <content:encoded> to accommodate Spotify.
+              • You need to have exactly one newline between paragraphs in
+                <itunes:summary> to accommodate Apple Podcasts.
+              • <description> should be written to look good even if paragraphs
+                are joined with a space into a single paragraph. (Thus, I don't
+                append the episode page link and tags to the end of <description>
+                here, as I haven't found a case where tags in <description>
+                help discoverability or where the episode page link won't
+                be accessible elsewhere. Such a case may exist in a different
+                podcast app, however. Worth keeping an eye out for.)
+            {% endcomment -%}
+            <description><![CDATA[{{ post.content | before_hr | expand_urls: site.url | cdata_escape | remove_script_and_audio | newlines_between_paragraphs: 1 }}]]></description>
+            <itunes:summary><![CDATA[{{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | format_for_apple_podcasts }}]]></itunes:summary>
+            <content:encoded><![CDATA[{{ post.content | before_hr | append: notes_footer | expand_urls: site.url | cdata_escape | remove_script_and_audio | newlines_between_paragraphs: 0 }}]]></content:encoded>
+            <enclosure url="{{ post.audio[page.format] | absolute_url | possibly_with_podtrac | xml_escape }}" 
+            {%- if post.filesize %}
+                       length="{{ post | size_by_format: page.format }}" 
+            {%- else %}
+                       length="{{ post.audio | audio:page.format | file_size }}" 
+            {%- endif %}
+                       type="{{ page.format | mime_type }}" />
+            <itunes:episodeType>{% if post.type and post.type != nil %}{% assign type = post.type | downcase %}{% if type == 'full' or type == 'trailer' or type == 'bonus' %}{{ type }}{% else %}full{% endif %}{% else %}full{% endif %}</itunes:episodeType>
+            <itunes:keywords>{{ post.rich_tags | map: 'long_name_with_abbreviation' | join: ', ' }}</itunes:keywords>
+            <itunes:subtitle>{{ post.subtitle }}</itunes:subtitle>
+            <itunes:summary>{{ post.summary }}</itunes:summary>
+            <itunes:author>{{ post.author | otherwise:site.author }}</itunes:author>
+            <itunes:explicit>{{ post.explicit | otherwise:site.explicit }}</itunes:explicit>
+            <itunes:duration>{{ post.duration }}</itunes:duration>
+            {%- if post.chapters -%}
+              <psc:chapters version="1.1" xmlns:psc="http://podlove.org/simple-chapters">
+                {%- for chapter in post.chapters -%}
+                  <psc:chapter start="{{ chapter | split_chapter: 'start' | xml_escape }}" title="{{ chapter | split_chapter: 'title' | xml_escape }}" />
+                {% endfor %}
+              </psc:chapters>
+            {%- endif -%}
+            {%- if post.contributors -%}
+              {%- for contributor in post.contributors -%}
+                <atom:contributor>
+                  <atom:name>{{ contributor.name }}</atom:name>
+                  <atom:uri>{{ contributor.uri }}</atom:uri>
+                  <atom:email>{{ contributor.email }}</atom:email>
+                </atom:contributor>
+              {%- endfor -%}
+            {%- endif -%}
+            {%- if post.image -%}
+              <itunes:image href="{{ post.image | replace: '#', '%23' | absolute_url | xml_escape }}" />
+              <image>
+                {% if post.image_title and post.image-title != "" %}<title>{{ post.image-title }}</title>{% endif -%}
+                <url>{{ post.image | replace: '#', '%23' | absolute_url }}</url>
+                <link>{{ site.url }}{{ site.baseurl }}</link>
+              </image>
+            {%- endif -%}
+          </item>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </channel>
+</rss>

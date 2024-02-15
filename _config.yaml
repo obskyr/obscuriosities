@@ -81,19 +81,17 @@ plugins_dir:
   - _plugins/priority
   - _plugins
 
+theme: jekyll-theme
+
 paginate: 8
 paginate_path: "/page/:num"
 
 exclude:
   - /jekyll-octopod
-  - /octopod
-  - /processnotionmd.py
+  - /jekyll-theme
   - /optimizeimages.sh
-  - /LICENSE
+  - /LICENSE.md
   - _drafts/template.md
-
-sass:
-  sass_dir: assets/css/_sass
 
 # Not actually, but to make per-post timezones actually somewhat work...
 timezone: UTC

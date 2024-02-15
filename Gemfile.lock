@@ -9,11 +9,15 @@ PATH
   remote: jekyll-octopod
   specs:
     jekyll-octopod (0.9.23.pre.obskyr)
-      facets (~> 3.1)
       jekyll (~> 4.0)
       jekyll-admin (~> 0.10)
       jekyll-bootflat (~> 0.3.2)
       kramdown-parser-gfm (~> 1.1)
+
+PATH
+  remote: jekyll-theme
+  specs:
+    jekyll-theme (0.1.0.pre.obskyr)
 
 GEM
   remote: https://rubygems.org/
@@ -43,7 +47,6 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    facets (3.1.0)
     ffi (1.16.3)
     forwardable-extended (2.6.0)
     gemoji (4.1.0)
@@ -169,6 +172,7 @@ DEPENDENCIES
   jekyll-postfiles
   jekyll-sitemap
   jekyll-tagging
+  jekyll-theme!
   jemoji
   rake (>= 13)
   wahwah!
